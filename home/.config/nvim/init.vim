@@ -1,46 +1,52 @@
-set nocompatible " be iMproved, required
-filetype off " required
-
 " Leader
 let mapleader=","
 
-set rtp+=~/.vim/Vundle.vim
-call vundle#begin()
 
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-fugitive'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'scrooloose/nerdtree'
-Bundle 'Shougo/neocomplete.git'
-Plugin 'kien/ctrlp.vim'
-Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'bkad/CamelCaseMotion'
-Plugin 'danro/rename.vim'
-Plugin 'tpope/vim-rails'
-Plugin 'vim-scripts/EasyGrep'
-Plugin 'rking/ag.vim'
-Bundle 'jgdavey/tslime.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'xolox/vim-misc'
-Plugin 'majutsushi/tagbar'
-Bundle 'lukaszkorecki/CoffeeTags'
-Plugin 'tpope/vim-commentary'
-Plugin 'godlygeek/tabular'
+"
+" Plugins
 
-Plugin 'chriskempson/base16-vim'
-Plugin 'altercation/vim-colors-solarized'
+call plug#begin('~/.vim/plugged')
 
-Plugin 'pangloss/vim-javascript'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'AndrewRadev/vim-eco'
-Plugin 'elzr/vim-json'
-Bundle 'groenewege/vim-less'
-Bundle 'chase/vim-ansible-yaml'
+" Sensible
+Plug 'tpope/vim-sensible'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+" Interface
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'bling/vim-airline'
+Plug 'scrooloose/nerdtree'
+Plug 'airblade/vim-gitgutter'
+Plug 'jeetsukumaran/vim-buffergator'
+
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-rails'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'godlygeek/tabular'
+Plug 'Shougo/neocomplete.git'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'bkad/CamelCaseMotion'
+Plug 'danro/rename.vim'
+
+" Tags
+Plug 'majutsushi/tagbar'
+Plug 'lukaszkorecki/CoffeeTags'
+
+" Syntax
+Plug 'scrooloose/syntastic'
+
+Plug 'pangloss/vim-javascript'
+Plug 'kchmck/vim-coffee-script'
+Plug 'vim-ruby/vim-ruby'
+Plug 'AndrewRadev/vim-eco'
+Plug 'elzr/vim-json'
+Plug 'groenewege/vim-less'
+Plug 'chase/vim-ansible-yaml'
+
+call plug#end()
+
+
+"
+" Settings
 
 " Colors
 set t_Co=256
@@ -55,9 +61,6 @@ set smartindent
 set tabstop=2
 set shiftwidth=2
 set expandtab
-
-" Backspace
-set backspace=indent,eol,start
 
 " Status Line
 set laststatus=2
@@ -112,21 +115,6 @@ nnoremap <C-H> <C-W><C-H>
 " Completion
 let g:neocomplete#enable_at_startup = 1
 
-" Multiple Cursors
-let g:multi_cursor_exit_from_insert_mode = 0
-
-function! Multiple_cursors_before()
-  if exists(':NeoCompleteLock')==2
-    exe 'NeoCompleteLock'
-  endif
-endfunction
-
-function! Multiple_cursors_after()
-  if exists(':NeoCompleteUnlock')==2
-    exe 'NeoCompleteUnlock'
-  endif
-endfunction
-
 " CtrlP
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_max_files=0
@@ -142,17 +130,6 @@ nmap ≥ :NERDTreeFind<CR>
 map „ <Plug>CamelCaseMotion_w
 map ı <Plug>CamelCaseMotion_b
 map ´ <Plug>CamelCaseMotion_e
-
-map <Leader>a :call Send_to_Tmux("zeus rspec ".expand("%")."\n")<CR>
-map <Leader>s :call Send_to_Tmux("zeus rspec ".expand("%").":".line(".")."\n")<CR>
-
-" EasyGrep
-let g:EasyGrepFilesToExclude='tmp'
-let g:EasyGrepRecursive=1
-let g:EasyGrepCommand=1
-let g:EasyGrepMode=2
-
-map <F9> :GrepOptions<CR>
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -170,3 +147,21 @@ map <F7> :SyntasticToggleMode<CR>
 " Tags
 map <F8> :TagbarToggle<CR>
 let g:CoffeeAutoTagIncludeVars=1
+
+"
+" Functions
+
+" Multiple Cursors
+let g:multi_cursor_exit_from_insert_mode = 0
+
+function! Multiple_cursors_before()
+  if exists(':NeoCompleteLock')==2
+    exe 'NeoCompleteLock'
+  endif
+endfunction
+
+function! Multiple_cursors_after()
+  if exists(':NeoCompleteUnlock')==2
+    exe 'NeoCompleteUnlock'
+  endif
+endfunction
