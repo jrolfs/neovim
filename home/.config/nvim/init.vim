@@ -49,10 +49,9 @@ call plug#end()
 " Settings
 
 " Colors
-set t_Co=256
 syntax on
 set background=dark
-colorscheme solarized
+colorscheme hybrid_material
 highlight clear SignColumn
 highlight GitGutterAdd ctermfg=green
 
@@ -71,6 +70,7 @@ set number
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 0
+let g:airline_theme = "hybrid"
 
 " Ruler
 set colorcolumn=120
