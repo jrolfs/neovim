@@ -1,9 +1,3 @@
-" Leader
-let mapleader=","
-
-
-"
-" Plugins
 
 call plug#begin('~/.vim/plugged')
 
@@ -12,29 +6,45 @@ Plug 'tpope/vim-sensible'
 
 " Interface
 Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'bling/vim-airline'
-Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
-Plug 'jeetsukumaran/vim-buffergator'
+Plug 'Shougo/deoplete.nvim'
+Plug 'tpope/vim-obsession'
+Plug 'gcmt/taboo.vim'
+Plug 'wesQ3/vim-windowswap'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
+" Tools
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-rails'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'godlygeek/tabular'
-Plug 'Shougo/neocomplete.git'
+
+" Files
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/tabpagebuffer.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'bkad/CamelCaseMotion'
+Plug 'mhinz/vim-grepper'
 Plug 'danro/rename.vim'
+Plug 'ryanoasis/vim-devicons'
+
+" Manipulation
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'godlygeek/tabular'
+
+" Motion
+Plug 'terryma/vim-multiple-cursors'
+Plug 'bkad/CamelCaseMotion'
+Plug 'tpope/vim-repeat'
 
 " Tags
 Plug 'majutsushi/tagbar'
-Plug 'lukaszkorecki/CoffeeTags'
 
 " Syntax
-Plug 'scrooloose/syntastic'
-
-Plug 'pangloss/vim-javascript'
+Plug 'benekastah/neomake'
+Plug 'othree/yajs.vim'
+Plug 'mxw/vim-jsx'
 Plug 'kchmck/vim-coffee-script'
 Plug 'vim-ruby/vim-ruby'
 Plug 'AndrewRadev/vim-eco'
@@ -48,6 +58,9 @@ call plug#end()
 "
 " Settings
 
+" Leader
+let mapleader = ","
+
 " Colors
 syntax on
 set background=dark
@@ -55,11 +68,32 @@ colorscheme hybrid_material
 highlight clear SignColumn
 highlight GitGutterAdd ctermfg=green
 
+" Undo
+silent !mkdir ~/.vim/backups > /dev/null 2>&1
+set undodir=~/.vim/backups
+set undofile
+
 " Tab Size
 set smartindent
 set tabstop=2
 set shiftwidth=2
 set expandtab
+
+" List trailing
+set listchars=tab:\ \ ,trail:·
+set list
+
+" Cursor
+set gcr=a:blinkon500-blinkwait500-blinkoff500
+set cursorline
+
+" Search
+set smartcase
+set ignorecase
+set showmatch
+
+" Movement
+set nostartofline
 
 " Status Line
 set laststatus=2
@@ -67,10 +101,23 @@ set laststatus=2
 " Line Numbers
 set number
 
+" Python
+let g:python_host_prog = '/Users/Jamie/.pyenv/shims/python'
+let g:python3_host_prog = '/Users/Jamie/.pyenv/shims/python3'
+
+" Tags
+let g:tagbar_type_coffee = { 'ctagstype': 'coffee', 'kinds': [ 'c:classes', 'm:methods', 'f:functions', 'v:variables', 'f:fields', ] }
+
 " Airline
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 0
 let g:airline_theme = "hybrid"
+let g:airline_section_y = '%{(&fenc == "" ? &enc : &fenc)}'                     "set encoding type info
+let g:airline_section_z = '%{substitute(getcwd(), expand("$HOME"), "~", "g")}'  "Set relative path
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '│'
 
 " Ruler
 set colorcolumn=120
@@ -79,32 +126,104 @@ set nowrap
 " CoffeeScript
 let g:coffee_lint_options = '-f ~/coffeelint.json'
 
-"
-" Bindings
+" Vimfiler
+let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_ignore_pattern = ['^\.git$', '^\.DS_Store$']
+
+" Completion
+let g:deoplete#enable_at_startup = 1
+set wildmode=list:full
+set wildmenu
+set wildignore+=*vim/backups*
+set wildignore+=*sass-cache*
+set wildignore+=*cache*
+set wildignore+=*logs*
+set wildignore+=*node_modules/**
+set wildignore+=*DS_Store*
+set wildignore+=*.gem
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=*.png,*.jpg,*.gif
+
+" CtrlP
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_max_files=0
+let g:ctrlp_working_path_mode = 'w'
+set wildignore+=*/.git/*,*.scssc,*/tmp/*
+
+" JSX
+let g:jsx_ext_required = 0
+
+" Abbreviations
+cnoreabbrev Wq wq
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qa qa
+cnoreabbrev Bd bd
+cnoreabbrev bD bd
+cnoreabbrev t tabe
+cnoreabbrev T tabe
+cnoreabbrev tc tabc
+cnoreabbrev Tc tabc
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
+
+" Multiple Cursors
+let g:multi_cursor_exit_from_insert_mode = 0
 
 " Buffers
 set hidden
-" close buffer
-nmap <leader>d :bp<bar>sp<bar>bn<bar>bd<CR>
-" close all buffers
-nmap <leader>D :bufdo bd<CR>
-" Switch between buffers
-noremap <S-tab> :bp<CR>
-noremap <tab> :bn<CR>
+
+" Neomake
+let g:neomake_javascript_enabled_makers = ['eslint']
+
+
+"
+" Mappings
+
+" Abbreviations
+cnoreabbrev Wq wq
+cnoreabbrev WQ wq
+cnoreabbrev Vs vs
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qa qa
+cnoreabbrev Bd bd
+cnoreabbrev bD bd
+cnoreabbrev t tabe
+cnoreabbrev T tabe
+cnoreabbrev tc tabc
+cnoreabbrev Tc tabc
+
+" Source configuration
+map <Leader>rr :source ~/.config/nvim/init.vim<CR>
+
+" Indentation
+nnoremap <TAB> >>
+nnoremap <S-TAB> <<
+xnoremap <S-TAB> <gv
+xnoremap <TAB> >gv
+
+" Unite
+nnoremap <Leader>b :Unite buffer_tab<CR>
+
+" VimFiler
+map <F3> :VimFilerExplorer -project<CR>
+map <S-F3> :VimFilerExplorer -file<CR>
+noremap <F2> :VimFiler<CR>
+
+" Buffers
+nmap <Leader>d :bp<BAR>sp<BAR>bn<BAR>bd<CR> " close buffer
+nmap <Leader>D :bufdo bd<CR> " close all buffers
+noremap <Leader>eb :%y<CR>:@"<CR> 
 
 " Tabs
-map <C-up> :tabn<cr>
-map <C-down> :tabp<cr>
-map <C-left> :tabr<cr>
-map <C-right> :tabl<cr>
-
-nnoremap <C-t> :tabnew<CR>
-
-" Tab names as directories
-function! GuiTabLabel()
-  return substitute( expand( '%:p' ), '.\+\/\(.\+\)\/.\+', '\1', '' )
-endfunction
-set guitablabel=%{GuiTabLabel()}
+map <C-S-k> :tabnext<CR>
+map <C-S-j> :tabprevious<CR>
 
 " Pane navigation
 nnoremap <C-J> <C-W><C-J>
@@ -112,48 +231,29 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Completion
-let g:neocomplete#enable_at_startup = 1
-
-" CtrlP
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_max_files=0
-set wildignore+=*/.git/*,*.scssc,*/tmp/*
-
-nnoremap <Leader>p :CtrlP<CR>
-
-" Nerdtree
-map <C-e> :NERDTreeToggle<CR>
-nmap ≥ :NERDTreeFind<CR>
-
 " CamelCaseMotion
-map „ <Plug>CamelCaseMotion_w
-map ı <Plug>CamelCaseMotion_b
-map ´ <Plug>CamelCaseMotion_e
+map <C-S-w> <Plug>CamelCaseMotion_w
+map <C-S-b> <Plug>CamelCaseMotion_b
+map <C-S-e> <Plug>CamelCaseMotion_e
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
-
-map <F6> :SyntasticCheck<CR>
-map <F7> :SyntasticToggleMode<CR>
+" Neomake
+nmap <Leader><Space>o :lopen<CR>
+nmap <Leader><Space>c :lclose<CR>
+nmap <Leader><Space>, :ll<CR>
+nmap <Leader><Space>n :lnext<CR>
+nmap <Leader><Space>p :lprev<CR>
 
 " Tags
 map <F8> :TagbarToggle<CR>
-let g:CoffeeAutoTagIncludeVars=1
+
+" Relative numbers
+map <Leader>r :call NumberToggle()<CR>
+
 
 "
 " Functions
 
 " Multiple Cursors
-let g:multi_cursor_exit_from_insert_mode = 0
-
 function! Multiple_cursors_before()
   if exists(':NeoCompleteLock')==2
     exe 'NeoCompleteLock'
@@ -163,5 +263,15 @@ endfunction
 function! Multiple_cursors_after()
   if exists(':NeoCompleteUnlock')==2
     exe 'NeoCompleteUnlock'
+  endif
+endfunction
+
+" Toggle Relative
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set nornu
+    set number
+  else
+    set rnu
   endif
 endfunction
