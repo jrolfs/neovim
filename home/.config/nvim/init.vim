@@ -232,6 +232,10 @@ map <C-S-j> :tabprevious<CR>
 " Taboo
 map <Leader>tr :TabooRename 
 
+" Grepper
+nnoremap <leader>git :Grepper -tool git -noswitch<cr>
+nnoremap <leader>ag  :Grepper -tool ag  -grepprg ag --vimgrep -G '^.+\.txt'<cr>
+
 " Pane navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
