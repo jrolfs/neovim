@@ -97,10 +97,13 @@ set showmatch
 set nostartofline
 
 " Status Line
-set laststatus=2
+set laststatus = 2
 
 " Line Numbers
 set number
+
+" Session
+set sessionoptions+=tabpages,globals
 
 " Python
 let g:python_host_prog = '/Users/Jamie/.pyenv/shims/python'
