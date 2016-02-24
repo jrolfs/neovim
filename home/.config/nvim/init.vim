@@ -97,7 +97,7 @@ set showmatch
 set nostartofline
 
 " Status Line
-set laststatus = 2
+set laststatus=2
 
 " Line Numbers
 set number
@@ -228,6 +228,9 @@ noremap <Leader>eb :%y<CR>:@"<CR>
 " Tabs
 map <C-S-k> :tabnext<CR>
 map <C-S-j> :tabprevious<CR>
+
+" Taboo
+map <Leader>tr :TabooRename 
 
 " Pane navigation
 nnoremap <C-J> <C-W><C-J>
