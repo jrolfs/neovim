@@ -8,11 +8,12 @@ Plug 'tpope/vim-sensible'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'airblade/vim-gitgutter'
 Plug 'Shougo/deoplete.nvim'
-Plug 'tpope/vim-obsession'
 Plug 'gcmt/taboo.vim'
 Plug 'wesQ3/vim-windowswap'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
 
 " Tools
 Plug 'tpope/vim-fugitive'
@@ -104,6 +105,9 @@ set number
 
 " Session
 set sessionoptions+=tabpages,globals
+
+let g:session_autosave = 'yes'
+let g:session_autosave_periodic = 1
 
 " Python
 let g:python_host_prog = '/Users/Jamie/.pyenv/shims/python'
