@@ -42,6 +42,7 @@ Plug 'tpope/vim-repeat'
 Plug 'majutsushi/tagbar'
 
 " Syntax
+Plug 'tpope/vim-git'
 Plug 'benekastah/neomake'
 Plug 'othree/yajs.vim'
 Plug 'mxw/vim-jsx'
