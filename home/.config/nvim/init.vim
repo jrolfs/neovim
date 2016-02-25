@@ -108,6 +108,7 @@ set sessionoptions+=tabpages,globals
 
 let g:session_autosave = 'yes'
 let g:session_autosave_periodic = 1
+let g:session_autosave_silent = 1
 
 " Python
 let g:python_host_prog = '/Users/Jamie/.pyenv/shims/python'
