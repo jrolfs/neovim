@@ -190,7 +190,8 @@ let g:multi_cursor_exit_from_insert_mode = 0
 set hidden
 
 " Neomake
-let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_enabled_makers = ['eslint', 'coffeelint', 'mri']
+autocmd! BufEnter,BufWritePost * Neomake
 
 
 "
