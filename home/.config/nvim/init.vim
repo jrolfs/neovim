@@ -273,19 +273,6 @@ map <Leader>r :call NumberToggle()<CR>
 "
 " Functions
 
-" Multiple Cursors
-function! Multiple_cursors_before()
-  if exists(':NeoCompleteLock')==2
-    exe 'NeoCompleteLock'
-  endif
-endfunction
-
-function! Multiple_cursors_after()
-  if exists(':NeoCompleteUnlock')==2
-    exe 'NeoCompleteUnlock'
-  endif
-endfunction
-
 " Toggle Relative
 function! NumberToggle()
   if(&relativenumber == 1)
