@@ -122,8 +122,6 @@ let g:tagbar_type_coffee = { 'ctagstype': 'coffee', 'kinds': [ 'c:classes', 'm:m
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme = "hybrid"
-let g:airline_section_y = '%{(&fenc == "" ? &enc : &fenc)}'                     "set encoding type info
-let g:airline_section_z = '%{substitute(getcwd(), expand("$HOME"), "~", "g")}'  "Set relative path
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#enabled = 1
