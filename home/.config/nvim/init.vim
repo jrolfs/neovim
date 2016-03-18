@@ -224,18 +224,21 @@ xnoremap <TAB> >gv
 nnoremap <Leader>b :Unite buffer_tab<CR>
 
 " VimFiler
-map <F3> :VimFilerExplorer -project<CR>
-map <S-F3> :VimFilerExplorer -file<CR>
+noremap <F3> :VimFilerExplorer -project<CR>
+noremap <S-F3> :VimFilerExplorer -file<CR>
 noremap <F2> :VimFiler<CR>
+noremap <S-F2> :VimFiler -file<CR>
 
 " Buffers
+noremap <D-j> :bn<CR>
+noremap <D-k> :bp<CR>
 nmap <Leader>d :bp<BAR>sp<BAR>bn<BAR>bd<CR> " close buffer
 nmap <Leader>D :bufdo bd<CR> " close all buffers
 noremap <Leader>eb :%y<CR>:@"<CR> 
 
 " Tabs
-map <C-S-k> :tabnext<CR>
-map <C-S-j> :tabprevious<CR>
+noremap <D-}> :tabnext<CR>
+noremap <D-{> :tabprevious<CR>
 
 " Taboo
 map <Leader>tr :TabooRename 
