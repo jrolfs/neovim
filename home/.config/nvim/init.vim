@@ -252,9 +252,9 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " CamelCaseMotion
-map <C-S-w> <Plug>CamelCaseMotion_w
-map <C-S-b> <Plug>CamelCaseMotion_b
-map <C-S-e> <Plug>CamelCaseMotion_e
+map <D-C-w> <Plug>CamelCaseMotion_w
+map <D-C-b> <Plug>CamelCaseMotion_b
+map <D-C-e> <Plug>CamelCaseMotion_e
 
 " Neomake
 nmap <Leader><Space>o :lopen<CR>
