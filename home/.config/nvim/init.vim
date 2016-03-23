@@ -228,8 +228,8 @@ noremap <F2> :VimFiler<CR>
 noremap <S-F2> :VimFiler -file<CR>
 
 " Buffers
-noremap <D-j> :bn<CR>
-noremap <D-k> :bp<CR>
+noremap <D-k> :bn<CR>
+noremap <D-j> :bp<CR>
 nmap <Leader>d :bp<BAR>sp<BAR>bn<BAR>bd<CR> " close buffer
 nmap <Leader>D :bufdo bd<CR> " close all buffers
 noremap <Leader>eb :%y<CR>:@"<CR> 
