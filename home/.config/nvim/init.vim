@@ -55,6 +55,7 @@ Plug 'AndrewRadev/vim-eco'
 Plug 'elzr/vim-json'
 Plug 'groenewege/vim-less'
 Plug 'chase/vim-ansible-yaml'
+Plug 'janko-m/vim-test'
 
 call plug#end()
 
@@ -191,6 +192,10 @@ set hidden
 let g:neomake_javascript_enabled_makers = ['eslint', 'coffeelint', 'mri']
 autocmd! BufEnter,BufWritePost * Neomake
 
+" test.vim
+let test#ruby#rspec#executable = '$(rbenv which zeus) rspec'
+let test#strategy = "neovim"
+
 
 "
 " Mappings
@@ -268,6 +273,13 @@ map <F8> :TagbarToggle<CR>
 
 " Relative numbers
 map <Leader>r :call NumberToggle()<CR>
+
+" test.vim
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
 
 
 "
