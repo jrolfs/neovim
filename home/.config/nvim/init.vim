@@ -19,6 +19,8 @@ Plug 'xolox/vim-session'
 " Tools
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
 
 " Files
 Plug 'Shougo/unite.vim'
@@ -108,6 +110,7 @@ set number
 
 " Session
 set sessionoptions+=tabpages,globals
+let g:session_autoload = 'no'
 
 let g:session_autosave = 'yes'
 let g:session_autosave_periodic = 1
