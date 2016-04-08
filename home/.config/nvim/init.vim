@@ -220,6 +220,9 @@ cnoreabbrev t tabe
 cnoreabbrev T tabe
 cnoreabbrev tc tabc
 cnoreabbrev Tc tabc
+cnoreabbrev oS OpenSession
+cnoreabbrev sS SaveSession
+cnoreabbrev cS CloseSession
 
 " Source configuration
 map <Leader>rr :source ~/.config/nvim/init.vim<CR>
