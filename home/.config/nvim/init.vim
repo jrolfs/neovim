@@ -87,6 +87,10 @@ set expandtab
 " Taboo
 let g:taboo_tab_format = ' [%P]%m '
 
+" GitGutter
+let g:gitgutter_max_signs = 1000
+let g:gitgutter_sign_column_always = 1
+
 " List trailing
 set listchars=tab:\ \ ,trail:·
 set list
