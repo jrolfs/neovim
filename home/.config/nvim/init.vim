@@ -86,6 +86,13 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+" Taboo
+let g:taboo_tab_format = ' [%P]%m '
+
+" GitGutter
+let g:gitgutter_max_signs = 1000
+let g:gitgutter_sign_column_always = 1
+
 " List trailing
 set listchars=tab:\ \ ,trail:·
 set list
@@ -216,6 +223,9 @@ cnoreabbrev t tabe
 cnoreabbrev T tabe
 cnoreabbrev tc tabc
 cnoreabbrev Tc tabc
+cnoreabbrev oS OpenSession
+cnoreabbrev sS SaveSession
+cnoreabbrev cS CloseSession
 
 " Source configuration
 map <Leader>rr :source ~/.config/nvim/init.vim<CR>
@@ -241,6 +251,9 @@ noremap <D-j> :bp<CR>
 nmap <Leader>d :bp<BAR>sp<BAR>bn<BAR>bd<CR> " close buffer
 nmap <Leader>D :bufdo bd<CR> " close all buffers
 noremap <Leader>eb :%y<CR>:@"<CR> 
+
+" Search
+noremap <Leader>h :noh<CR>
 
 " Tabs
 noremap <D-}> :tabnext<CR>
