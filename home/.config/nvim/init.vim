@@ -84,6 +84,9 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+" Taboo
+let g:taboo_tab_format = ' [%P]%m '
+
 " List trailing
 set listchars=tab:\ \ ,trail:·
 set list
