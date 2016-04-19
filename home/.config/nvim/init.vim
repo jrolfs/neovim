@@ -249,8 +249,8 @@ xnoremap <TAB> >gv
 nnoremap <Leader>b :Unite buffer_tab<CR>
 
 " VimFiler
-noremap <F3> :VimFilerExplorer -project<CR>
-noremap <S-F3> :VimFilerExplorer -file<CR>
+noremap <F3> :VimFilerExplorer -find<CR>
+noremap <S-F3> :VimFilerBuffer<CR>
 noremap <F2> :VimFiler<CR>
 noremap <S-F2> :VimFiler -file<CR>
 
