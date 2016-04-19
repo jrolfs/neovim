@@ -68,6 +68,10 @@ call plug#end()
 "
 " Settings
 
+" Render
+set ttyfast
+set lazyredraw
+
 " Leader
 let mapleader = ","
 
