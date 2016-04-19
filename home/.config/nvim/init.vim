@@ -207,6 +207,7 @@ set hidden
 
 " Neomake
 let g:neomake_javascript_enabled_makers = ['eslint', 'coffeelint', 'mri']
+let g:neomake_vim_enabled_makers = ['vint']
 autocmd! BufEnter,BufWritePost * Neomake
 
 " test.vim
