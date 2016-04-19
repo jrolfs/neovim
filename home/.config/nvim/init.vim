@@ -24,6 +24,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
+Plug 'janko-m/vim-test'
 
 " Files
 Plug 'Shougo/unite.vim'
@@ -51,16 +52,15 @@ Plug 'majutsushi/tagbar'
 " Syntax
 Plug 'tpope/vim-git'
 Plug 'benekastah/neomake'
-Plug 'othree/yajs.vim'
-Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'kchmck/vim-coffee-script'
 Plug 'vim-ruby/vim-ruby'
 Plug 'AndrewRadev/vim-eco'
 Plug 'elzr/vim-json'
+Plug 'mxw/vim-jsx'
 Plug 'groenewege/vim-less'
+Plug 'cakebaker/scss-syntax.vim'
 Plug 'chase/vim-ansible-yaml'
-Plug 'janko-m/vim-test'
 
 call plug#end()
 
