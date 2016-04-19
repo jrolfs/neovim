@@ -73,7 +73,7 @@ set ttyfast
 set lazyredraw
 
 " Leader
-let mapleader = ","
+let g:mapleader = ','
 
 " Colors
 syntax on
@@ -105,7 +105,7 @@ set listchars=tab:\ \ ,trail:·
 set list
 
 " Cursor
-set gcr=a:blinkon500-blinkwait500-blinkoff500
+set guicursor=a:blinkon500-blinkwait500-blinkoff500
 set cursorline
 
 " Search
@@ -139,7 +139,7 @@ let g:tagbar_type_coffee = { 'ctagstype': 'coffee', 'kinds': [ 'c:classes', 'm:m
 
 " Airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme = "hybrid"
+let g:airline_theme = 'hybrid'
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -210,8 +210,8 @@ let g:neomake_javascript_enabled_makers = ['eslint', 'coffeelint', 'mri']
 autocmd! BufEnter,BufWritePost * Neomake
 
 " test.vim
-let test#ruby#rspec#executable = '$(rbenv which zeus) rspec'
-let test#strategy = "neovim"
+let g:test#ruby#rspec#executable = '$(rbenv which zeus) rspec'
+let g:test#strategy = 'neovim'
 
 
 "
@@ -311,9 +311,9 @@ nmap <silent> <leader>g :TestVisit<CR>
 " Toggle Relative
 function! NumberToggle()
   if(&relativenumber == 1)
-    set nornu
+    set norelativenumber
     set number
   else
-    set rnu
+    set relativenumber
   endif
 endfunction
