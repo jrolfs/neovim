@@ -202,7 +202,8 @@ let g:multi_cursor_exit_from_insert_mode = 0
 set hidden
 
 " Neomake
-let g:neomake_javascript_enabled_makers = ['eslint', 'coffeelint', 'mri']
+let g:neomake_javascript_enabled_makers = ['eslint', 'coffeelint']
+let g:neomake_ruby_enabled_makers = ['mri']
 let g:neomake_vim_enabled_makers = ['vint']
 autocmd! BufEnter,BufWritePost * Neomake
 
