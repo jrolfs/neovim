@@ -12,7 +12,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Shougo/deoplete.nvim'
 Plug 'gcmt/taboo.vim'
 Plug 'wesQ3/vim-windowswap'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'xolox/vim-misc'
@@ -172,12 +173,6 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
-" CtrlP
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_max_files=0
-let g:ctrlp_working_path_mode = 'w'
-set wildignore+=*/.git/*,*.scssc,*/tmp/*
-
 " JSX
 let g:jsx_ext_required = 0
 
@@ -246,6 +241,10 @@ xnoremap <TAB> >gv
 
 " Unite
 nnoremap <Leader>b :Unite buffer_tab<CR>
+
+" FZF
+
+noremap <C-P> :Files<CR>
 
 " VimFiler
 noremap <F3> :VimFilerExplorer -find<CR>
