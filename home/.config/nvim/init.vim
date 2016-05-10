@@ -250,7 +250,7 @@ noremap <C-P> :Files<CR>
 noremap <F3> :VimFilerExplorer -find<CR>
 noremap <S-F3> :VimFilerBuffer<CR>
 noremap <F2> :VimFiler<CR>
-noremap <S-F2> :VimFiler -file<CR>
+noremap <S-F2> :VimFilerBuffer<CR>
 
 " Buffers
 noremap <D-k> :bn<CR>
