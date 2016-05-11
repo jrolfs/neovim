@@ -25,6 +25,7 @@ Plug 'tpope/vim-rails'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 Plug 'janko-m/vim-test'
+Plug 'benekastah/neomake'
 
 " Files
 Plug 'Shougo/unite.vim'
@@ -51,7 +52,6 @@ Plug 'majutsushi/tagbar'
 
 " Syntax
 Plug 'tpope/vim-git'
-Plug 'benekastah/neomake'
 Plug 'kchmck/vim-coffee-script'
 Plug 'vim-ruby/vim-ruby'
 Plug 'AndrewRadev/vim-eco'
