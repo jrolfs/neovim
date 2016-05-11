@@ -52,6 +52,7 @@ Plug 'tpope/vim-repeat'
 Plug 'majutsushi/tagbar'
 
 " Syntax
+Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-git'
 Plug 'kchmck/vim-coffee-script'
 Plug 'vim-ruby/vim-ruby'
