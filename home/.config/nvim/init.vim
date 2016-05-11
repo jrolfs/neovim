@@ -39,6 +39,7 @@ Plug 'chrisbra/SudoEdit.vim'
 " Manipulation
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'godlygeek/tabular'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'godlygeek/tabular'
 
