@@ -25,6 +25,7 @@ Plug 'tpope/vim-rails'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 Plug 'janko-m/vim-test'
+Plug 'benekastah/neomake'
 
 " Files
 Plug 'Shougo/unite.vim'
@@ -38,6 +39,7 @@ Plug 'chrisbra/SudoEdit.vim'
 " Manipulation
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'godlygeek/tabular'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'godlygeek/tabular'
 
@@ -50,8 +52,8 @@ Plug 'tpope/vim-repeat'
 Plug 'majutsushi/tagbar'
 
 " Syntax
+Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-git'
-Plug 'benekastah/neomake'
 Plug 'kchmck/vim-coffee-script'
 Plug 'vim-ruby/vim-ruby'
 Plug 'AndrewRadev/vim-eco'
@@ -60,7 +62,6 @@ Plug 'rschmukler/pangloss-vim-indent'
 Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'mxw/vim-jsx'
-Plug 'groenewege/vim-less'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'chase/vim-ansible-yaml'
 Plug 'gorodinskiy/vim-coloresque'
