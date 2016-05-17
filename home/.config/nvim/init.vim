@@ -139,6 +139,7 @@ let g:python3_host_prog = '/Users/Jamie/.pyenv/shims/python3'
 
 " Tags
 let g:tagbar_type_coffee = { 'ctagstype': 'coffee', 'kinds': [ 'c:classes', 'm:methods', 'f:functions', 'v:variables', 'f:fields', ] }
+let g:tagbar_autofocus = 1
 
 " Airline
 let g:airline_powerline_fonts = 1
