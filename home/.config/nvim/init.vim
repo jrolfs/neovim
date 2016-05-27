@@ -260,8 +260,6 @@ noremap <F2> :VimFiler<CR>
 noremap <S-F2> :VimFilerBuffer<CR>
 
 " Buffers
-noremap <D-k> :bn<CR>
-noremap <D-j> :bp<CR>
 nmap <Leader>d :bp<BAR>sp<BAR>bn<BAR>bd<CR> " close buffer
 nmap <Leader>D :bufdo bd<CR> " close all buffers
 noremap <Leader>eb :%y<CR>:@"<CR> 
@@ -270,8 +268,8 @@ noremap <Leader>eb :%y<CR>:@"<CR>
 noremap <Leader>h :noh<CR>
 
 " Tabs
-noremap <D-}> :tabnext<CR>
-noremap <D-{> :tabprevious<CR>
+noremap <D-k> :tabnext<CR>
+noremap <D-j> :tabprevious<CR>
 
 " Taboo
 map <Leader>tr :TabooRename 
