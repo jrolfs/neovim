@@ -34,7 +34,6 @@ Plug 'Shougo/tabpagebuffer.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'danro/rename.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'chrisbra/SudoEdit.vim'
 
 " Manipulation
 Plug 'tpope/vim-commentary'
