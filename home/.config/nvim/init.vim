@@ -72,7 +72,6 @@ call plug#end()
 
 " Render
 set ttyfast
-set lazyredraw
 
 " Leader
 let g:mapleader = ','
@@ -212,6 +211,11 @@ autocmd! BufEnter,BufWritePost * Neomake
 let g:test#ruby#rspec#executable = '$(rbenv which zeus) rspec'
 let g:test#strategy = 'neovim'
 
+" Ruby
+augroup ruby
+  autocmd! BufEnter *.rb set lazyredraw
+  autocmd! BufLeave * set nolazyredraw
+augroup END
 
 "
 " Mappings
