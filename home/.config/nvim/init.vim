@@ -90,6 +90,7 @@ augroup END
 let g:mapleader = ','
 
 " Colors
+let g:base16colorspace = 256
 syntax on
 set background=dark
 colorscheme base16-ocean
