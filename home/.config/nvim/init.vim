@@ -232,9 +232,16 @@ let g:jsx_ext_required = 0
 let g:multi_cursor_exit_from_insert_mode = 0
 
 " Neomake
+let g:neomake_scss_sasslint_maker = {
+  \ 'exe': 'sass-lint',
+  \ 'args': ['-v', '-q', '-f', 'compact'],
+  \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,%W%f: line %l\, col %c\, Warning - %m'
+  \ }
+
 let g:neomake_javascript_enabled_makers = ['eslint', 'coffeelint']
 let g:neomake_ruby_enabled_makers = ['mri']
 let g:neomake_vim_enabled_makers = ['vint']
+let g:neomake_scss_enabled_makers = ['sasslint']
 
 autocmd! BufEnter,BufWritePost * Neomake
 
