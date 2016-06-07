@@ -19,6 +19,7 @@ Plug 'daviesjamie/vim-base16-lightline'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 Plug 'sjl/gundo.vim'
+Plug 'edkolev/tmuxline.vim'
 
 " Tools
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
@@ -187,6 +188,17 @@ let g:lightline = {
   \     'mode': 'LightLineMode',
   \   },
   \   'subseparator': { 'left': '|', 'right': '|' }
+  \ }
+
+" Tmuxline
+let g:tmuxline_preset = {
+  \   'a'    : '#S',
+  \   'c'    : ['#(whoami)', '#(uptime | cud -d " " -f 1,2,3)'],
+  \   'win'  : ['#I', '#W'],
+  \   'cwin' : ['#I', '#W', '#F'],
+  \   'x'    : '#(date)',
+  \   'y'    : ['%R', '%a', '%Y'],
+  \   'z'    : '#H'
   \ }
 
 " CoffeeScript
