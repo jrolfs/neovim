@@ -83,7 +83,7 @@ runtime functions/neomake.vim
 
 " Redraw
 augroup lazyredraw
-  autocmd! CursorMoved,CursorMovedI,InsertEnter * set lazyredraw
+  autocmd! CursorMoved,CursorMovedI,InsertEnter *.rb set lazyredraw
   autocmd! FocusLost * set nolazyredraw
 augroup END
 
