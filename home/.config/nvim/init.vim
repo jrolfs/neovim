@@ -295,10 +295,10 @@ nnoremap <Leader>b :Unite buffer_tab<CR>
 noremap <C-P> :Files<CR>
 
 " VimFiler
-noremap <F3> :VimFilerExplorer -find<CR>
-noremap <S-F3> :VimFilerBuffer<CR>
-noremap <F2> :VimFiler<CR>
-noremap <S-F2> :VimFilerBuffer<CR>
+noremap <F1> :VimFilerExplorer -project -winwidth=50<CR>
+noremap <S-F1> :VimFilerExplorer -find -winwidth=50<CR>
+noremap <F2> :VimFiler -winwidth=50<CR>
+noremap <S-F2> :VimFilerBuffer -winwidth=50<CR>
 
 " Buffers
 nmap <Leader>d :bp<BAR>sp<BAR>bn<BAR>bd<CR> " close buffer
