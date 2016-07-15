@@ -29,7 +29,7 @@ Plug 'tpope/vim-rails'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 Plug 'janko-m/vim-test'
-Plug 'benekastah/neomake', { 'do': 'npm install -g eslint jsonlint' }
+Plug 'benekastah/neomake', { 'do': 'npm install -g eslint jsonlint sass-lint coffeelint markdownlint-cli' }
 
 " Files
 Plug 'Shougo/unite.vim'
