@@ -242,6 +242,7 @@ let g:neomake_javascript_enabled_makers = ['eslint', 'coffeelint']
 let g:neomake_ruby_enabled_makers = ['mri']
 let g:neomake_vim_enabled_makers = ['vint']
 let g:neomake_scss_enabled_makers = ['sasslint']
+let g:neomake_markdown_enabled_makers = ['markdownlint']
 
 autocmd! BufEnter,BufWritePost * Neomake
 
