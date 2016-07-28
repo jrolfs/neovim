@@ -34,6 +34,7 @@ Plug 'benekastah/neomake', { 'do': 'npm install -g eslint jsonlint sass-lint cof
 " Files
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
+Plug 't9md/vim-choosewin'
 Plug 'Shougo/tabpagebuffer.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'danro/rename.vim'
@@ -299,6 +300,9 @@ noremap <F1> :VimFilerExplorer -project -winwidth=50<CR>
 noremap <S-F1> :VimFilerExplorer -find -winwidth=50<CR>
 noremap <F2> :VimFiler -winwidth=50<CR>
 noremap <S-F2> :VimFilerBuffer -winwidth=50<CR>
+
+" Choosewin
+nmap  -  <Plug>(choosewin)
 
 " Buffers
 nmap <Leader>d :bp<BAR>sp<BAR>bn<BAR>bd<CR> " close buffer
