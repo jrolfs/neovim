@@ -302,6 +302,9 @@ noremap <S-F1> :VimFilerExplorer -find -winwidth=50<CR>
 noremap <F2> :VimFiler -winwidth=50<CR>
 noremap <S-F2> :VimFilerBuffer -winwidth=50<CR>
 
+" Gundo
+nnoremap <F5> :GundoToggle<CR>
+
 " Choosewin
 nmap  -  <Plug>(choosewin)
 
