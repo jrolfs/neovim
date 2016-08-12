@@ -20,6 +20,7 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 Plug 'sjl/gundo.vim'
 Plug 'edkolev/tmuxline.vim'
+Plug 'szw/vim-maximizer'
 
 " Tools
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
