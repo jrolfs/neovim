@@ -126,7 +126,6 @@ set cursorline
 
 " Search
 set smartcase
-set ignorecase
 set showmatch
 
 " Movement
