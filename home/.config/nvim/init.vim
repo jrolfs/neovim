@@ -313,7 +313,7 @@ nmap <Leader>D :bufdo bd<CR> " close all buffers
 noremap <Leader>eb :%y<CR>:@"<CR> 
 
 " Search
-noremap <Leader>h :noh<CR>
+noremap <Leader>/ :noh<CR>
 
 " Tabs
 noremap <D-k> :tabnext<CR>
