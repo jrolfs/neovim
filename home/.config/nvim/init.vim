@@ -68,7 +68,7 @@ Plug 'othree/es.next.syntax.vim'
 Plug 'mxw/vim-jsx'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'chase/vim-ansible-yaml'
-Plug 'gorodinskiy/vim-coloresque'
+Plug 'lilydjwg/colorizer'
 
 call plug#end()
 
