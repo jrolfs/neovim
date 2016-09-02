@@ -72,12 +72,10 @@ Plug 'lilydjwg/colorizer'
 
 call plug#end()
 
-
 "
 " Functions
 runtime functions/relative-numbers.vim
 runtime functions/lightline.vim
-runtime functions/neomake.vim
 
 
 "
@@ -247,12 +245,10 @@ let g:neomake_markdown_enabled_makers = ['markdownlint']
 
 autocmd! BufEnter,BufReadPost,BufWritePost * Neomake
 
-call NeoMakeDefaults()
-
-let g:neomake_error_sign = { 'text': "\uF057", 'texthl': 'NeomakeErrorDefault' }
-let g:neomake_warning_sign = { 'text': "\uF056", 'texthl': 'NeomakeWarningDefault' }
-let g:neomake_informational_sign = { 'text': "\uF05A", 'texthl': 'NeomakeInformationDefault' }
-let g:neomake_message_sign = { 'text': "\uF09A", 'texthl': 'NeomakeMessageDefault' }
+let g:neomake_error_sign = { 'text': "\uF057", 'texthl': 'NeomakeErrorSign' }
+let g:neomake_warning_sign = { 'text': "\uF056", 'texthl': 'NeomakeWarningSign' }
+let g:neomake_message_sign = { 'text': "\uF09A", 'texthl': 'NeomakeMessageSign' }
+let g:neomake_info_sign = { 'text': "\uF05A", 'texthl': 'NeomakeInfoSign' }
 
 " test.vim
 let g:test#ruby#rspec#executable = '$(rbenv which zeus) rspec'
