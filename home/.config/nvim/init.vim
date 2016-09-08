@@ -293,9 +293,9 @@ noremap <C-P> :Files<CR>
 
 " VimFiler
 noremap <F1> :VimFilerExplorer -project -winwidth=50<CR>
-noremap <S-F1> :VimFilerExplorer -find -winwidth=50<CR>
+noremap <D-F1> :VimFilerExplorer -find -winwidth=50<CR>
 noremap <F2> :VimFiler -winwidth=50<CR>
-noremap <S-F2> :VimFilerBuffer -winwidth=50<CR>
+noremap <D-F2> :VimFilerBuffer -winwidth=50<CR>
 
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
