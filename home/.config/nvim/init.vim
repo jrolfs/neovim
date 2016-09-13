@@ -1,5 +1,15 @@
 scriptencoding utf-8
 
+"
+" Functions
+
+runtime functions/relative-numbers.vim
+runtime functions/lightline.vim
+runtime functions/neomake.vim
+
+
+"
+" Plugins
 
 call plug#begin('~/.vim/plugged')
 
@@ -71,12 +81,6 @@ Plug 'chase/vim-ansible-yaml'
 Plug 'lilydjwg/colorizer'
 
 call plug#end()
-
-"
-" Functions
-runtime functions/relative-numbers.vim
-runtime functions/lightline.vim
-runtime functions/neomake.vim
 
 
 "
