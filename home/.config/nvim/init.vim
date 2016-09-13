@@ -30,7 +30,7 @@ Plug 'tpope/vim-rails'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 Plug 'janko-m/vim-test'
-Plug 'benekastah/neomake', { 'do': 'npm install -g eslint jsonlint sass-lint coffeelint markdownlint-cli' }
+Plug 'benekastah/neomake', { 'do': function('InstallNeomakeTools') }
 
 " Files
 Plug 'Shougo/unite.vim'
@@ -76,6 +76,7 @@ call plug#end()
 " Functions
 runtime functions/relative-numbers.vim
 runtime functions/lightline.vim
+runtime functions/neomake.vim
 
 
 "
