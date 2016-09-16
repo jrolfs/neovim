@@ -251,7 +251,10 @@ let g:neomake_vim_enabled_makers = ['vint']
 let g:neomake_scss_enabled_makers = ['sasslint']
 let g:neomake_markdown_enabled_makers = ['markdownlint']
 
-autocmd! BufEnter,BufReadPost,BufWritePost * Neomake
+augroup neomake
+  autocmd! BufEnter,BufReadPost,BufWritePost * Neomake
+  autocmd! FileType javascript :call NeomakeSetExecutableEslint()
+augroup END
 
 let g:neomake_error_sign = { 'text': "\uF057", 'texthl': 'NeomakeErrorSign' }
 let g:neomake_warning_sign = { 'text': "\uF056", 'texthl': 'NeomakeWarningSign' }
