@@ -232,11 +232,13 @@ let g:deoplete#enable_at_startup = 1
 
 " JSX
 let g:jsx_ext_required = 0
-"
+
 " Multiple Cursors
 let g:multi_cursor_exit_from_insert_mode = 0
 
 " Neomake
+let g:neomake_vim_vint_exe = NeomakeGetExecutableVint()
+
 let g:neomake_scss_sasslint_maker = {
   \ 'exe': 'sass-lint',
   \ 'args': ['-v', '-q', '-f', 'compact'],
