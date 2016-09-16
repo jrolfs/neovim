@@ -41,7 +41,7 @@ Plug 'tpope/vim-rails'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 Plug 'janko-m/vim-test'
-Plug 'benekastah/neomake', { 'do': function('InstallNeomakeTools') }
+Plug 'benekastah/neomake', { 'do': function('NeomakePostInstall') }
 
 " Files
 Plug 'Shougo/unite.vim'
