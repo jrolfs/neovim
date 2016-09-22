@@ -338,8 +338,8 @@ noremap <D-j> :tabprevious<CR>
 map <Leader>tr :TabooRename 
 
 " Grepper
-nnoremap <leader>git :Grepper -tool git -noswitch<cr>
-nnoremap <leader>ag  :Grepper -tool ag  -grepprg ag --vimgrep -G '^.+\.txt'<cr>
+nnoremap <leader>git :Grepper -tool git -noswitch<CR>
+nnoremap <leader>ag  :Grepper -tool ag  -grepprg ag --vimgrep -G '^.+\.txt'<CR>
 
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
