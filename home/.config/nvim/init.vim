@@ -292,7 +292,7 @@ cnoreabbrev sS SaveSession
 cnoreabbrev cS CloseSession
 
 " Source configuration
-map <Leader>rr :source ~/.config/nvim/init.vim<CR>
+map <Leader>c :source ~/.config/nvim/init.vim<CR>
 
 " Indentation
 nnoremap <TAB> >>
