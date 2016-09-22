@@ -73,6 +73,7 @@ Plug 'tpope/vim-git'
 Plug 'kchmck/vim-coffee-script'
 Plug 'vim-ruby/vim-ruby'
 Plug 'AndrewRadev/vim-eco'
+Plug 'digitaltoad/vim-pug'
 Plug 'elzr/vim-json'
 Plug 'rschmukler/pangloss-vim-indent'
 Plug 'othree/yajs.vim'
@@ -90,7 +91,7 @@ call plug#end()
 
 " Redraw
 augroup lazyredraw
-  autocmd! CursorMoved,CursorMovedI,InsertEnter *.rb set lazyredraw
+  autocmd! CursorMoved,CursorMovedI,InsertEnter *.rb,*.jade set lazyredraw
   autocmd! FocusLost * set nolazyredraw
 augroup END
 
