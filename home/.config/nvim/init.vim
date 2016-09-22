@@ -238,8 +238,6 @@ let g:jsx_ext_required = 0
 let g:multi_cursor_exit_from_insert_mode = 0
 
 " Neomake
-let g:neomake_vim_vint_exe = NeomakeGetExecutableVint()
-
 let g:neomake_scss_sasslint_maker = {
   \ 'exe': 'sass-lint',
   \ 'args': ['-v', '-q', '-f', 'compact'],
@@ -252,9 +250,14 @@ let g:neomake_vim_enabled_makers = ['vint']
 let g:neomake_scss_enabled_makers = ['sasslint']
 let g:neomake_markdown_enabled_makers = ['markdownlint']
 
-augroup neomake
-  autocmd! BufEnter,BufReadPost,BufWritePost * Neomake
-  autocmd! FileType javascript :call NeomakeSetExecutableEslint()
+autocmd! BufEnter,BufReadPost,BufWritePost * Neomake
+
+augroup neomake_exe
+  autocmd! FileType javascript :call NeomakeSetExecutableLocalEslint()
+  autocmd! FileType vim let b:neomake_vim_vint_exe = PyenvGetGlobalExecutable('vint')
+  autocmd! FileType coffee let b:neomake_javascript_coffeelint_exe = NodenvGetGlobalExecutable('coffeelint')
+  autocmd! FileType scss let b:neomake_scss_sasslint_exe = NodenvGetGlobalExecutable('sass-lint')
+  autocmd! FileType markdown let b:neomake_markdown_markdownlint_exe = NodenvGetGlobalExecutable('markdownlint')
 augroup END
 
 let g:neomake_error_sign = { 'text': "\uF057", 'texthl': 'NeomakeErrorSign' }

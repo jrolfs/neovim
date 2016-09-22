@@ -11,7 +11,7 @@ function! NeomakePostInstall(info)
   !pip install vim-vint
 endfunction
 
-function! NeomakeSetExecutableEslint()
+function! NeomakeSetExecutableLocalEslint()
   let l:npm_bin = ''
   let l:eslint = 'eslint'
 
@@ -23,19 +23,9 @@ function! NeomakeSetExecutableEslint()
     let l:eslint = l:npm_bin . '/eslint'
   endif
 
-  let g:neomake_javascript_eslint_exe = l:eslint
-endfunction
-
-function! NeomakeGetExecutableVint()
-  if executable('vint')
-    return 'vint'
-  endif
-
-  let l:pyenv_vint = split(system('pyenv which vint'), '\n')[0]
-
-  if executable(l:pyenv_vint)
-    return l:pyenv_vint
+  if executable(l:eslint)
+    let b:neomake_javascript_eslint_exe = l:eslint
   else
-    throw 'Could not find vint'
+    let b:neomake_javascript_eslint_exe = NodenvGetGlobalExecutable('eslint')
   endif
 endfunction
