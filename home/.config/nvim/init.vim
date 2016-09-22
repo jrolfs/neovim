@@ -294,6 +294,9 @@ cnoreabbrev cS CloseSession
 " Source configuration
 map <Leader>c :source ~/.config/nvim/init.vim<CR>
 
+" Buffer path
+map <Leader>p :let @+ = expand("%")<CR>
+
 " Indentation
 nnoremap <TAB> >>
 nnoremap <S-TAB> <<
