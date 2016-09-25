@@ -43,6 +43,7 @@ Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 Plug 'janko-m/vim-test'
 Plug 'benekastah/neomake', { 'do': function('NeomakePostInstall') }
+Plug 'editorconfig/editorconfig-vim'
 
 " Files
 Plug 'Shougo/unite.vim'
