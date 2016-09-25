@@ -36,7 +36,7 @@ Plug 'szw/vim-maximizer'
 
 " Tools
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
-Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript', 'do': 'npm install -g tern' }
+Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'mattn/webapi-vim'
