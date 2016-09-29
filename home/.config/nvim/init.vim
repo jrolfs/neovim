@@ -43,6 +43,7 @@ Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 Plug 'janko-m/vim-test'
 Plug 'benekastah/neomake', { 'do': function('NeomakePostInstall') }
+Plug 'jaawerth/neomake-local-eslint-first'
 Plug 'editorconfig/editorconfig-vim'
 
 " Files
@@ -255,7 +256,6 @@ let g:neomake_markdown_enabled_makers = ['markdownlint']
 autocmd! BufEnter,BufReadPost,BufWritePost * Neomake
 
 augroup neomake_exe
-  autocmd! FileType javascript :call NeomakeSetExecutableLocalEslint()
   autocmd! FileType vim let b:neomake_vim_vint_exe = PyenvGetGlobalExecutable('vint')
   autocmd! FileType coffee let b:neomake_javascript_coffeelint_exe = NodenvGetGlobalExecutable('coffeelint')
   autocmd! FileType scss let b:neomake_scss_sasslint_exe = NodenvGetGlobalExecutable('sass-lint')
