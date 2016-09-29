@@ -314,8 +314,7 @@ nnoremap <D-]> :TernDef<CR>
 nnoremap <Leader>b :Unite buffer_tab<CR>
 
 " FZF
-
-noremap <C-P> :Files<CR>
+noremap <C-p> :Files<CR>
 
 " VimFiler
 noremap <F1> :VimFilerExplorer -project -winwidth=50<CR>
@@ -352,10 +351,10 @@ nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
 
 " Pane navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <C-j> <C-W><C-J>
+nnoremap <C-k> <C-W><C-K>
+nnoremap <C-l> <C-W><C-L>
+nnoremap <C-h> <C-W><C-H>
 
 " CamelCaseMotion
 map <D-C-w> <Plug>CamelCaseMotion_w
