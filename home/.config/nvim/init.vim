@@ -240,6 +240,9 @@ let g:jsx_ext_required = 0
 " Multiple Cursors
 let g:multi_cursor_exit_from_insert_mode = 0
 
+" Tern
+let g:tern_request_timeout = 2
+
 " Neomake
 let g:neomake_scss_sasslint_maker = {
   \ 'exe': 'sass-lint',
