@@ -307,6 +307,9 @@ nnoremap <S-TAB> <<
 xnoremap <S-TAB> <gv
 xnoremap <TAB> >gv
 
+" Tern
+nnoremap <D-]> :TernDef<CR>
+
 " Unite
 nnoremap <Leader>b :Unite buffer_tab<CR>
 
