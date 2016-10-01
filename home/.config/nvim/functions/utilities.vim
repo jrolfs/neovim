@@ -6,21 +6,36 @@ function! s:FirstLine(string)
   return s:SplitLines(a:string)[0]
 endfunction
 
+function! EnvGetExecutable(env, executable)
+  return s:FirstLine(system(a:env .  'env which ' . a:executable))
+endfunction
+
 function! EnvGetGlobalExecutable(env, executable)
-  if !exists('g:' . a:env . 'env_global')
-    let g:{a:env}env_global = s:FirstLine(system(a:env . 'env global'))
+  if !exists('g:' . a:env . 'env_global_version')
+    let g:{a:env}env_global_version = s:FirstLine(system(a:env . 'env global'))
   end
 
-  let l:executable = substitute(a:executable, '-', '_', 'g')
+  return g:{a:env}env_global_version
 
-  if !exists('g:' . a:env . 'env_globals_' . l:executable)
-    let g:{a:env}env_globals_{l:executable} = s:FirstLine(system(
-      \   toupper(a:env) . 'ENV_VERSION=' . g:{a:env}env_global .
-      \   ' ' . a:env .  'env which ' . a:executable
-      \ ))
-  endif
+  " let l:executable = substitute(a:executable, '-', '_', 'g')
 
-  return g:{a:env}env_globals_{l:executable}
+  " if !exists('g:' . a:env . 'env_globals_' . l:executable)
+  "   let g:{a:env}env_globals_{l:executable} = s:FirstLine(system(toupper(a:env) . 'ENV_VERSION=' . g:{a:env}env_global_version))
+  " endif
+
+  " return g:{a:env}env_globals_{l:executable}
+endfunction
+
+function! NodenvGetExecutable(executable)
+  return EnvGetExecutable('nod', a:executable)
+endfunction
+
+function! RbenvGetExecutable(executable)
+  return EnvGetExecutable('rb', a:executable)
+endfunction
+
+function! PyenvGetExecutable(executable, ...)
+  return EnvGetExecutable('py', a:executable)
 endfunction
 
 function! NodenvGetGlobalExecutable(executable)
