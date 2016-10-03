@@ -311,6 +311,7 @@ nnoremap <D-]> :TernDef<CR>
 
 " Unite
 nnoremap <Leader>b :Unite buffer_tab<CR>
+nnoremap <Leader>B :Unite buffer<CR>
 
 " FZF
 noremap <C-p> :Files<CR>
