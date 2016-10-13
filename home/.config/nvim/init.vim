@@ -260,7 +260,11 @@ let g:neomake_markdown_enabled_makers = ['markdownlint']
 autocmd! BufEnter,BufReadPost,BufWritePost * Neomake
 
 augroup neomake_exe
-  autocmd! FileType vim let b:neomake_vim_vint_exe = PyenvGetExecutable('vint')
+  autocmd! FileType vim let b:neomake_vim_vint_exe = PyenvGetGlobalExecutable('vint')
+  autocmd! FileType coffee let b:neomake_javascript_coffeelint_exe = NodenvGetExecutable('coffeelint')
+  autocmd! FileType scss let b:neomake_scss_sasslint_exe = NodenvGetExecutable('sass-lint')
+  autocmd! FileType markdown let b:neomake_markdown_markdownlint_exe = NodenvGetExecutable('markdownlint')
+  autocmd! FileType json let b:neomake_json_jsonlint_exe = NodenvGetExecutable('jsonlint')
 augroup END
 
 let g:neomake_error_sign = { 'text': "\uF057", 'texthl': 'NeomakeErrorSign' }
