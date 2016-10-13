@@ -37,6 +37,7 @@ Plug 'szw/vim-maximizer'
 " Tools
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
 Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript' }
+Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'mattn/webapi-vim'
@@ -53,11 +54,12 @@ Plug 't9md/vim-choosewin'
 Plug 'Shougo/tabpagebuffer.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'danro/rename.vim'
-Plug 'ryanoasis/vim-devicons'
 
 " Manipulation
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'guns/vim-sexp', { 'for': 'clojure' }
+Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'godlygeek/tabular'
 
@@ -315,6 +317,7 @@ nnoremap <D-]> :TernDef<CR>
 
 " Unite
 nnoremap <Leader>b :Unite buffer_tab<CR>
+nnoremap <Leader>B :Unite buffer<CR>
 
 " FZF
 noremap <C-p> :Files<CR>
