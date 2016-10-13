@@ -252,6 +252,7 @@ let g:neomake_scss_sasslint_maker = {
   \ }
 
 let g:neomake_javascript_enabled_makers = ['eslint', 'coffeelint']
+let g:neomake_json_enabled_makers = ['jsonlint']
 let g:neomake_ruby_enabled_makers = ['mri']
 let g:neomake_vim_enabled_makers = ['vint']
 let g:neomake_scss_enabled_makers = ['sasslint']
