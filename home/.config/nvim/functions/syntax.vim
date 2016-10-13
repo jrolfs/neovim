@@ -1,4 +1,4 @@
 augroup syntax
-  " Linter Configurations
-  au BufRead,BufNewFile .babelrc,.jshintrc,.eslintrc set filetype=json
+  autocmd! BufRead,BufNewFile .babelrc,.jshintrc,.eslintrc set filetype=json
+  autocmd! BufRead,BufNewFile *.edn,*.boot set filetype=clojure
 augroup END
