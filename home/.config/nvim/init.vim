@@ -84,6 +84,7 @@ Plug 'mxw/vim-jsx'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'chase/vim-ansible-yaml'
 Plug 'lilydjwg/colorizer'
+Plug 'nikvdp/ejs-syntax'
 
 call plug#end()
 
