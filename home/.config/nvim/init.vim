@@ -348,7 +348,7 @@ map <Leader>tr :TabooRename
 
 " Grepper
 nnoremap <leader>git :Grepper -tool git -noswitch<CR>
-nnoremap <leader>ag  :Grepper -tool ag  -grepprg ag --vimgrep -G '^.+\.txt'<CR>
+nnoremap <leader>ag  :Grepper -tool ag  -grepprg ag --vimgrep<CR>
 
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
