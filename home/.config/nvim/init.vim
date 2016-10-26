@@ -24,7 +24,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Shougo/deoplete.nvim'
 Plug 'gcmt/taboo.vim'
 Plug 'wesQ3/vim-windowswap'
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --key-bindings --completion' }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'jrolfs/vim-base16-lightline'
