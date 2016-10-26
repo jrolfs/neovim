@@ -73,21 +73,7 @@ Plug 'tpope/vim-repeat'
 Plug 'majutsushi/tagbar'
 
 " Syntax
-Plug 'plasticboy/vim-markdown'
-Plug 'tpope/vim-git'
-Plug 'kchmck/vim-coffee-script'
-Plug 'vim-ruby/vim-ruby'
-Plug 'AndrewRadev/vim-eco'
-Plug 'digitaltoad/vim-pug'
-Plug 'elzr/vim-json'
-Plug 'rschmukler/pangloss-vim-indent'
-Plug 'othree/yajs.vim'
-Plug 'othree/es.next.syntax.vim'
-Plug 'mxw/vim-jsx'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'chase/vim-ansible-yaml'
-Plug 'lilydjwg/colorizer'
-Plug 'nikvdp/ejs-syntax'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
