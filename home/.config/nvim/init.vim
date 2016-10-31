@@ -293,12 +293,6 @@ map <Leader>c :source ~/.config/nvim/init.vim<CR>
 " Buffer path
 map <Leader>p :let @+ = expand("%")<CR>
 
-" Indentation
-nnoremap <TAB> >>
-nnoremap <S-TAB> <<
-xnoremap <S-TAB> <gv
-xnoremap <TAB> >gv
-
 " Tern
 nnoremap <D-]> :TernDef<CR>
 
