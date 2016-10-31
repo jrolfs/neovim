@@ -322,7 +322,7 @@ nmap  -  <Plug>(choosewin)
 " Buffers
 nmap <Leader>d :bp<BAR>sp<BAR>bn<BAR>bd<CR> " close buffer
 nmap <Leader>D :bufdo bd<CR> " close all buffers
-noremap <Leader>eb :%y<CR>:@"<CR> 
+noremap <Leader>eb :%y<CR>:@"<CR>
 
 " Search
 noremap <Leader>/ :noh<CR>
@@ -332,7 +332,7 @@ noremap <D-k> :tabnext<CR>
 noremap <D-j> :tabprevious<CR>
 
 " Taboo
-map <Leader>tr :TabooRename 
+map <Leader>tr :TabooRename
 
 " Grepper
 nnoremap <leader>git :Grepper -tool git -noswitch<CR>
