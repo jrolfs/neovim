@@ -313,6 +313,9 @@ noremap <D-F2> :VimFilerBuffer<CR>
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
 
+" GitGutter
+nnoremap <Leader>gg :GitGutter<CR>
+
 " Choosewin
 nmap  -  <Plug>(choosewin)
 
