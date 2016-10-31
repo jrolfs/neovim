@@ -19,7 +19,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 
 " Interface
-Plug 'chriskempson/base16-vim'
+Plug 'jlesquembre/base16-neovim'
 Plug 'airblade/vim-gitgutter'
 Plug 'Shougo/deoplete.nvim'
 Plug 'gcmt/taboo.vim'
