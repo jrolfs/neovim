@@ -37,6 +37,7 @@ Plug 'szw/vim-maximizer'
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
 Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript' }
 Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-classpath'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'mattn/webapi-vim'
