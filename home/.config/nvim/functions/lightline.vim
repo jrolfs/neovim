@@ -7,7 +7,7 @@ function! LightLineReadonly()
 endfunction
 
 function! LightLineFilename()
-  let l:fname = expand('%:t')
+  let l:fname = expand('%')
 
   return l:fname == '__Tagbar__' ? g:lightline.fname :
         \ l:fname =~ '__Gundo' ? '' :
