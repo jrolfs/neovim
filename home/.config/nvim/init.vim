@@ -156,6 +156,9 @@ let g:session_autosave_silent = 1
 let g:python_host_prog = $HOME .'/.pyenv/shims/python'
 let g:python3_host_prog = $HOME . '/.pyenv/shims/python3'
 
+let g:JavaComplete_UsePython3 = 1
+let g:JavaComplete_BaseDir = '~/.cache'
+
 " Tags
 let g:tagbar_autofocus = 1
 let g:tagbar_type_coffee = {
