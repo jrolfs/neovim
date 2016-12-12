@@ -47,6 +47,7 @@ Plug 'janko-m/vim-test'
 Plug 'benekastah/neomake', { 'do': function('NeomakePostInstall') }
 Plug 'jaawerth/neomake-local-eslint-first'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'heavenshell/vim-jsdoc', { 'for': 'javascript' }
 
 " Files
 Plug 'Shougo/unite.vim'
@@ -265,6 +266,10 @@ let g:neomake_warning_sign = { 'text': "\uF056", 'texthl': 'NeomakeWarningSign' 
 let g:neomake_message_sign = { 'text': "\uF09A", 'texthl': 'NeomakeMessageSign' }
 let g:neomake_info_sign = { 'text': "\uF05A", 'texthl': 'NeomakeInfoSign' }
 
+" JSDoc
+let g:jsdoc_allow_input_prompt = 1
+let g:jsdoc_input_description = 1
+
 " test.vim
 let g:test#ruby#rspec#executable = '$(rbenv which zeus) rspec'
 let g:test#strategy = 'neovim'
@@ -361,6 +366,9 @@ nmap <Leader><Space>c :lclose<CR>
 nmap <Leader><Space>, :ll<CR>
 nmap <Leader><Space>n :lnext<CR>
 nmap <Leader><Space>p :lprev<CR>
+
+" JSDoc
+nmap <Leader>js <Plug>(jsdoc)
 
 " Tags
 map <F8> :TagbarToggle<CR>
