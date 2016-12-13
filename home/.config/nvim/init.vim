@@ -20,6 +20,7 @@ Plug 'tpope/vim-sensible'
 
 " Interface
 Plug 'jlesquembre/base16-neovim'
+Plug 'mhartington/oceanic-next'
 Plug 'airblade/vim-gitgutter'
 Plug 'Shougo/deoplete.nvim'
 Plug 'gcmt/taboo.vim'
@@ -36,6 +37,7 @@ Plug 'szw/vim-maximizer'
 " Tools
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
 Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript' }
+Plug 'neovim/node-host', { 'do': 'npm install' }
 Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-classpath'
@@ -44,10 +46,11 @@ Plug 'tpope/vim-rails'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 Plug 'janko-m/vim-test'
-Plug 'benekastah/neomake', { 'do': function('NeomakePostInstall') }
+Plug 'w0rp/ale'
 Plug 'jaawerth/neomake-local-eslint-first'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'heavenshell/vim-jsdoc', { 'for': 'javascript' }
+Plug 'hkupty/iron.nvim'
 
 " Files
 Plug 'Shougo/unite.vim'
@@ -63,6 +66,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'guns/vim-sexp', { 'for': 'clojure' }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
+Plug 'clojure-vim/nvim-parinfer.js'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'godlygeek/tabular'
 
@@ -76,6 +80,7 @@ Plug 'majutsushi/tagbar'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
+Plug 'othree/yajs.vim'
 
 call plug#end()
 
@@ -96,7 +101,7 @@ let g:mapleader = ','
 let g:base16colorspace = 256
 syntax on
 set background=dark
-colorscheme base16-ocean
+colorscheme base16-oceanicnext
 
 " Undo
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
@@ -253,8 +258,6 @@ let g:neomake_scss_enabled_makers = ['sasslint']
 let g:neomake_pug_enabled_makers = ['puglint']
 let g:neomake_markdown_enabled_makers = ['markdownlint']
 
-autocmd! BufEnter,BufReadPost,BufWritePost * Neomake
-
 augroup neomake_exe
   autocmd! FileType coffee let b:neomake_javascript_coffeelint_exe = NodenvGetExecutable('coffeelint')
   autocmd! FileType json let b:neomake_json_jsonlint_exe = NodenvGetExecutable('jsonlint')
@@ -272,6 +275,10 @@ let g:neomake_info_sign = { 'text': "\uF05A", 'texthl': 'NeomakeInfoSign' }
 " JSDoc
 let g:jsdoc_allow_input_prompt = 1
 let g:jsdoc_input_description = 1
+
+" ALE
+let g:ale_sign_error = "\uF057"
+let g:ale_sign_warning = "\uF056"
 
 " test.vim
 let g:test#ruby#rspec#executable = '$(rbenv which zeus) rspec'
