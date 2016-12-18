@@ -296,10 +296,10 @@ cnoreabbrev sS SaveSession
 cnoreabbrev cS CloseSession
 
 " Source configuration
-map <Leader>c :source ~/.config/nvim/init.vim<CR>
+noremap <Leader>c :source ~/.config/nvim/init.vim<CR>
 
 " Buffer path
-map <Leader>p :let @+ = expand("%")<CR>
+noremap <Leader>p :let @+ = expand("%")<CR>
 
 " Tern
 nnoremap <D-]> :TernDef<CR>
@@ -325,7 +325,7 @@ nnoremap <F5> :GundoToggle<CR>
 nnoremap <Leader>gg :GitGutter<CR>
 
 " Choosewin
-nmap  -  <Plug>(choosewin)
+noremap - <Plug>(choosewin)
 
 " Search
 noremap <Leader>/ :noh<CR>
@@ -335,14 +335,14 @@ noremap <D-k> :tabnext<CR>
 noremap <D-j> :tabprevious<CR>
 
 " Taboo
-map <Leader>tr :TabooRename
+noremap <Leader>tr :TabooRename
 
 " Grepper
 nnoremap <leader>git :Grepper -tool git -noswitch<CR>
 nnoremap <leader>ag  :Grepper -tool ag  -grepprg ag --vimgrep<CR>
 
-nmap gs <plug>(GrepperOperator)
-xmap gs <plug>(GrepperOperator)
+nnoremap gs <plug>(GrepperOperator)
+xnoremap gs <plug>(GrepperOperator)
 
 " Pane navigation
 nnoremap <C-j> <C-W><C-J>
@@ -351,29 +351,29 @@ nnoremap <C-l> <C-W><C-L>
 nnoremap <C-h> <C-W><C-H>
 
 " CamelCaseMotion
-map <D-C-w> <Plug>CamelCaseMotion_w
-map <D-C-b> <Plug>CamelCaseMotion_b
-map <D-C-e> <Plug>CamelCaseMotion_e
+noremap <D-C-w> <Plug>CamelCaseMotion_w
+noremap <D-C-b> <Plug>CamelCaseMotion_b
+noremap <D-C-e> <Plug>CamelCaseMotion_e
 
 " Neomake
-nmap <Leader><Space>o :lopen<CR>
-nmap <Leader><Space>c :lclose<CR>
-nmap <Leader><Space>, :ll<CR>
-nmap <Leader><Space>n :lnext<CR>
-nmap <Leader><Space>p :lprev<CR>
+nnoremap <Leader><Space>o :lopen<CR>
+nnoremap <Leader><Space>c :lclose<CR>
+nnoremap <Leader><Space>, :ll<CR>
+nnoremap <Leader><Space>n :lnext<CR>
+nnoremap <Leader><Space>p :lprev<CR>
 
 " JSDoc
-nmap <Leader>js <Plug>(jsdoc)
+nnoremap <Leader>js <Plug>(jsdoc)
 
 " Tags
-map <F8> :TagbarToggle<CR>
+noremap <F8> :TagbarToggle<CR>
 
 " Relative numbers
-map <Leader>r :call NumberToggle()<CR>
+noremap <Leader>r :call NumberToggle()<CR>
 
 " test.vim
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
+nnoremap <silent> <leader>t :TestNearest<CR>
+nnoremap <silent> <leader>T :TestFile<CR>
+nnoremap <silent> <leader>a :TestSuite<CR>
+nnoremap <silent> <leader>l :TestLast<CR>
+nnoremap <silent> <leader>g :TestVisit<CR>
