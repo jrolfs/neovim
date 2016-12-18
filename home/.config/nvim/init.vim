@@ -327,11 +327,6 @@ nnoremap <Leader>gg :GitGutter<CR>
 " Choosewin
 nmap  -  <Plug>(choosewin)
 
-" Buffers
-nmap <Leader>d :bp<BAR>sp<BAR>bn<BAR>bd<CR> " close buffer
-nmap <Leader>D :bufdo bd<CR> " close all buffers
-noremap <Leader>eb :%y<CR>:@"<CR>
-
 " Search
 noremap <Leader>/ :noh<CR>
 
