@@ -93,7 +93,7 @@ let g:mapleader = ','
 let g:base16colorspace = 256
 syntax on
 set background=dark
-colorscheme base16-ocean
+colorscheme base16-oceanicnext
 
 " Undo
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
