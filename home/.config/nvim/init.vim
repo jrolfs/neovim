@@ -158,16 +158,6 @@ let g:JavaComplete_BaseDir = '~/.cache'
 
 " Tags
 let g:tagbar_autofocus = 1
-let g:tagbar_type_coffee = {
-  \ 'ctagstype': 'coffee',
-  \ 'kinds': [
-  \   'c:classes',
-  \   'm:methods',
-  \   'f:functions',
-  \   'v:variables',
-  \   'f:fields'
-  \   ]
-  \ }
 
 " Lightline
 let g:tagbar_status_func = 'TagbarStatusFunc'
