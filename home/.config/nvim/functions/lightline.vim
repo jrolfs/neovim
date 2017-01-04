@@ -9,13 +9,13 @@ endfunction
 function! LightLineFilename()
   let l:fname = expand('%')
 
-  return l:fname == '__Tagbar__' ? g:lightline.fname :
-        \ l:fname =~ '__Gundo' ? '' :
-        \ &filetype == 'vimfiler' ? vimfiler#get_status_string() :
-        \ &filetype == 'unite' ? unite#get_status_string() :
-        \ ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-        \ ('' != fname ? fname : '[No Name]') .
-        \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+  return l:fname ==# '__Tagbar__' ? g:lightline.fname :
+        \ l:fname =~# '__Gundo' ? '' :
+        \ &filetype ==# 'vimfiler' ? vimfiler#get_status_string() :
+        \ &filetype ==# 'unite' ? unite#get_status_string() :
+        \ ('' !=# LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+        \ ('' !=# l:fname ? l:fname : '[No Name]') .
+        \ ('' !=# LightLineModified() ? ' ' . LightLineModified() : '')
 endfunction
 
 function! LightLineFugitive()
