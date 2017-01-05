@@ -331,8 +331,8 @@ noremap <Leader>tr :TabooRename
 nnoremap <leader>git :Grepper -tool git -noswitch<CR>
 nnoremap <leader>ag  :Grepper -tool ag  -grepprg ag --vimgrep<CR>
 
-nnoremap gs <plug>(GrepperOperator)
-xnoremap gs <plug>(GrepperOperator)
+nnoremap gs <Plug>(GrepperOperator)
+xnoremap gs <Plug>(GrepperOperator)
 
 " Pane navigation
 nnoremap <C-j> <C-W><C-J>
