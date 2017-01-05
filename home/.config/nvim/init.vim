@@ -42,8 +42,7 @@ Plug 'tpope/vim-rails'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 Plug 'janko-m/vim-test'
-Plug 'benekastah/neomake', { 'do': function('NeomakePostInstall') }
-Plug 'jaawerth/neomake-local-eslint-first'
+Plug 'jrolfs/ale', { 'branch': 'enhanced-sign-highlighting' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'heavenshell/vim-jsdoc', { 'for': 'javascript' }
 Plug 'hkupty/iron.nvim'
@@ -229,40 +228,13 @@ let g:multi_cursor_exit_from_insert_mode = 0
 " Tern
 let g:tern_request_timeout = 2
 
-" Neomake
-let g:neomake_scss_sasslint_maker = {
-  \ 'exe': 'sass-lint',
-  \ 'args': ['-v', '-q', '-f', 'compact'],
-  \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,%W%f: line %l\, col %c\, Warning - %m'
-  \ }
-
-let g:neomake_javascript_enabled_makers = ['eslint', 'coffeelint']
-let g:neomake_json_enabled_makers = ['jsonlint']
-let g:neomake_ruby_enabled_makers = ['mri']
-let g:neomake_vim_enabled_makers = ['vint']
-let g:neomake_scss_enabled_makers = ['sasslint']
-let g:neomake_pug_enabled_makers = ['puglint']
-let g:neomake_markdown_enabled_makers = ['markdownlint']
-
-autocmd! BufEnter,BufReadPost,BufWritePost * Neomake
-
-augroup neomake_exe
-  autocmd! FileType coffee let b:neomake_javascript_coffeelint_exe = NodenvGetExecutable('coffeelint')
-  autocmd! FileType json let b:neomake_json_jsonlint_exe = NodenvGetExecutable('jsonlint')
-  autocmd! FileType vim let b:neomake_vim_vint_exe = PyenvGetGlobalExecutable('vint')
-  autocmd! FileType scss let b:neomake_scss_sasslint_exe = NodenvGetExecutable('sass-lint')
-  autocmd! FileType pug let b:neomake_pug_puglint_exe = NodenvGetExecutable('pug-lint')
-  autocmd! FileType markdown let b:neomake_markdown_markdownlint_exe = NodenvGetExecutable('markdownlint')
-augroup END
-
-let g:neomake_error_sign = { 'text': "\uF057", 'texthl': 'NeomakeErrorSign' }
-let g:neomake_warning_sign = { 'text': "\uF056", 'texthl': 'NeomakeWarningSign' }
-let g:neomake_message_sign = { 'text': "\uF09A", 'texthl': 'NeomakeMessageSign' }
-let g:neomake_info_sign = { 'text': "\uF05A", 'texthl': 'NeomakeInfoSign' }
-
 " JSDoc
 let g:jsdoc_allow_input_prompt = 1
 let g:jsdoc_input_description = 1
+
+" ALE
+let g:ale_sign_error = "\uF057"
+let g:ale_sign_warning = "\uF056"
 
 " test.vim
 let g:test#ruby#rspec#executable = '$(rbenv which zeus) rspec'
@@ -349,7 +321,7 @@ noremap <D-C-w> <Plug>CamelCaseMotion_w
 noremap <D-C-b> <Plug>CamelCaseMotion_b
 noremap <D-C-e> <Plug>CamelCaseMotion_e
 
-" Neomake
+" Location list
 nnoremap <Leader><Space>o :lopen<CR>
 nnoremap <Leader><Space>c :lclose<CR>
 nnoremap <Leader><Space>, :ll<CR>
