@@ -33,6 +33,7 @@ Plug 'szw/vim-maximizer'
 " Tools
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
 Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript' }
+Plug 'neovim/node-host', { 'do': 'npm install' }
 Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-classpath'
@@ -60,6 +61,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'guns/vim-sexp', { 'for': 'clojure' }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
+Plug 'clojure-vim/nvim-parinfer.js'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'godlygeek/tabular'
 
