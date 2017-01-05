@@ -76,6 +76,7 @@ Plug 'majutsushi/tagbar'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
+Plug 'othree/yajs.vim'
 
 call plug#end()
 
