@@ -46,6 +46,7 @@ Plug 'benekastah/neomake', { 'do': function('NeomakePostInstall') }
 Plug 'jaawerth/neomake-local-eslint-first'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'heavenshell/vim-jsdoc', { 'for': 'javascript' }
+Plug 'hkupty/iron.nvim'
 
 " Files
 Plug 'Shougo/unite.vim'
