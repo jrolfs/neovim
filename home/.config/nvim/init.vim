@@ -15,9 +15,6 @@ runtime functions/neomake.vim
 
 call plug#begin('~/.vim/plugged')
 
-" Sensible
-Plug 'tpope/vim-sensible'
-
 " Interface
 Plug 'jlesquembre/base16-neovim'
 Plug 'airblade/vim-gitgutter'
