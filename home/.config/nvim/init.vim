@@ -35,6 +35,7 @@ Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
 Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript' }
 Plug 'neovim/node-host', { 'do': 'npm install' }
 Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
+Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-classpath'
 Plug 'tpope/vim-fugitive'
