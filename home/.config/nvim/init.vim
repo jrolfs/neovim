@@ -292,7 +292,7 @@ nnoremap <F5> :GundoToggle<CR>
 nnoremap <Leader>gg :GitGutter<CR>
 
 " Choosewin
-noremap - <Plug>(choosewin)
+map - <Plug>(choosewin)
 
 " Search
 noremap <Leader>/ :noh<CR>
@@ -308,8 +308,8 @@ noremap <Leader>tr :TabooRename
 nnoremap <leader>git :Grepper -tool git -noswitch<CR>
 nnoremap <leader>ag  :Grepper -tool ag  -grepprg ag --vimgrep<CR>
 
-nnoremap gs <Plug>(GrepperOperator)
-xnoremap gs <Plug>(GrepperOperator)
+nmap gs <Plug>(GrepperOperator)
+xmap gs <Plug>(GrepperOperator)
 
 " Pane navigation
 nnoremap <C-j> <C-W><C-J>
@@ -330,7 +330,7 @@ nnoremap <Leader><Space>n :lnext<CR>
 nnoremap <Leader><Space>p :lprev<CR>
 
 " JSDoc
-nnoremap <Leader>js <Plug>(jsdoc)
+nmap <Leader>js <Plug>(jsdoc)
 
 " Tags
 noremap <F8> :TagbarToggle<CR>
