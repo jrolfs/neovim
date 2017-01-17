@@ -8,6 +8,7 @@ runtime functions/utilities.vim
 runtime functions/relative-numbers.vim
 runtime functions/lightline.vim
 runtime functions/neomake.vim
+runtime functions/test.vim
 
 
 "
@@ -237,7 +238,7 @@ let g:jsdoc_input_description = 1
 let g:ale_sign_error = "\uF057"
 let g:ale_sign_warning = "\uF056"
 
-" test.vim
+" vim-test
 let g:test#ruby#rspec#executable = '$(rbenv which zeus) rspec'
 let g:test#strategy = 'neovim'
 
@@ -338,7 +339,7 @@ noremap <F8> :TagbarToggle<CR>
 " Relative numbers
 noremap <Leader>r :call NumberToggle()<CR>
 
-" test.vim
+" vim-test
 nnoremap <silent> <leader>t :TestNearest<CR>
 nnoremap <silent> <leader>T :TestFile<CR>
 nnoremap <silent> <leader>a :TestSuite<CR>
