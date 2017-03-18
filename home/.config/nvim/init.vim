@@ -7,7 +7,6 @@ runtime functions/syntax.vim
 runtime functions/utilities.vim
 runtime functions/relative-numbers.vim
 runtime functions/lightline.vim
-runtime functions/neomake.vim
 runtime functions/test.vim
 
 
