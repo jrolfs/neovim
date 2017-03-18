@@ -54,6 +54,6 @@ function! LightLineMode()
 endfunction
 
 function! TagbarStatusFunc(current, sort, fname, ...) abort
-    let g:lightline.fname = a:fname
+  let g:lightline.fname = a:fname
   return lightline#statusline(0)
 endfunction
