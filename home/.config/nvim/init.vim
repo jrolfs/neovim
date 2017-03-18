@@ -47,6 +47,7 @@ Plug 'jrolfs/ale', { 'branch': 'enhanced-sign-highlighting' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'heavenshell/vim-jsdoc', { 'for': 'javascript' }
 Plug 'hkupty/iron.nvim'
+Plug 'kassio/neoterm'
 
 " Files
 Plug 'Shougo/unite.vim'
@@ -260,7 +261,6 @@ cnoreabbrev Qa qa
 cnoreabbrev Bd bd
 cnoreabbrev bD bd
 cnoreabbrev t tabe
-cnoreabbrev T tabe
 cnoreabbrev tc tabc
 cnoreabbrev Tc tabc
 cnoreabbrev oS OpenSession
