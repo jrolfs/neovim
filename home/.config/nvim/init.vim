@@ -90,6 +90,11 @@ augroup lazyredraw
   autocmd! FocusLost * set nolazyredraw
 augroup END
 
+" Terminal
+augroup terminal_insert
+  autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
+augroup END
+
 " Leader
 let g:mapleader = ','
 
@@ -312,10 +317,20 @@ nmap gs <Plug>(GrepperOperator)
 xmap gs <Plug>(GrepperOperator)
 
 " Pane navigation
-nnoremap <C-j> <C-W><C-J>
-nnoremap <C-k> <C-W><C-K>
-nnoremap <C-l> <C-W><C-L>
-nnoremap <C-h> <C-W><C-H>
+nnoremap <C-j> <C-W><C-j>
+nnoremap <C-k> <C-W><C-k>
+nnoremap <C-l> <C-W><C-l>
+nnoremap <C-h> <C-W><C-h>
+
+" Terminal
+tnoremap <ESC><ESC> <C-\><C-n>
+tnoremap <D-l> clear<CR>
+
+tmap <C-h> <ESC><ESC><C-h>
+tmap <C-j> <ESC><ESC><C-j>
+tmap <C-k> <ESC><ESC><C-k>
+tmap <C-l> <ESC><ESC><C-l>
+
 
 " CamelCaseMotion
 noremap <D-C-w> <Plug>CamelCaseMotion_w
