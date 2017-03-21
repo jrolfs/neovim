@@ -47,6 +47,7 @@ Plug 'jrolfs/ale', { 'branch': 'enhanced-sign-highlighting' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'heavenshell/vim-jsdoc', { 'for': 'javascript' }
 Plug 'hkupty/iron.nvim'
+Plug 'clojure-vim/async-clj-omni'
 Plug 'kassio/neoterm'
 
 " Files
@@ -225,6 +226,9 @@ set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
 let g:deoplete#enable_at_startup = 1
+
+let g:deoplete#keyword_patterns = {}
+let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 
 " JSX
 let g:jsx_ext_required = 0
