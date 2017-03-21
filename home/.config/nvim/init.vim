@@ -3,11 +3,11 @@ scriptencoding utf-8
 "
 " Functions
 
-runtime functions/syntax.vim
-runtime functions/utilities.vim
-runtime functions/relative-numbers.vim
-runtime functions/lightline.vim
-runtime functions/test.vim
+runtime scripts/syntax.vim
+runtime scripts/utilities.vim
+runtime scripts/relative-numbers.vim
+runtime scripts/lightline.vim
+runtime scripts/test.vim
 
 
 "
