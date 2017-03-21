@@ -247,6 +247,9 @@ let g:ale_sign_warning = "\uF056"
 let g:test#ruby#rspec#executable = '$(rbenv which zeus) rspec'
 let g:test#strategy = 'neovim'
 
+" Parinfer
+let g:parinfer_preview_cursor_scope = 1
+
 
 "
 " Mappings
