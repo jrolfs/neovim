@@ -28,6 +28,11 @@ augroup END
 "
 " Formatting
 
+let s:prettier_eslint = 'prettier-eslint'
+let s:prettier = 'prettier'
+
+let s:javascript_formatter = NodenvGetGlobalExecutable(s:prettier_eslint)
+
 function! SetFormatProgramJavascript()
   let l:formatter = NodenvGetGlobalExecutable('prettier')
 
@@ -51,6 +56,14 @@ function! SetFormatProgramJavascript()
   execute 'setlocal' l:set_arguments
 endfunction
 
-augroup formatting
-  autocmd BufRead,BufNewFile *.js,*.jsx call SetFormatProgramJavascript()
-augroup END
+if s:javascript_formatter =~# s:prettier_eslint
+  " Use 'prettier-eslint-cli' if available globally
+  augroup javascript_formatting
+    execute 'set' 'formatprg=' . s:javascript_formatter . '\ --stdin'
+  augroup END
+else
+  " Use 'prettier' if available globally
+  augroup javascript_formatting
+    autocmd BufRead,BufNewFile *.js,*.jsx call SetFormatProgramJavascript()
+  augroup END
+endif
