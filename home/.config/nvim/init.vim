@@ -66,7 +66,7 @@ Plug 'guns/vim-sexp', { 'for': 'clojure' }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'clojure-vim/nvim-parinfer.js'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'godlygeek/tabular'
+Plug 'junegunn/vim-easy-align'
 
 " Motion
 Plug 'terryma/vim-multiple-cursors'
@@ -330,6 +330,10 @@ tmap <C-l> <ESC><ESC><C-l>
 noremap <D-C-w> <Plug>CamelCaseMotion_w
 noremap <D-C-b> <Plug>CamelCaseMotion_b
 noremap <D-C-e> <Plug>CamelCaseMotion_e
+
+" EasyAlign
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " Location list
 nnoremap <Leader><Space>o :lopen<CR>
