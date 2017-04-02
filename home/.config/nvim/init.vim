@@ -85,17 +85,6 @@ call plug#end()
 "
 " Settings
 
-" Redraw
-augroup lazyredraw
-  autocmd! CursorMoved,CursorMovedI,InsertEnter *.rb,*.jade set lazyredraw
-  autocmd! FocusLost * set nolazyredraw
-augroup END
-
-" Terminal
-augroup terminal_insert
-  autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
-augroup END
-
 " Leader
 let g:mapleader = ','
 
