@@ -3,7 +3,7 @@ scriptencoding utf-8
 "
 " External
 
-runtime scripts/syntax.vim
+runtime scripts/autocommands.vim
 runtime scripts/utilities.vim
 runtime scripts/relative-numbers.vim
 runtime scripts/lightline.vim
