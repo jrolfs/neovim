@@ -325,7 +325,6 @@ tmap <C-j> <ESC><ESC><C-j>
 tmap <C-k> <ESC><ESC><C-k>
 tmap <C-l> <ESC><ESC><C-l>
 
-
 " CamelCaseMotion
 noremap <D-C-w> <Plug>CamelCaseMotion_w
 noremap <D-C-b> <Plug>CamelCaseMotion_b
