@@ -59,7 +59,9 @@ endfunction
 if s:javascript_formatter =~# s:prettier_eslint
   " Use 'prettier-eslint-cli' if available globally
   augroup javascript_formatting
-    execute 'set' 'formatprg=' . s:javascript_formatter . '\ --stdin'
+    autocmd FileType javascript execute 'set' 'formatprg=' . s:javascript_formatter . '\ --stdin'
+    autocmd FileType javascript vnoremap gq gqdd
+    autocmd FileType javascript nnoremap gqq gqqdd
   augroup END
 else
   " Use 'prettier' if available globally
