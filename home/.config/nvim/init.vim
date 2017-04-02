@@ -61,6 +61,7 @@ Plug 'ryanoasis/vim-devicons'
 " Manipulation
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-sleuth'
 Plug 'guns/vim-sexp', { 'for': 'clojure' }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'clojure-vim/nvim-parinfer.js'
@@ -102,6 +103,9 @@ set undofile
 " Tab Size
 set smartindent
 set expandtab
+
+" Sleuth
+let g:sleuth_automatic = 0
 
 " Taboo
 let g:taboo_tab_format = ' [%P]%m '
