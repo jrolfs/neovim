@@ -68,6 +68,7 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'clojure-vim/nvim-parinfer.js'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'sbdchd/neoformat'
 
 " Motion
 Plug 'terryma/vim-multiple-cursors'
@@ -241,6 +242,10 @@ let g:test#strategy = 'neovim'
 
 " Parinfer
 let g:parinfer_preview_cursor_scope = 1
+
+" Neoformat
+
+let g:neoformat_enabled_javascript = ['prettiereslint']
 
 
 "
