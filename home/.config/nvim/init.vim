@@ -324,13 +324,13 @@ nnoremap <C-l> <C-W><C-l>
 nnoremap <C-h> <C-W><C-h>
 
 " Terminal
-tnoremap <ESC><ESC> <C-\><C-n>
+tnoremap <Leader><ESC> <C-\><C-n>
 tnoremap <D-l> clear<CR>
 
-tmap <C-h> <ESC><ESC><C-h>
-tmap <C-j> <ESC><ESC><C-j>
-tmap <C-k> <ESC><ESC><C-k>
-tmap <C-l> <ESC><ESC><C-l>
+tmap <C-h> <Leader><ESC><C-h>
+tmap <C-j> <Leader><ESC><C-j>
+tmap <C-k> <Leader><ESC><C-k>
+tmap <C-l> <Leader><ESC><C-l>
 
 " CamelCaseMotion
 noremap <D-C-w> <Plug>CamelCaseMotion_w
