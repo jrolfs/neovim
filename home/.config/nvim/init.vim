@@ -310,8 +310,8 @@ noremap <D-j> :tabprevious<CR>
 noremap <Leader>tr :TabooRename
 
 " Grepper
-nnoremap <leader>git :Grepper -tool git -noswitch<CR>
-nnoremap <leader>ag  :Grepper -tool ag  -grepprg ag --vimgrep<CR>
+nnoremap <Leader>git :Grepper -tool git -noswitch<CR>
+nnoremap <Leader>ag  :Grepper -tool ag  -grepprg ag --vimgrep<CR>
 
 nmap gs <Plug>(GrepperOperator)
 xmap gs <Plug>(GrepperOperator)
@@ -357,8 +357,8 @@ noremap <F8> :TagbarToggle<CR>
 noremap <Leader>r :call NumberToggle()<CR>
 
 " vim-test
-nnoremap <silent> <leader>t :TestNearest<CR>
-nnoremap <silent> <leader>T :TestFile<CR>
-nnoremap <silent> <leader>a :TestSuite<CR>
-nnoremap <silent> <leader>l :TestLast<CR>
-nnoremap <silent> <leader>g :TestVisit<CR>
+nnoremap <silent> <Leader>t :TestNearest<CR>
+nnoremap <silent> <Leader>T :TestFile<CR>
+nnoremap <silent> <Leader>a :TestSuite<CR>
+nnoremap <silent> <Leader>l :TestLast<CR>
+nnoremap <silent> <Leader>g :TestVisit<CR>
