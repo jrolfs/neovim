@@ -272,6 +272,7 @@ noremap <Leader>c :source ~/.config/nvim/init.vim<CR>
 
 " Buffer path
 noremap <Leader>p :let @+ = expand("%")<CR>
+noremap <Leader>h :tcd %:p:h<CR>
 
 " Tern
 nnoremap <D-]> :TernDef<CR>
