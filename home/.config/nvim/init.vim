@@ -245,8 +245,8 @@ let g:test#strategy = 'neovim'
 let g:parinfer_preview_cursor_scope = 1
 
 " Neoformat
-
 let g:neoformat_enabled_javascript = ['prettiereslint']
+let g:neoformat_javascript_prettiereslint = { 'args': ['--stdin', '--bracket-spacing true'] }
 
 
 "
