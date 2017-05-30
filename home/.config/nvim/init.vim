@@ -367,3 +367,6 @@ nnoremap <silent> <Leader>T :TestFile<CR>
 nnoremap <silent> <Leader>a :TestSuite<CR>
 nnoremap <silent> <Leader>l :TestLast<CR>
 nnoremap <silent> <Leader>g :TestVisit<CR>
+
+" Neoformat
+noremap <Leader>n :Neoformat<CR>
