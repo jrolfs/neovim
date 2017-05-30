@@ -83,6 +83,7 @@ Plug 'tpope/vim-repeat'
 Plug 'majutsushi/tagbar'
 
 " Syntax
+Plug 'flowtype/vim-flow', { 'for': 'javascript' }
 Plug 'sheerun/vim-polyglot'
 Plug 'othree/yajs.vim'
 
