@@ -33,6 +33,9 @@ Plug 'szw/vim-maximizer'
 " Tools
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
 Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript' }
+Plug 'wokalski/autocomplete-flow', { 'for': 'javascript' }
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
 Plug 'neovim/node-host', { 'do': 'npm install' }
 Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }
