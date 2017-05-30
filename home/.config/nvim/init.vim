@@ -39,6 +39,7 @@ Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-classpath'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-rails'
 Plug 'moll/vim-node'
 Plug 'mattn/webapi-vim'
