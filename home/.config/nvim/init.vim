@@ -249,8 +249,14 @@ let g:test#strategy = 'neovim'
 let g:parinfer_preview_cursor_scope = 1
 
 " Neoformat
+let s:eslint_bin = NodenvGetGlobalExecutable('prettier-eslint')
+
 let g:neoformat_enabled_javascript = ['prettiereslint']
-let g:neoformat_javascript_prettiereslint = { 'args': ['--stdin', '--bracket-spacing true'] }
+let g:neoformat_javascript_prettiereslint = {
+  \ 'exe': s:eslint_bin,
+  \ 'args': ['--stdin', '--bracket-spacing true'],
+  \ 'stdin': 1
+  \ }
 
 
 "
