@@ -232,6 +232,8 @@ let g:multi_cursor_exit_from_insert_mode = 0
 
 " Tern
 let g:tern_request_timeout = 2
+let g:tern#command = ["tern"]
+let g:tern#arguments = ["--persistent"]
 
 " JSDoc
 let g:jsdoc_allow_input_prompt = 1
