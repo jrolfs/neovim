@@ -260,6 +260,9 @@ let g:neoformat_javascript_prettiereslint = {
   \ 'stdin': 1
   \ }
 
+" Neosnippet
+let g:neosnippet#enable_completed_snippet = 1
+
 
 "
 " Mappings
