@@ -265,6 +265,11 @@ let g:neoformat_javascript_prettiereslint = {
   \ 'stdin': 1
   \ }
 
+" Flow
+let g:flow#autoclose = 1
+let g:flow#timeout = 5
+let g:flow#enable = 0
+
 " Neosnippet
 let g:neosnippet#enable_completed_snippet = 1
 
