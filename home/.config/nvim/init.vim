@@ -231,9 +231,14 @@ let g:jsx_ext_required = 0
 let g:multi_cursor_exit_from_insert_mode = 0
 
 " Tern
+let s:node_bin =  NodenvGetGlobalExecutable('node')
+let s:tern_bin = NodenvGetGlobalExecutable('tern')
+let s:tern_command = [s:node_bin, s:tern_bin]
+
 let g:tern_request_timeout = 2
-let g:tern#command = ["tern"]
-let g:tern#arguments = ["--persistent"]
+let g:tern#command = s:tern_command
+let g:tern#arguments = ['--persistent']
+let g:deoplete#sources#ternjs#tern_bin = join(s:tern_command, ' ')
 
 " JSDoc
 let g:jsdoc_allow_input_prompt = 1
