@@ -158,8 +158,8 @@ let g:session_autosave_periodic = 1
 let g:session_autosave_silent = 1
 
 " Python
-let g:python_host_prog = $HOME .'/.pyenv/shims/python'
-let g:python3_host_prog = $HOME . '/.pyenv/shims/python3'
+let g:python_host_prog = '/run/current-system/sw/bin/nvim-python'
+let g:python3_host_prog = '/run/current-system/sw/bin/nvim-python3'
 
 let g:JavaComplete_UsePython3 = 1
 let g:JavaComplete_BaseDir = '~/.cache'
