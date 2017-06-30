@@ -8,6 +8,11 @@ augroup syntax
   autocmd! BufRead,BufNewFile Dockerfile.* set syntax=dockerfile
 augroup END
 
+augroup ALESignHighlightGroup
+   autocmd!
+   autocmd ColorScheme * call SetALEHighlights()
+ augroup END
+
 
 "
 " Redraw
