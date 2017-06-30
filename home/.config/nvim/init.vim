@@ -48,7 +48,7 @@ Plug 'moll/vim-node'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 Plug 'janko-m/vim-test'
-Plug 'jrolfs/ale', { 'branch': 'enhanced-sign-highlighting' }
+Plug 'w0rp/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'heavenshell/vim-jsdoc', { 'for': 'javascript' }
 Plug 'hkupty/iron.nvim'
