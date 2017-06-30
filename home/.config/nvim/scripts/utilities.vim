@@ -55,3 +55,31 @@ endfunction
 function! PyenvGetGlobalExecutable(executable, ...)
   return EnvGetGlobalExecutable('py', a:executable)
 endfunction
+
+"
+" Other
+
+function! GetHighlightProperty(group, property) abort
+     let l:reverse = synIDattr(synIDtrans(hlID(a:group)), 'reverse')
+     let l:property = a:property
+
+     if l:reverse
+         if l:property ==# 'fg'
+             let l:property = 'bg'
+         elseif l:property ==# 'bg'
+             let l:property = 'fg'
+         elseif l:property ==# 'fg#'
+             let l:property = 'bg#'
+         elseif l:property ==# 'bg#'
+             let l:property = 'fg#'
+         endif
+     endif
+
+     let l:value = synIDattr(synIDtrans(hlID(a:group)), l:property)
+
+     if l:value == -1
+         let l:value = 'NONE'
+     endif
+
+     return l:value
+ endfunction
