@@ -22,5 +22,5 @@ augroup END
 " Terminal
 
 augroup terminal_insert
-  autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
+  autocmd! BufEnter * if &buftype == 'terminal' | :startinsert | endif
 augroup END
