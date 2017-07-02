@@ -9,8 +9,7 @@ augroup syntax
 augroup END
 
 augroup ALESignHighlightGroup
-   autocmd!
-   autocmd ColorScheme * call SetALEHighlights()
+   autocmd! VimEnter,ColorScheme * call SetALEHighlights()
  augroup END
 
 
