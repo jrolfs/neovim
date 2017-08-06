@@ -257,12 +257,26 @@ let g:test#strategy = 'neovim'
 let g:parinfer_preview_cursor_scope = 1
 
 " Neoformat
-let s:eslint_bin = NodenvGetGlobalExecutable('prettier-eslint')
+let s:prettier_eslint_bin = NodenvGetGlobalExecutable('prettier-eslint')
+let s:prettier_bin = NodenvGetGlobalExecutable('prettier')
 
 let g:neoformat_enabled_javascript = ['prettiereslint']
 let g:neoformat_javascript_prettiereslint = {
-  \ 'exe': s:eslint_bin,
+  \ 'exe': s:prettier_eslint_bin,
   \ 'args': ['--stdin', '--bracket-spacing true'],
+  \ 'stdin': 1
+  \ }
+
+let g:neoformat_enabled_typescript = ['prettier']
+let g:neoformat_typescript_prettier = {
+  \ 'exe': s:prettier_bin,
+  \ 'args': [
+  \   '--stdin',
+  \   '--parser typescript',
+  \   '--print-width 100',
+  \   '--tab-width 4',
+  \   '--no-bracket-spacing'
+  \ ],
   \ 'stdin': 1
   \ }
 
