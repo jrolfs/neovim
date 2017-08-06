@@ -127,7 +127,6 @@ set listchars=tab:\ \ ,trail:·
 set list
 
 " Cursor
-set guicursor=a:blinkon500-blinkwait500-blinkoff500
 set cursorline
 
 " Search
