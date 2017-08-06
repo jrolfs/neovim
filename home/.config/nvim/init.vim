@@ -333,6 +333,8 @@ noremap <Leader>/ :noh<CR>
 " Tabs
 noremap <D-k> :tabnext<CR>
 noremap <D-j> :tabprevious<CR>
+noremap <Leader>. :tabnext<CR>
+noremap <Leader>m :tabprevious<CR>
 
 " Taboo
 noremap <Leader>tr :TabooRename
