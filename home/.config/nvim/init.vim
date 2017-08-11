@@ -36,6 +36,7 @@ Plug 'sjl/vitality.vim'
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
 Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript' }
 Plug 'wokalski/autocomplete-flow', { 'for': 'javascript' }
+Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'neovim/node-host', { 'do': 'npm install' }
