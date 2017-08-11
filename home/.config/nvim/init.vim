@@ -121,8 +121,8 @@ let g:sleuth_automatic = 0
 let g:taboo_tab_format = ' [%P]%m '
 
 " GitGutter
+set signcolumn=yes
 let g:gitgutter_max_signs = 2000
-let g:gitgutter_sign_column_always = 1
 
 " List trailing
 set listchars=tab:\ \ ,trail:·
