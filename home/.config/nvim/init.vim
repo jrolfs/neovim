@@ -376,6 +376,12 @@ tmap <C-j> <Leader><ESC><C-j>
 tmap <C-k> <Leader><ESC><C-k>
 tmap <C-l> <Leader><ESC><C-l>
 
+" Neoterm
+nnoremap <silent> <Leader>th :call neoterm#close()<cr>
+nnoremap <silent> <Leader>ts :call neoterm#open()<cr>
+nnoremap <silent> <Leader>tl :call neoterm#clear()<cr>
+nnoremap <silent> <Leader>tc :call neoterm#kill()<cr>
+
 " CamelCaseMotion
 noremap <D-C-w> <Plug>CamelCaseMotion_w
 noremap <D-C-b> <Plug>CamelCaseMotion_b
