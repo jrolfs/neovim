@@ -3,6 +3,7 @@ scriptencoding utf-8
 "
 " External
 
+runtime scripts/environments.vim
 runtime scripts/utilities.vim
 runtime scripts/highlights.vim
 runtime scripts/autocommands.vim
