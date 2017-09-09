@@ -6,3 +6,11 @@ function! NumberToggle()
     set relativenumber
   endif
 endfunction
+
+function! TabooTabTitle(tabnumber)
+  let l:icon = WebDevIconsGetFileTypeSymbol()
+
+  echom "asdf"
+
+  return l:icon . ' %P%m'
+endfunction
