@@ -7,7 +7,8 @@ runtime scripts/environments.vim
 runtime scripts/utilities.vim
 runtime scripts/highlights.vim
 runtime scripts/autocommands.vim
-runtime scripts/relative-numbers.vim
+runtime scripts/autocomplete.vim
+runtime scripts/ui.vim
 runtime scripts/lightline.vim
 runtime scripts/test.vim
 
