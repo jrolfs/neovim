@@ -13,9 +13,4 @@ function! ToggleTestStrategies()
   endif
 endfunction
 
-augroup vimtest
-  autocmd! TabEnter,TabNew,TabNewEntered * call ToggleTestStrategies()
-  autocmd! BufRead,BufNewFile *.js call ToggleTestStrategies()
-augroup END
-
 let g:test#javascript#mocha#file_pattern = '\vtests?/.*\.(ts|js|jsx|coffee)$'
