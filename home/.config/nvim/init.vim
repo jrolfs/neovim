@@ -388,7 +388,7 @@ nnoremap <Leader>gg :GitGutter<CR>
 map - <Plug>(choosewin)
 
 " Search
-noremap <Leader>/ :noh<CR>
+noremap <silent> <Leader>/ :noh<CR>
 
 " Tabs
 noremap <D-k> :tabnext<CR>
@@ -451,7 +451,7 @@ nmap <Leader>js <Plug>(jsdoc)
 noremap <F8> :TagbarToggle<CR>
 
 " Relative numbers
-noremap <Leader>r :call NumberToggle()<CR>
+noremap <silent> <Leader>r :call NumberToggle()<CR>
 
 " vim-test
 nnoremap <silent> <Leader>t :TestNearest<CR>
