@@ -19,7 +19,7 @@ runtime scripts/test.vim
 call plug#begin('~/.vim/plugged')
 
 " Interface
-Plug 'jlesquembre/base16-neovim'
+Plug 'jrolfs/oceanic-next', { 'branch': 'fix-tabs' }
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf' }
 Plug 'junegunn/fzf.vim'
@@ -92,6 +92,9 @@ Plug 'majutsushi/tagbar'
 " Syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'othree/yajs.vim'
+Plug 'othree/es.next.syntax.vim'
+Plug 'othree/html5.vim'
+Plug 'HerringtonDarkholme/yats.vim'
 
 call plug#end()
 
@@ -104,9 +107,12 @@ let g:mapleader = ','
 
 " Colors
 let g:base16colorspace = 256
-syntax on
+set termguicolors
+syntax enable
+set noshowmode
 set background=dark
-colorscheme base16-oceanicnext
+colorscheme OceanicNext
+filetype plugin on
 
 " Undo
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
@@ -116,6 +122,9 @@ set undofile
 " Tab Size
 set smartindent
 set expandtab
+
+" Syntax
+let g:polyglot_disabled = ['javascript', 'html', 'typescript']
 
 " Sleuth
 let g:sleuth_automatic = 0
