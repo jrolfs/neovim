@@ -269,38 +269,6 @@ let g:test#strategy = 'neovim'
 " Parinfer
 let g:parinfer_preview_cursor_scope = 1
 
-" Neoformat
-let s:prettier_eslint_bin = NodenvGetGlobalExecutable('prettier-eslint')
-let s:prettier_bin = NodenvGetGlobalExecutable('prettier')
-
-let g:neoformat_enabled_javascript = ['prettiereslint']
-let g:neoformat_javascript_prettiereslint = {
-  \ 'exe': s:prettier_eslint_bin,
-  \ 'args': ['--stdin', '--bracket-spacing true'],
-  \ 'stdin': 1
-  \ }
-
-let g:neoformat_enabled_typescript = ['prettier']
-let g:neoformat_typescript_prettier = {
-  \ 'exe': s:prettier_bin,
-  \ 'args': [
-  \   '--stdin',
-  \   '--parser typescript',
-  \   '--print-width 100',
-  \   '--tab-width 4',
-  \   '--no-bracket-spacing'
-  \ ],
-  \ 'stdin': 1
-  \ }
-
-" Flow
-let g:flow#autoclose = 1
-let g:flow#timeout = 5
-let g:flow#enable = 0
-
-" Neosnippet
-let g:neosnippet#enable_completed_snippet = 1
-
 
 "
 " Mappings
