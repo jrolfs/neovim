@@ -293,7 +293,15 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
+" Deoplete
 let g:deoplete#enable_at_startup = 1
+
+" Neosnippet
+let g:neosnippet#enable_completed_snippet = 1
+
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 
 " JSX
 let g:jsx_ext_required = 0
