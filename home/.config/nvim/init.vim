@@ -175,6 +175,14 @@ let g:session_autosave = 'yes'
 let g:session_autosave_periodic = 1
 let g:session_autosave_silent = 1
 
+" Grepper
+let g:grepper = {
+  \   'tools': ['git', 'ag', 'vimgrep'],
+  \   'ag': {
+  \     'grepprg': '/run/current-system/sw/bin/ag'
+  \   }
+  \ }
+
 " Python
 let g:python_host_prog = '/run/current-system/sw/bin/nvim-python'
 let g:python3_host_prog = '/run/current-system/sw/bin/nvim-python3'
