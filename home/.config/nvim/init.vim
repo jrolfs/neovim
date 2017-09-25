@@ -21,18 +21,20 @@ call plug#begin('~/.vim/plugged')
 " Interface
 Plug 'jlesquembre/base16-neovim'
 Plug 'airblade/vim-gitgutter'
-Plug 'Shougo/deoplete.nvim'
-Plug 'gcmt/taboo.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --key-bindings --completion' }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'jrolfs/vim-base16-lightline'
+Plug 'gcmt/taboo.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 Plug 'sjl/gundo.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'szw/vim-maximizer'
 Plug 'sjl/vitality.vim'
+
+" Completion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Tools
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
@@ -61,9 +63,9 @@ Plug 'kassio/neoterm'
 
 " Files
 Plug 'Shougo/unite.vim'
+Plug 'Shougo/tabpagebuffer.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 't9md/vim-choosewin'
-Plug 'Shougo/tabpagebuffer.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'danro/rename.vim'
 Plug 'ryanoasis/vim-devicons'
