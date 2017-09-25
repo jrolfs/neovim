@@ -4,8 +4,8 @@ function! ToggleTestStrategies()
 
   if (l:directory =~? 'search-result-node')
     let g:{l:mocha} = '--compilers js:babel-core/register'
-  elseif (l:directory =~? 'redemption-proxy')
-    let g:{l:mocha} = '-r ts-node/register -r src/declarations.ts'
+  elseif (l:directory =~? 'wtf-service')
+    let g:{l:mocha} = '-r ts-node/register'
   else
     if exists('g:' . l:mocha)
       unlet g:{l:mocha}
