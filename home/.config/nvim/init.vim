@@ -97,6 +97,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'jez/vim-github-hub'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'chrisbra/Colorizer'
 
 call plug#end()
 
