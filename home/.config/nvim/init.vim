@@ -9,7 +9,6 @@ runtime scripts/highlights.vim
 runtime scripts/autocommands.vim
 runtime scripts/autocomplete.vim
 runtime scripts/ui.vim
-runtime scripts/lightline.vim
 runtime scripts/test.vim
 
 
@@ -23,9 +22,8 @@ Plug 'jrolfs/oceanic-next', { 'branch': 'fix-tabs' }
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf' }
 Plug 'junegunn/fzf.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'jrolfs/vim-base16-lightline'
 Plug 'gcmt/taboo.vim'
+Plug 'vim-airline/vim-airline'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 Plug 'sjl/gundo.vim'
@@ -181,26 +179,62 @@ let g:JavaComplete_BaseDir = '~/.cache'
 " Tags
 let g:tagbar_autofocus = 1
 
-" Lightline
-let g:tagbar_status_func = 'TagbarStatusFunc'
-let g:unite_force_overwrite_statusline = 0
-let g:vimfiler_force_overwrite_statusline = 0
-let g:vimshell_force_overwrite_statusline = 0
-let g:lightline = {
-  \   'colorscheme': 'base16',
-  \   'active': {
-  \     'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
-  \     'right': [ [ 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
-  \   },
-  \   'component_function': {
-  \     'fugitive': 'LightLineFugitive',
-  \     'filename': 'LightLineFilename',
-  \     'fileformat': 'LightLineFileformat',
-  \     'filetype': 'LightLineFiletype',
-  \     'fileencoding': 'LightLineFileencoding',
-  \     'mode': 'LightLineMode',
-  \   },
-  \   'subseparator': { 'left': '|', 'right': '|' }
+" Airline
+let g:airline_theme = 'oceanicnext'
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+if g:gui_oni
+  let g:airline_extensions = ['ale']
+else
+  let g:airline_extensions = ['branch', 'ale']
+endif
+
+
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
+
+
+let g:airline_section_c = '%<%f%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'
+
+let g:airline_section_x = ''
+let g:airline_section_y = ''
+
+let airline#extensions#ale#error_symbol = "\uF057 "
+let airline#extensions#ale#warning_symbol = "\uF056 "
+
+if !g:gui_oni
+  let g:airline_mode_map = {
+    \ '__' : '-',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'c'  : 'C',
+    \ 'v'  : 'V',
+    \ 'V'  : 'V',
+    \ '' : 'V',
+    \ 's'  : 'S',
+    \ 'S'  : 'S',
+    \ '' : 'S',
+    \ }
+endif
+
+let g:airline#extensions#default#section_truncate_width = {
+  \ 'a': 30,
+  \ 'b': 30,
+  \ 'x': 120,
+  \ 'y': 120,
+  \ 'z': 45,
+  \ 'warning': 30,
+  \ 'error': 30,
   \ }
 
 " Tmuxline
