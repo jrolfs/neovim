@@ -21,7 +21,7 @@ call plug#begin('~/.vim/plugged')
 " Interface
 Plug 'jlesquembre/base16-neovim'
 Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --key-bindings --completion' }
+Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf' }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'jrolfs/vim-base16-lightline'
@@ -38,19 +38,17 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Tools
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
-Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript' }
-Plug 'wokalski/autocomplete-flow', { 'for': 'javascript' }
-Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'neovim/node-host', { 'do': 'npm install' }
+Plug 'carlitux/deoplete-ternjs'
+Plug 'wokalski/autocomplete-flow'
 Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
+Plug 'neovim/node-host', { 'do': 'npm install' }
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }
-Plug 'tpope/vim-fireplace'
-Plug 'tpope/vim-classpath'
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'tpope/vim-classpath', { 'for': 'clojure' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'tpope/vim-unimpaired'
 Plug 'moll/vim-node'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
@@ -60,6 +58,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'heavenshell/vim-jsdoc', { 'for': 'javascript' }
 Plug 'hkupty/iron.nvim'
 Plug 'kassio/neoterm'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
 
 " Files
 Plug 'Shougo/unite.vim'
@@ -90,7 +90,6 @@ Plug 'tpope/vim-repeat'
 Plug 'majutsushi/tagbar'
 
 " Syntax
-Plug 'flowtype/vim-flow', { 'for': 'javascript' }
 Plug 'sheerun/vim-polyglot'
 Plug 'othree/yajs.vim'
 
