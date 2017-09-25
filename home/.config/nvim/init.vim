@@ -94,6 +94,9 @@ Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/html5.vim'
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'jez/vim-github-hub'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 call plug#end()
 
@@ -255,6 +258,15 @@ let g:coffee_lint_options = '-f ~/coffeelint.json'
 " Vimfiler
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_ignore_pattern = ['^\.git$', '^\.DS_Store$']
+
+" Pandoc
+let g:pandoc#syntax#codeblocks#embeds#langs = [
+  \   "javascript",
+  \   "json=javascript",
+  \   "ruby",
+  \   "python",
+  \   "bash=sh"
+  \ ]
 
 " Completion
 set completeopt-=preview
