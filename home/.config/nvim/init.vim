@@ -329,7 +329,7 @@ let g:ale_sign_warning = "\uF056"
 
 " vim-test
 let g:test#ruby#rspec#executable = '$(rbenv which zeus) rspec'
-let g:test#strategy = 'neovim'
+let g:test#strategy = 'neoterm'
 
 " Parinfer
 let g:parinfer_preview_cursor_scope = 1
@@ -422,10 +422,11 @@ tmap <C-k> <Leader><ESC><C-k>
 tmap <C-l> <Leader><ESC><C-l>
 
 " Neoterm
-nnoremap <silent> <Leader>th :call neoterm#close()<cr>
-nnoremap <silent> <Leader>ts :call neoterm#open()<cr>
-nnoremap <silent> <Leader>tl :call neoterm#clear()<cr>
-nnoremap <silent> <Leader>tc :call neoterm#kill()<cr>
+nnoremap <silent> <Leader>z :call neoterm#toggle()<CR><ESC>
+nnoremap <silent> <Leader>sx :call neoterm#close()<CR>
+nnoremap <silent> <Leader>ss :call neoterm#open()<CR><ESC>
+nnoremap <silent> <Leader>sc :call neoterm#clear()<CR>
+nnoremap <silent> <seader>sk :call neoterm#kill()<CR>
 
 " CamelCaseMotion
 noremap <D-C-w> <Plug>CamelCaseMotion_w
