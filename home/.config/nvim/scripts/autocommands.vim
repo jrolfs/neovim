@@ -2,11 +2,10 @@
 " Syntax
 
 augroup syntax
-  autocmd! BufRead,BufNewFile .babelrc,.jshintrc,.eslintrc set filetype=json
-  autocmd! BufRead,BufNewFile *.boot set filetype=clojure
-  autocmd! BufRead,BufNewFile *.hst set syntax=sh
-  autocmd! BufRead,BufNewFile Dockerfile.* set syntax=dockerfile
-  autocmd! FileType gitcommit set filetype=markdown.pandoc
+  autocmd! BufRead,BufNewFile .babelrc,.jshintrc,.eslintrc setlocal filetype=json
+  autocmd! BufRead,BufNewFile *.boot setlocal filetype=clojure
+  autocmd! BufRead,BufNewFile *.hst setlocal syntax=sh
+  autocmd! BufRead,BufNewFile Dockerfile.* setlocal syntax=dockerfile
 augroup END
 
 augroup ALESignHighlightGroup
