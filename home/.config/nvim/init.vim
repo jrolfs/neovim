@@ -109,7 +109,7 @@ call plug#end()
 " Leader
 let g:mapleader = ','
 
-" Colors
+" Syntax
 set termguicolors
 syntax enable
 set noshowmode
