@@ -94,7 +94,7 @@ Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/html5.vim'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'jez/vim-github-hub'
+Plug 'jrolfs/vim-github-hub', { 'branch': 'support-commit' }
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'chrisbra/Colorizer'
