@@ -110,7 +110,6 @@ call plug#end()
 let g:mapleader = ','
 
 " Colors
-let g:base16colorspace = 256
 set termguicolors
 syntax enable
 set noshowmode
