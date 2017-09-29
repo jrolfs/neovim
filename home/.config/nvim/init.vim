@@ -112,7 +112,6 @@ let g:mapleader = ','
 " Syntax
 set termguicolors
 syntax enable
-set noshowmode
 set background=dark
 colorscheme OceanicNext
 filetype plugin on
@@ -193,6 +192,8 @@ let g:JavaComplete_BaseDir = '~/.cache'
 let g:tagbar_autofocus = 1
 
 " Airline
+set noshowmode
+
 let g:airline_theme = 'oceanicnext'
 
 if !exists('g:airline_symbols')
