@@ -30,9 +30,9 @@ function! s:SetALEHighlights() abort
 endfunction
 
 function! s:SetChooseWinHighlights() abort
-  execute 'highlight! link ChooseWinLabel airline_tabsel'
-  execute 'highlight! link ChooseWinLabelCurrent airline_tabmod'
-  execute 'highlight! link ChooseWinLand airline_tabmod'
+  execute 'highlight! link ChooseWinLabel airline_x'
+  execute 'highlight! link ChooseWinLabelCurrent airline_y'
+  execute 'highlight! link ChooseWinLand airline_y'
 endfunction
 
 function! SetOniSignHighlight() abort
