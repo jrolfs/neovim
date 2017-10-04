@@ -1,3 +1,7 @@
+scriptencoding utf-8
+
+set fillchars+=vert:│
+
 function! NumberToggle()
   if(&relativenumber == 1)
     set norelativenumber
