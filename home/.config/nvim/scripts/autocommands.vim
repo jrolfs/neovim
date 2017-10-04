@@ -9,7 +9,7 @@ augroup syntax
 augroup END
 
 augroup ALESignHighlightGroup
-   autocmd! VimEnter,ColorScheme * call UpdateHightlights()
+   autocmd! VimEnter,ColorScheme * call UpdateHighlights()
 augroup END
 
 augroup vimtest
