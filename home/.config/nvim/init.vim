@@ -78,7 +78,6 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'clojure-vim/nvim-parinfer.js'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'sbdchd/neoformat'
 
 " Motion
 Plug 'terryma/vim-multiple-cursors'
@@ -327,6 +326,11 @@ let g:jsdoc_input_description = 1
 let g:ale_sign_error = "\uF057"
 let g:ale_sign_warning = "\uF056"
 
+let g:ale_fixers = {
+  \ 'javascript': ['prettier_eslint'],
+  \ 'typescript': ['prettier']
+  \ }
+
 " vim-test
 let g:test#ruby#rspec#executable = '$(rbenv which zeus) rspec'
 let g:test#strategy = 'neoterm'
@@ -459,6 +463,3 @@ nnoremap <silent> <Leader>T :TestFile<CR>
 nnoremap <silent> <Leader>a :TestSuite<CR>
 nnoremap <silent> <Leader>l :TestLast<CR>
 nnoremap <silent> <Leader>g :TestVisit<CR>
-
-" Neoformat
-noremap <Leader>n :Neoformat<CR>

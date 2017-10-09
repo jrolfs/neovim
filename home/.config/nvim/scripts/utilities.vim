@@ -64,35 +64,6 @@ endfunction
 "
 " Other
 
-function! NodeClosestExecutable(executable)
-  return system('cd ' . getcwd() . ' && npm-which ' . a:executable)
-endfunction
-
-function! UpdateNeoformatBinaries()
-  let g:prettier_eslint_bin = NodeClosestExecutable('prettier-eslint')
-  let g:prettier_bin = NodeClosestExecutable('prettier')
-
-  let g:neoformat_enabled_javascript = ['prettiereslint']
-  let g:neoformat_javascript_prettiereslint = {
-        \ 'exe': g:prettier_eslint_bin,
-        \ 'args': ['--stdin'],
-        \ 'stdin': 1
-        \ }
-
-  let g:neoformat_enabled_typescript = ['prettier']
-  let g:neoformat_typescript_prettier = {
-        \ 'exe': g:prettier_bin,
-        \ 'args': [
-        \   '--stdin',
-        \   '--parser typescript',
-        \   '--print-width 100',
-        \   '--tab-width 4',
-        \   '--no-bracket-spacing'
-        \ ],
-        \ 'stdin': 1
-        \ }
-endfunction
-
 function! GetHighlightProperty(group, property) abort
   let l:reverse = synIDattr(synIDtrans(hlID(a:group)), 'reverse')
   let l:property = a:property
