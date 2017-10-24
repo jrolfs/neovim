@@ -328,6 +328,7 @@ let g:jsdoc_input_description = 1
 " ALE
 let g:ale_sign_error = "\uF057"
 let g:ale_sign_warning = "\uF056"
+let g:ale_completion_enabled = 1
 
 let g:ale_fixers = {
   \ 'javascript': ['prettier_eslint'],
