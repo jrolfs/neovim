@@ -251,7 +251,7 @@ endif
 let g:airline#extensions#default#section_truncate_width = {
   \ 'a': 30,
   \ 'b': 30,
-  \ 'x': 120,
+  \ 'x': 45,
   \ 'y': 120,
   \ 'z': 45,
   \ 'warning': 30,
