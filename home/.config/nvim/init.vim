@@ -78,7 +78,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sleuth'
 Plug 'guns/vim-sexp', { 'for': 'clojure' }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
-Plug 'clojure-vim/nvim-parinfer.js'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'junegunn/vim-easy-align'
 
@@ -344,9 +343,6 @@ let g:ale_fixers = {
 " vim-test
 let g:test#ruby#rspec#executable = '$(rbenv which zeus) rspec'
 let g:test#strategy = 'neoterm'
-
-" Parinfer
-let g:parinfer_preview_cursor_scope = 1
 
 
 "
