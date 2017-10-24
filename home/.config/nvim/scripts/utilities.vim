@@ -62,7 +62,17 @@ endfunction
 
 
 "
-" Other
+" Plugins
+
+function! ConditionalPlug(condition, ...)
+  let l:options = get(a:000, 0, {})
+
+  return a:condition ? l:options : extend(l:options, { 'on': [], 'for': [] })
+endfunction
+
+
+"
+" Highlights
 
 function! GetHighlightProperty(group, property) abort
   let l:reverse = synIDattr(synIDtrans(hlID(a:group)), 'reverse')
