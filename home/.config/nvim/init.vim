@@ -163,7 +163,7 @@ set nostartofline
 set laststatus=2
 
 " Line Numbers
-set number
+set relativenumber
 
 " Buffers
 set hidden
