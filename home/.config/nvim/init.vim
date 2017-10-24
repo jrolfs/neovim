@@ -379,6 +379,14 @@ nnoremap <Leader>B :Unite buffer<CR>
 " FZF
 noremap <C-p> :Files<CR>
 
+" ALE
+noremap <Leader>al <Plug>(ale_lint)
+noremap <Leader>af <Plug>(ale_fix)
+noremap <Leader>ap <Plug>(ale_previous)
+noremap <Leader>an <Plug>(ale_next)
+noremap <Leader>agg <Plug>(ale_first)
+noremap <Leader>aG <Plug>(ale_last)
+
 " VimFiler
 noremap <F1> :VimFilerExplorer -project -winwidth=50<CR>
 noremap <D-F1> :VimFilerExplorer -find -winwidth=50<CR>
