@@ -132,7 +132,7 @@ set undofile
 set smartindent
 set expandtab
 
-" Syntax
+" Polyglot
 let g:polyglot_disabled = ['javascript', 'html', 'typescript']
 
 " Sleuth
