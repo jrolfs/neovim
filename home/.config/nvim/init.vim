@@ -118,6 +118,9 @@ set background=dark
 colorscheme OceanicNext
 filetype plugin on
 
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+
 " Undo
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
 set undodir=~/.vim/backups
