@@ -140,7 +140,9 @@ let g:polyglot_disabled = ['javascript', 'html', 'typescript']
 let g:sleuth_automatic = 1
 
 " Taboo
-let g:taboo_tab_format = ' %P%m '
+let g:taboo_tab_format = ' %m %I⁾%P  '
+let g:taboo_renamed_tab_format = '  %m%I⁾I%l  '
+let g:taboo_modified_tab_flag = '✎'
 
 " GitGutter
 set signcolumn=yes
