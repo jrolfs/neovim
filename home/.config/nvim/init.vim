@@ -448,7 +448,7 @@ nnoremap <silent> <Leader>z :call neoterm#toggle()<CR><ESC>
 nnoremap <silent> <Leader>sx :call neoterm#close()<CR>
 nnoremap <silent> <Leader>ss :call neoterm#open()<CR><ESC>
 nnoremap <silent> <Leader>sc :call neoterm#clear()<CR>
-nnoremap <silent> <seader>sk :call neoterm#kill()<CR>
+nnoremap <silent> <Leader>sk :call neoterm#kill()<CR>
 
 " CamelCaseMotion
 noremap <D-C-w> <Plug>CamelCaseMotion_w
