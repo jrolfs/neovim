@@ -388,12 +388,10 @@ nnoremap <Leader>B :Unite buffer<CR>
 noremap <C-p> :Files<CR>
 
 " ALE
-noremap <Leader>al <Plug>(ale_lint)
-noremap <Leader>af <Plug>(ale_fix)
-noremap <Leader>ap <Plug>(ale_previous)
-noremap <Leader>an <Plug>(ale_next)
-noremap <Leader>agg <Plug>(ale_first)
-noremap <Leader>aG <Plug>(ale_last)
+nmap <Leader>al <Plug>(ale_lint)
+nmap <Leader>af <Plug>(ale_fix)
+nmap <Leader>ap <Plug>(ale_previous)
+nmap <Leader>an <Plug>(ale_next)
 
 " VimFiler
 noremap <F1> :VimFilerExplorer -project -winwidth=50<CR>
