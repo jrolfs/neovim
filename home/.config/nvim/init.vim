@@ -137,7 +137,7 @@ set expandtab
 let g:polyglot_disabled = ['javascript', 'html', 'typescript']
 
 " Sleuth
-let g:sleuth_automatic = 0
+let g:sleuth_automatic = 1
 
 " Taboo
 let g:taboo_tab_format = ' %P%m '
