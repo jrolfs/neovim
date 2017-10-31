@@ -98,3 +98,21 @@ function! GetHighlightProperty(group, property) abort
 
   return l:value
 endfunction
+
+
+"
+" Helpers
+
+function! CommandToQuickFix(command)
+    let l:output = system(a:command)
+    let l:files = split(l:output, '\n')
+
+    let l:list = []
+
+    for l:file in l:files
+        let l:entry = { 'filename': l:file, 'lnum': 1 }
+        call add(l:list, l:entry)
+    endfor
+
+    call setqflist(l:list)
+endfunction
