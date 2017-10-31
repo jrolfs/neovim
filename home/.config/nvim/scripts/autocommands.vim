@@ -2,7 +2,7 @@
 " Syntax
 
 augroup syntax
-  autocmd! BufRead,BufNewFile .babelrc,.jshintrc,.eslintrc setlocal filetype=json
+  autocmd! BufRead,BufNewFile .babelrc,.jshintrc,.eslintrc* setlocal filetype=json
   autocmd! BufRead,BufNewFile *.boot setlocal filetype=clojure
   autocmd! BufRead,BufNewFile *.hst setlocal syntax=sh
   autocmd! BufRead,BufNewFile Dockerfile.* setlocal syntax=dockerfile
