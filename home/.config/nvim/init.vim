@@ -316,6 +316,22 @@ let g:deoplete#sources#ternjs#tern_bin = join(s:tern_command, ' ')
 let g:jsdoc_allow_input_prompt = 1
 let g:jsdoc_input_description = 1
 
+" FZF
+let g:fzf_colors = {
+  \ 'fg':      ['fg', 'Normal'],
+  \ 'hl':      ['fg', 'Todo'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'Normal', 'Normal'],
+  \ 'hl+':     ['fg', 'Special'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Include'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment']
+  \ }
+
 " ALE
 let g:ale_sign_error = "\uF057"
 let g:ale_sign_warning = "\uF056"
