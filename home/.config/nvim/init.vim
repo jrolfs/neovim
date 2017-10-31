@@ -371,7 +371,7 @@ cnoreabbrev sS SaveSession
 cnoreabbrev cS CloseSession
 
 " Source configuration
-noremap <Leader>c :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
+noremap <silent> <Leader>c :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
 
 " Buffer path
 noremap <Leader>p :let @+ = expand("%")<CR>
