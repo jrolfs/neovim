@@ -337,6 +337,10 @@ let g:ale_sign_error = "\uF057"
 let g:ale_sign_warning = "\uF056"
 let g:ale_completion_enabled = 1
 
+let g:ale_linters = {
+  \ 'javascript': ['eslint', 'flow']
+  \ }
+
 let g:ale_fixers = {
   \ 'javascript': ['prettier_eslint'],
   \ 'typescript': ['prettier']
