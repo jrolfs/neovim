@@ -22,7 +22,7 @@ Plug 'jrolfs/oceanic-next', { 'branch': 'fix-tabs' }
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf' }
 Plug 'junegunn/fzf.vim'
-Plug 'gcmt/taboo.vim'
+Plug 'jrolfs/taboo.vim', { 'branch': 'unicode-tab-numbers' }
 Plug 'vim-airline/vim-airline'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
