@@ -206,50 +206,33 @@ set noshowmode
 
 let g:airline_theme = 'oceanicnext'
 
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-
-if g:gui_oni
-  let g:airline_extensions = ['ale']
-else
-  let g:airline_extensions = ['branch', 'ale']
-endif
-
-
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = '☰'
-let g:airline_symbols.maxlinenr = ''
-
-
-let g:airline_section_c = '%<%f%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'
-
-let g:airline_section_x = ''
-let g:airline_section_y = ''
+let g:airline_extensions = ['ale'] + (g:gui_oni ? [] : ['branch'])
+let g:airline_powerline_fonts = 1
 
 let airline#extensions#ale#error_symbol = "\uF057 "
 let airline#extensions#ale#warning_symbol = "\uF056 "
 
-if !g:gui_oni
-  let g:airline_mode_map = {
-    \ '__' : '-',
-    \ 'n'  : 'N',
-    \ 'i'  : 'I',
-    \ 'R'  : 'R',
-    \ 'c'  : 'C',
-    \ 'v'  : 'V',
-    \ 'V'  : 'V',
-    \ '' : 'V',
-    \ 's'  : 'S',
-    \ 'S'  : 'S',
-    \ '' : 'S',
-    \ }
-endif
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+
+let g:webdevicons_enable_airline_statusline = 0
+let g:airline_section_x = '%{WebDevIconsGetFileTypeSymbol()}% '
+let g:airline_section_y = '%{WebDevIconsGetFileFormatSymbol()}% '
+let g:airline_section_z = '⇅%3p%%%  ⇥%3v'
+
+let g:airline_mode_map = {
+  \ '__' : '-',
+  \ 'n'  : 'N',
+  \ 'i'  : 'I',
+  \ 'R'  : 'R',
+  \ 'c'  : 'C',
+  \ 'v'  : 'V',
+  \ 'V'  : 'V',
+  \ '' : 'V',
+  \ 's'  : 'S',
+  \ 'S'  : 'S',
+  \ '' : 'S',
+  \ }
 
 let g:airline#extensions#default#section_truncate_width = {
   \ 'a': 30,
