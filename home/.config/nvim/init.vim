@@ -112,14 +112,14 @@ call plug#end()
 let g:mapleader = ','
 
 " Syntax
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+
 set termguicolors
 syntax enable
 set background=dark
 colorscheme OceanicNext
 filetype plugin on
-
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
 
 " Interface
 set fillchars+=vert:│
