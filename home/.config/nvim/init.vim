@@ -222,7 +222,7 @@ let g:airline_right_alt_sep = ''
 let g:webdevicons_enable_airline_statusline = 0
 let g:airline_section_x = '%{WebDevIconsGetFileTypeSymbol()}% '
 let g:airline_section_y = '%{WebDevIconsGetFileFormatSymbol()}% '
-let g:airline_section_z = '⇅%3p%%%  ⇥%3v'
+let g:airline_section_z = '⇅ %3p%%%  ⇥ %3v'
 
 let g:airline_mode_map = {
   \ '__' : '-',
