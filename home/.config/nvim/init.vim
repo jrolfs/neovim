@@ -170,10 +170,14 @@ set number relativenumber
 
 " Buffers
 set hidden
-"
+
 " Ruler
 set colorcolumn=120
 set nowrap
+
+" Omnifunc
+inoremap <C-Space> <C-x><C-o>
+imap <C-@> <C-Space>
 
 " Session
 set sessionoptions+=tabpages,globals
