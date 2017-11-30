@@ -85,7 +85,6 @@ Plug 'junegunn/vim-easy-align'
 
 " Motion
 Plug 'terryma/vim-multiple-cursors'
-Plug 'bkad/CamelCaseMotion'
 Plug 'tpope/vim-repeat'
 
 " Tags
@@ -487,10 +486,6 @@ nnoremap <silent> <Leader>ss :call neoterm#open()<CR><ESC>
 nnoremap <silent> <Leader>sc :call neoterm#clear()<CR>
 nnoremap <silent> <Leader>sk :call neoterm#kill()<CR>
 
-" CamelCaseMotion
-noremap <D-C-w> <Plug>CamelCaseMotion_w
-noremap <D-C-b> <Plug>CamelCaseMotion_b
-noremap <D-C-e> <Plug>CamelCaseMotion_e
 
 " EasyAlign
 xmap ga <Plug>(EasyAlign)
