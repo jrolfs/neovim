@@ -25,7 +25,7 @@ augroup END
 " Redraw
 
 augroup lazyredraw
-  autocmd! CursorMoved,CursorMovedI,InsertEnter *.rb,*.jade set lazyredraw
+  autocmd! CursorMoved,CursorMovedI,InsertEnter *.rb,*.jade,*.ts set lazyredraw
   autocmd! FocusLost * set nolazyredraw
 augroup END
 
