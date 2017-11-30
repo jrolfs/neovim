@@ -64,6 +64,7 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 
 " Files
+Plug 'Shougo/denite.nvim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/tabpagebuffer.vim'
 Plug 'Shougo/vimfiler.vim'
