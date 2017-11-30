@@ -283,9 +283,6 @@ let g:tmuxline_preset = {
   \   'z'    : '#H'
   \ }
 
-" CoffeeScript
-let g:coffee_lint_options = '-f ~/coffeelint.json'
-
 " Vimfiler
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_ignore_pattern = ['^\.git$', '^\.DS_Store$']
