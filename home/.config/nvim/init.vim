@@ -508,8 +508,8 @@ noremap <F8> :TagbarToggle<CR>
 noremap <silent> <Leader>r :call NumberToggle()<CR>
 
 " vim-test
-nnoremap <silent> <Leader>t :TestNearest<CR>
-nnoremap <silent> <Leader>T :TestFile<CR>
-nnoremap <silent> <Leader>a :TestSuite<CR>
-nnoremap <silent> <Leader>l :TestLast<CR>
-nnoremap <silent> <Leader>g :TestVisit<CR>
+nnoremap <silent> <Leader>t :TestNearest<CR> :call neoterm#open()<CR><ESC>
+nnoremap <silent> <Leader>T :TestFile<CR> :call neoterm#open()<CR><ESC>
+nnoremap <silent> <Leader>a :TestSuite<CR> :call neoterm#open()<CR><ESC>
+nnoremap <silent> <Leader>l :TestLast<CR> :call neoterm#open()<CR><ESC>
+nnoremap <silent> <Leader>g :TestVisit<CR> :call neoterm#open()<CR><ESC>
