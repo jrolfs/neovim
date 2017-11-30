@@ -361,6 +361,9 @@ let g:ale_sign_error = "\uF057"
 let g:ale_sign_warning = "\uF056"
 let g:ale_completion_enabled = 1
 
+let g:ale_javascript_prettier_eslint_options = '--log-level=debug --tab-width=4'
+let g:ale_history_log_output = 1
+
 let g:ale_linters = {
   \ 'javascript': ['eslint', 'flow']
   \ }
