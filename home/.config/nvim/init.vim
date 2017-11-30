@@ -188,6 +188,29 @@ let g:session_autosave = 'yes'
 let g:session_autosave_periodic = 1
 let g:session_autosave_silent = 1
 
+" Denite
+call denite#custom#option('_', {
+  \ 'prompt': 'λ:',
+  \ 'empty': 0,
+  \ 'winheight': 16,
+  \ 'source_names': 'short',
+  \ 'vertical_preview': 1,
+  \ 'auto-accel': 1,
+  \ 'auto-resume': 1,
+  \ })
+
+call denite#custom#var('grep', 'command', ['rg'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+call denite#custom#var('grep', 'separator', ['--'])
+call denite#custom#var('grep', 'final_opts', [])
+call denite#custom#var('grep', 'default_opts', [
+  \ '--hidden',
+  \ '--vimgrep',
+  \ '--no-heading',
+  \ '-S'
+  \ ])
+
 " Grepper
 let g:grepper = {
   \   'tools': ['git', 'ag', 'vimgrep'],
@@ -386,6 +409,12 @@ noremap <Leader>h :tcd %:p:h<CR>
 " Tern
 nnoremap <D-]> :TernDef<CR>
 
+" Denite
+nnoremap <Leader>p :<C-u>Denite file_rec<CR>
+nnoremap <Leader>f :<C-u>Denite grep:. -mode=normal<CR>
+nnoremap <Leader>s :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
+nnoremap <Leader>d :<C-u>Denite -resume<CR>
+
 " Unite
 nnoremap <Leader>b :Unite buffer_tab<CR>
 nnoremap <Leader>B :Unite buffer<CR>
@@ -404,7 +433,6 @@ noremap <F1> :VimFilerExplorer -project -winwidth=50<CR>
 noremap <D-F1> :VimFilerExplorer -find -winwidth=50<CR>
 noremap <F2> :VimFilerBuffer<CR>
 noremap <D-F2> :VimFiler<CR>
-noremap <Leader>f :VimFiler<CR>
 
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
