@@ -173,7 +173,7 @@ set number relativenumber
 set hidden
 
 " Ruler
-set colorcolumn=120
+set colorcolumn=100
 set nowrap
 
 " Omnifunc
