@@ -399,6 +399,18 @@ cnoreabbrev cS CloseSession
 " Source configuration
 noremap <silent> <Leader>c :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
 
+" Navigation
+nnoremap ]q :cnext<cr>zz
+nnoremap [q :cprev<cr>zz
+nnoremap ]l :lnext<cr>zz
+nnoremap [l :lprev<cr>zz
+
+nnoremap ]b :bnext<cr>
+nnoremap [b :bprev<cr>
+
+noremap <Leader>. :tabnext<CR>
+noremap <Leader>m :tabprevious<CR>
+
 " Buffer path
 noremap <Leader>p :let @+ = expand("%")<CR>
 noremap <Leader>h :tcd %:p:h<CR>
@@ -442,12 +454,6 @@ map - <Plug>(choosewin)
 
 " Search
 noremap <silent> <Leader>/ :noh<CR>
-
-" Tabs
-noremap <D-k> :tabnext<CR>
-noremap <D-j> :tabprevious<CR>
-noremap <Leader>. :tabnext<CR>
-noremap <Leader>m :tabprevious<CR>
 
 " Taboo
 noremap <Leader>tr :TabooRename
