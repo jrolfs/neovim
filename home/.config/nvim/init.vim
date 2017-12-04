@@ -42,7 +42,6 @@ Plug 'wokalski/autocomplete-flow'
 Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
 Plug 'neovim/node-host', { 'do': 'npm install' }
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }
-Plug 'mhartington/nvim-typescript', ConditionalPlug(!g:gui)
 
 " Tools
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
