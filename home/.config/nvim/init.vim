@@ -362,13 +362,14 @@ let g:ale_sign_warning = "\uF056"
 let g:ale_completion_enabled = 1
 
 let g:ale_linters = {
-  \ 'javascript': ['eslint', 'flow']
+  \   'javascript': [ 'eslint', 'flow'],
+  \   'typescript': ['tslint', 'tsserver']
   \ }
 
 let g:ale_fixers = {
-  \ 'javascript': ['prettier_eslint'],
-  \ 'typescript': ['prettier'],
-  \ 'json': ['prettier']
+  \   'javascript': ['prettier_eslint'],
+  \   'typescript': ['prettier'],
+  \   'json': ['prettier']
   \ }
 
 " vim-test
