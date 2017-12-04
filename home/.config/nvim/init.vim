@@ -401,6 +401,7 @@ noremap <silent> <Leader>c :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
 " Navigation
 nnoremap ]q :cnext<cr>zz
 nnoremap [q :cprev<cr>zz
+
 nnoremap ]l :lnext<cr>zz
 nnoremap [l :lprev<cr>zz
 
