@@ -418,10 +418,10 @@ noremap <Leader>h :tcd %:p:h<CR>
 nnoremap <D-]> :TernDef<CR>
 
 " Denite
-nnoremap <Leader>p :<C-u>Denite file_rec<CR>
-nnoremap <Leader>f :<C-u>Denite grep:. -mode=normal<CR>
-nnoremap <Leader>s :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
-nnoremap <Leader>d :<C-u>Denite -resume<CR>
+nnoremap <Leader>dp :<C-u>Denite file_rec<CR>
+nnoremap <Leader>df :<C-u>Denite grep:. -mode=normal<CR>
+nnoremap <Leader>ds :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
+nnoremap <Leader>dr :<C-u>Denite -resume<CR>
 
 " Unite
 nnoremap <Leader>b :Unite buffer_tab<CR>
