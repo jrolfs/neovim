@@ -489,7 +489,6 @@ nnoremap <silent> <Leader>ss :call neoterm#open()<CR><ESC>
 nnoremap <silent> <Leader>sc :call neoterm#clear()<CR>
 nnoremap <silent> <Leader>sk :call neoterm#kill()<CR>
 
-
 " EasyAlign
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
