@@ -459,8 +459,8 @@ noremap <silent> <Leader>/ :noh<CR>
 noremap <Leader>tr :TabooRename
 
 " Grepper
-nnoremap <Leader>git :Grepper -tool git -noswitch<CR>
-nnoremap <Leader>ag  :Grepper -tool ag  -grepprg ag --vimgrep<CR>
+nnoremap <F3>git :Grepper -tool git -noswitch<CR>
+nnoremap <F4> :Grepper -tool ag  -grepprg ag --vimgrep<CR>
 
 nmap gs <Plug>(GrepperOperator)
 xmap gs <Plug>(GrepperOperator)
