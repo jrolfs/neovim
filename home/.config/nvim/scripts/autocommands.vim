@@ -36,3 +36,12 @@ augroup END
 augroup terminal_insert
   autocmd! BufEnter * if &buftype == 'terminal' | :startinsert | endif
 augroup END
+
+
+"
+" Deoplete
+
+augroup deoplete
+  autocmd! BufEnter *.ts call deoplete#disable()
+  autocmd! BufLeave *.ts call deoplete#enable()
+augroup END
