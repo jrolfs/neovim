@@ -286,6 +286,8 @@ let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_ignore_pattern = ['^\.git$', '^\.DS_Store$']
 
 " Pandoc
+let g:pandoc#modules#disabled = ['chdir', 'folding']
+
 let g:pandoc#syntax#codeblocks#embeds#langs = [
   \   "javascript",
   \   "json=javascript",
