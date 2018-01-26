@@ -516,9 +516,6 @@ nmap <Leader>js <Plug>(jsdoc)
 " Tags
 noremap <F8> :TagbarToggle<CR>
 
-" Relative numbers
-noremap <silent> <Leader>r :call NumberToggle()<CR>
-
 " vim-test
 nnoremap <silent> <Leader>t :TestNearest<CR> :call neoterm#open()<CR><ESC>
 nnoremap <silent> <Leader>T :TestFile<CR> :call neoterm#open()<CR><ESC>
