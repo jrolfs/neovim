@@ -467,8 +467,8 @@ noremap <Leader>tr :TabooRename
 nnoremap <F6> :MaximizerToggle<CR>
 
 " Grepper
-noremap <F3> :Grepper -tool git -noswitch<CR>
-nnoremap <F4> :Grepper -tool ag  -grepprg ag --vimgrep<CR>
+noremap <Leader>fg :Grepper -tool git -noswitch<CR>
+nnoremap <Leader>fa :Grepper -tool ag -grepprg ag --vimgrep<CR>
 
 nmap gs <Plug>(GrepperOperator)
 xmap gs <Plug>(GrepperOperator)
