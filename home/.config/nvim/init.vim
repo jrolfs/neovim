@@ -31,6 +31,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'szw/vim-maximizer'
 Plug 'wellle/targets.vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'romainl/vim-qf'
 
 " Completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
