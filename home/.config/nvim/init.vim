@@ -33,6 +33,7 @@ Plug 'romainl/vim-qf'
 Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
 
 " Completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
