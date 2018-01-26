@@ -20,8 +20,6 @@ call plug#begin('~/.vim/plugged')
 " Interface
 Plug 'jrolfs/oceanic-next', { 'branch': 'fix-tabs' }
 Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf' }
-Plug 'junegunn/fzf.vim'
 Plug 'jrolfs/taboo.vim', { 'branch': 'unicode-tab-numbers' }
 Plug 'vim-airline/vim-airline'
 Plug 'xolox/vim-misc'
@@ -32,6 +30,9 @@ Plug 'szw/vim-maximizer'
 Plug 'wellle/targets.vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'romainl/vim-qf'
+Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf' }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/limelight.vim'
 
 " Completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
