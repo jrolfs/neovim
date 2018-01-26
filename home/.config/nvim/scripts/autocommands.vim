@@ -8,10 +8,6 @@ augroup syntax
   autocmd! BufRead,BufNewFile Dockerfile.* setlocal syntax=dockerfile
 augroup END
 
-augroup ALESignHighlightGroup
-   autocmd! VimEnter,ColorScheme * call UpdateHighlights()
-augroup END
-
 augroup vimtest
   autocmd! DirChanged * call ToggleTestStrategies()
 augroup END

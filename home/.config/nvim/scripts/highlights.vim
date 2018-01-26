@@ -44,7 +44,6 @@ function! SetOniSignHighlight() abort
   execute 'highlight! VertSplit ' . s:AssignFg(l:bg) . ' ' . s:AssignBg(l:bg)
 endfunction
 
-function! UpdateHighlights() abort
-  call s:SetALEHighlights()
+function! UpdateHighlights()
   call s:SetChooseWinHighlights()
 endfunction

@@ -34,6 +34,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
+Plug '~/Development/Sources/seoul256.vim'
 
 " Completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -120,11 +121,11 @@ let g:oceanic_next_terminal_italic = 1
 set termguicolors
 syntax enable
 set background=dark
-colorscheme OceanicNext
+colorscheme seoul256
 filetype plugin on
 
 " Interface
-set fillchars+=vert:│
+set fillchars+=vert: 
 
 " Undo
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
@@ -232,8 +233,6 @@ let g:tagbar_autofocus = 1
 
 " Airline
 set noshowmode
-
-let g:airline_theme = 'oceanicnext'
 
 let g:airline_extensions = ['ale'] + (g:gui_oni ? [] : ['branch'])
 let g:airline_powerline_fonts = 1
