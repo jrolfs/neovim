@@ -479,6 +479,10 @@ nnoremap <C-k> <C-W><C-k>
 nnoremap <C-l> <C-W><C-l>
 nnoremap <C-h> <C-W><C-h>
 
+" Quickfix
+
+nnoremap <Leader>qq :ccl<CR>
+
 " Terminal
 tnoremap <Leader><ESC> <C-\><C-n>
 tnoremap <D-l> clear<CR>
