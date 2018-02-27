@@ -517,8 +517,8 @@ nmap <Leader>js <Plug>(jsdoc)
 noremap <F8> :TagbarToggle<CR>
 
 " vim-test
-nnoremap <silent> <Leader>t :TestNearest<CR> :call neoterm#open()<CR><ESC>
-nnoremap <silent> <Leader>T :TestFile<CR> :call neoterm#open()<CR><ESC>
-nnoremap <silent> <Leader>a :TestSuite<CR> :call neoterm#open()<CR><ESC>
-nnoremap <silent> <Leader>l :TestLast<CR> :call neoterm#open()<CR><ESC>
-nnoremap <silent> <Leader>g :TestVisit<CR> :call neoterm#open()<CR><ESC>
+nnoremap <silent> <Leader>tt :TestNearest<CR> :call neoterm#open()<CR><ESC>
+nnoremap <silent> <Leader>tT :TestFile<CR> :call neoterm#open()<CR><ESC>
+nnoremap <silent> <Leader>ta :TestSuite<CR> :call neoterm#open()<CR><ESC>
+nnoremap <silent> <Leader>tl :TestLast<CR> :call neoterm#open()<CR><ESC>
+nnoremap <silent> <Leader>tg :TestVisit<CR> :call neoterm#open()<CR><ESC>
