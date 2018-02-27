@@ -441,6 +441,7 @@ nmap <Leader>ap <Plug>(ale_previous)
 nmap <Leader>an <Plug>(ale_next)
 nmap <Leader>ag :ALEGoToDefinition<CR>
 nmap <Leader>aG :ALEGoToDefinitionInTab<CR>
+nmap <Leader>ad :ALEDetail<CR>
 
 " VimFiler
 noremap <F1> :VimFilerExplorer -project -winwidth=50<CR>
