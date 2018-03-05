@@ -214,10 +214,9 @@ call denite#custom#var('grep', 'default_opts', [
 
 " Grepper
 let g:grepper = {
-  \   'tools': ['git', 'ag', 'vimgrep'],
-  \   'ag': {
-  \     'grepprg': '/run/current-system/sw/bin/ag'
-  \   }
+  \   'tools': ['rg', 'ag', 'git'],
+  \   'ag': { 'grepprg': '/run/current-system/sw/bin/ag' },
+  \   'rg': { 'grepprg': '/run/current-system/sw/bin/rg' }
   \ }
 
 " Python
@@ -470,6 +469,7 @@ nnoremap <F6> :MaximizerToggle<CR>
 " Grepper
 noremap <Leader>fg :Grepper -tool git -noswitch<CR>
 nnoremap <Leader>fa :Grepper -tool ag -grepprg ag --vimgrep<CR>
+nnoremap <Leader>fr :Grepper -tool rg -grepprg rg<CR>
 
 nmap gs <Plug>(GrepperOperator)
 xmap gs <Plug>(GrepperOperator)
