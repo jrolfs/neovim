@@ -123,6 +123,8 @@ colorscheme seoul256
 
 " Interface
 set fillchars+=vert: 
+set winminwidth=0
+set winminheight=0
 
 " Undo
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
