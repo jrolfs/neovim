@@ -18,7 +18,6 @@ runtime scripts/test.vim
 call plug#begin('~/.vim/plugged')
 
 " Interface
-Plug 'jrolfs/oceanic-next', { 'branch': 'fix-tabs' }
 Plug 'airblade/vim-gitgutter'
 Plug 'jrolfs/taboo.vim', { 'branch': 'unicode-tab-numbers' }
 Plug 'vim-airline/vim-airline'
@@ -114,14 +113,13 @@ call plug#end()
 let g:mapleader = ','
 
 " Syntax
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
-
 set termguicolors
-syntax enable
 set background=dark
-colorscheme seoul256
+
+syntax enable
 filetype plugin on
+
+colorscheme seoul256
 
 " Interface
 set fillchars+=vert: 
