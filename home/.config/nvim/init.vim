@@ -136,7 +136,7 @@ set smartindent
 set expandtab
 
 " Polyglot
-let g:polyglot_disabled = ['javascript', 'html', 'typescript']
+let g:polyglot_disabled = ['javascript', 'jsx', 'html', 'typescript']
 
 " Sleuth
 let g:sleuth_automatic = 1
