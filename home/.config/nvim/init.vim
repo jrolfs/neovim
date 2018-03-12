@@ -466,6 +466,9 @@ noremap <Leader>tr :TabooRename
 " Maximixer
 nnoremap <F6> :MaximizerToggle<CR>
 
+" Find/Replace
+nnoremap <Leader>rp :%s/"//g<Left><Left>
+
 " Grepper
 noremap <Leader>fg :Grepper -tool git -noswitch<CR>
 nnoremap <Leader>fa :Grepper -tool ag -grepprg ag --vimgrep<CR>
