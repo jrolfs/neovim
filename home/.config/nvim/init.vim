@@ -89,13 +89,11 @@ Plug 'junegunn/vim-easy-align'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-repeat'
 
-" Tags
-Plug 'majutsushi/tagbar'
-
 " Syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'othree/html5.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'jrolfs/vim-github-hub', { 'branch': 'support-commit' }
