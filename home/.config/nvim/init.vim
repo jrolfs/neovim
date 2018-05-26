@@ -431,7 +431,7 @@ nnoremap <Leader>ds :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
 nnoremap <Leader>dr :<C-u>Denite -resume<CR>
 
 " Unite
-nnoremap <Leader>b :Unite buffer_tab<CR>
+nnoremap <Leader>b :<C-u>Denite buffer_tab -mode=normal<CR>
 nnoremap <Leader>B :Unite buffer<CR>
 
 " FZF
