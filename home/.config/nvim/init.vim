@@ -88,6 +88,7 @@ Plug 'junegunn/vim-easy-align'
 " Motion
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-repeat'
+Plug 'easymotion/vim-easymotion'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
