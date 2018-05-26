@@ -102,6 +102,7 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'chrisbra/Colorizer'
 Plug 'styled-components/vim-styled-components'
+Plug 'jparise/vim-graphql'
 
 call plug#end()
 
