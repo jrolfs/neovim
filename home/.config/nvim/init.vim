@@ -369,7 +369,10 @@ let g:ale_linters = {
 let g:ale_fixers = {
   \   'javascript': ['prettier_eslint'],
   \   'typescript': ['prettier'],
-  \   'json': ['prettier']
+  \   'json': ['prettier'],
+  \   'scss': ['prettier'],
+  \   'xhtml': ['html-tidy'],
+  \   'html': ['html-tidy']
   \ }
 
 " vim-test
