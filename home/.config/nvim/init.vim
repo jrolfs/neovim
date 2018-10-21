@@ -8,8 +8,13 @@ runtime scripts/utilities.vim
 runtime scripts/highlights.vim
 runtime scripts/autocommands.vim
 runtime scripts/autocomplete.vim
-runtime scripts/ui.vim
 runtime scripts/test.vim
+
+if g:gui_oni
+  runtime scripts/ui-oni.vim
+else
+  runtime scripts/ui.vim
+end
 
 
 "
@@ -35,10 +40,12 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug '~/Development/Sources/seoul256.vim'
+Plug '~/Development/Sources/oceanic-next'
 Plug 'chrisbra/Recover.vim'
 
 " Completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 
 " Tools
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
@@ -61,7 +68,7 @@ Plug 'mattn/gist-vim'
 Plug 'janko-m/vim-test'
 Plug 'w0rp/ale'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'heavenshell/vim-jsdoc', { 'for': 'javascript' }
+Plug 'heavenshell/vim-jsdoc'
 Plug 'hkupty/iron.nvim'
 Plug 'kassio/neoterm'
 Plug 'Shougo/neosnippet'
@@ -112,7 +119,7 @@ call plug#end()
 " Settings
 
 " Leader
-let g:mapleader = ','
+let g:mapleader = ' '
 
 " Syntax
 set termguicolors
@@ -122,11 +129,13 @@ syntax enable
 filetype plugin on
 
 colorscheme seoul256
+let g:seoul256_srgb = 1
 
 " Interface
-set fillchars+=vert: 
+set fillchars+=vert:⎸
 set winminwidth=0
 set winminheight=0
+set updatetime=100
 
 " Undo
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
@@ -176,7 +185,7 @@ set number relativenumber
 set hidden
 
 " Ruler
-set colorcolumn=100
+set colorcolumn=0
 set nowrap
 
 " Omnifunc
@@ -213,6 +222,12 @@ call denite#custom#var('grep', 'default_opts', [
   \ '--no-heading',
   \ '-S'
   \ ])
+call denite#custom#source(
+  \ 'buffer',
+  \ 'matchers', [
+  \   'matcher/fuzzy',
+  \   'matcher/project_files'
+  \ ])
 
 " Grepper
 let g:grepper = {
@@ -240,12 +255,14 @@ let g:airline_powerline_fonts = 1
 let airline#extensions#ale#error_symbol = "\uF057 "
 let airline#extensions#ale#warning_symbol = "\uF056 "
 
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 
 let g:webdevicons_enable_airline_statusline = 0
-let g:airline_section_x = '%{WebDevIconsGetFileTypeSymbol()}% '
-let g:airline_section_y = '%{WebDevIconsGetFileFormatSymbol()}% '
+let g:airline_section_x = '%{WebDevIconsGetFileTypeSymbol()}%  '
+let g:airline_section_y = '%{WebDevIconsGetFileFormatSymbol()}%  '
 let g:airline_section_z = '⇅ %3p%%%  ⇥ %3v'
 
 let g:airline_mode_map = {
@@ -360,8 +377,8 @@ let g:fzf_colors = {
   \ }
 
 " ALE
-let g:ale_sign_error = "\uF057"
-let g:ale_sign_warning = "\uF056"
+let g:ale_sign_error = "\u2301"
+let g:ale_sign_warning = "\u2139"
 let g:ale_completion_enabled = 1
 
 let g:ale_linters = {
@@ -415,8 +432,8 @@ nnoremap [l :lprev<cr>zz
 nnoremap ]b :bnext<cr>
 nnoremap [b :bprev<cr>
 
-noremap <Leader>. :tabnext<CR>
-noremap <Leader>m :tabprevious<CR>
+noremap ]w :tabnext<CR>
+noremap [w :tabprevious<CR>
 
 " Buffer path
 noremap <Leader>p :let @+ = expand("%")<CR>
@@ -432,7 +449,7 @@ nnoremap <Leader>ds :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
 nnoremap <Leader>dr :<C-u>Denite -resume<CR>
 
 " Unite
-nnoremap <Leader>b :<C-u>Denite buffer_tab -mode=normal<CR>
+nnoremap <Leader>b :Unite buffer<CR>
 nnoremap <Leader>B :Unite buffer<CR>
 
 " FZF
@@ -443,21 +460,23 @@ nmap <Leader>al <Plug>(ale_lint)
 nmap <Leader>af <Plug>(ale_fix)
 nmap <Leader>ap <Plug>(ale_previous)
 nmap <Leader>an <Plug>(ale_next)
-nmap <Leader>ag :ALEGoToDefinition<CR>
-nmap <Leader>aG :ALEGoToDefinitionInTab<CR>
+nmap <Leader>agg :ALEGoToDefinition<CR>
+nmap <Leader>agt :ALEGoToDefinitionInTab<CR>
+nmap <Leader>ags :sp<CR>:ALEGoToDefinition<CR>
+nmap <Leader>agv :vs<CR>:ALEGoToDefinition<CR>
 nmap <Leader>ad :ALEDetail<CR>
 
 " VimFiler
-noremap <F1> :VimFilerExplorer -project -winwidth=50<CR>
-noremap <D-F1> :VimFilerExplorer -find -winwidth=50<CR>
-noremap <F2> :VimFilerBuffer<CR>
-noremap <D-F2> :VimFiler<CR>
+noremap <Leader>le :VimFilerExplorer -project -winwidth=50<CR>
+noremap <Leader>lE :VimFilerExplorer -find -winwidth=50<CR>
+noremap <Leader>ls :VimFilerBuffer<CR>
+noremap <Leader>lS :VimFiler<CR>
 
 " Gundo
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <Leader>z :GundoToggle<CR>
 
 " GitGutter
-nnoremap <Leader>gg :GitGutter<CR>
+nnoremap <Leader>GG :GitGutter<CR>
 
 " Choosewin
 map - <Plug>(choosewin)
@@ -475,9 +494,9 @@ nnoremap <F6> :MaximizerToggle<CR>
 nnoremap <Leader>rp :%s/"//g<Left><Left>
 
 " Grepper
-noremap <Leader>fg :Grepper -tool git -noswitch<CR>
-nnoremap <Leader>fa :Grepper -tool ag -grepprg ag --vimgrep<CR>
-nnoremap <Leader>fr :Grepper -tool rg -grepprg rg<CR>
+noremap <Leader>gg :Grepper -tool git -noswitch<CR>
+nnoremap <Leader>ga :Grepper -tool ag -grepprg ag --vimgrep<CR>
+nnoremap <Leader>gr :Grepper -tool rg -grepprg rg<CR>
 
 nmap gs <Plug>(GrepperOperator)
 xmap gs <Plug>(GrepperOperator)
@@ -496,28 +515,33 @@ nnoremap <Leader>qq :ccl<CR>
 tnoremap <Leader><ESC> <C-\><C-n>
 tnoremap <D-l> clear<CR>
 
-tmap <C-h> <Leader><ESC><C-h>
-tmap <C-j> <Leader><ESC><C-j>
-tmap <C-k> <Leader><ESC><C-k>
-tmap <C-l> <Leader><ESC><C-l>
+tmap <C-w> <Leader><ESC><C-w>
+
+" tmap <C-h> <Leader><ESC><C-h>
+" tmap <C-j> <Leader><ESC><C-j>
+" tmap <C-k> <Leader><ESC><C-k>
+" tmap <C-l> <Leader><ESC><C-l>
 
 " Neoterm
-nnoremap <silent> <Leader>z :call neoterm#toggle()<CR><ESC>
-nnoremap <silent> <Leader>sx :call neoterm#close()<CR>
-nnoremap <silent> <Leader>ss :call neoterm#open()<CR><ESC>
-nnoremap <silent> <Leader>sc :call neoterm#clear()<CR>
-nnoremap <silent> <Leader>sk :call neoterm#kill()<CR>
+nmap <silent> <Leader>ntt :Ttoggle<CR><ESC>
+nmap <silent> <Leader>ntx :Tclose<CR>
+nmap <silent> <Leader>nto :Topen<CR><ESC>
+nmap <silent> <Leader>ntc :Tclear<CR>
+nmap <silent> <Leader>ntk :Tkill<CR>
 
 " EasyAlign
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
+" EasyMotion
+map <Leader> <Plug>(easymotion-prefix)
+
 " Location list
-nnoremap <Leader><Space>o :lopen<CR>
-nnoremap <Leader><Space>c :lclose<CR>
-nnoremap <Leader><Space>, :ll<CR>
-nnoremap <Leader><Space>n :lnext<CR>
-nnoremap <Leader><Space>p :lprev<CR>
+nnoremap <Leader>lo :lopen<CR>
+nnoremap <Leader>lc :lclose<CR>
+nnoremap <Leader>l, :ll<CR>
+nnoremap <Leader>ln :lnext<CR>
+nnoremap <Leader>lp :lprev<CR>
 
 " JSDoc
 nmap <Leader>js <Plug>(jsdoc)
@@ -526,8 +550,9 @@ nmap <Leader>js <Plug>(jsdoc)
 noremap <F8> :TagbarToggle<CR>
 
 " vim-test
-nnoremap <silent> <Leader>tt :TestNearest<CR> :call neoterm#open()<CR><ESC>
-nnoremap <silent> <Leader>tT :TestFile<CR> :call neoterm#open()<CR><ESC>
-nnoremap <silent> <Leader>ta :TestSuite<CR> :call neoterm#open()<CR><ESC>
-nnoremap <silent> <Leader>tl :TestLast<CR> :call neoterm#open()<CR><ESC>
-nnoremap <silent> <Leader>tg :TestVisit<CR> :call neoterm#open()<CR><ESC>
+nnoremap <silent> <Leader>tt :TestNearest<CR>
+nnoremap <silent> <Leader>tT :TestFile<CR>
+nnoremap <silent> <Leader>ta :TestSuite<CR>
+nnoremap <silent> <Leader>tl :TestLast<CR>
+nnoremap <silent> <Leader>tg :TestVisit<CR>
+

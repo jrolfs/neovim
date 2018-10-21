@@ -1,13 +1,12 @@
-function! UpdateFlowBin() abort
-  let l:local_flow = finddir('node_modules', '.;') . '/.bin/flow'
+scriptencoding utf-8
 
-  if matchstr(l:local_flow, "^\/\\w") ==# ''
-    let l:local_flow = getcwd() . '/' . l:local_flow
-  endif
+"
+" Disable autocompletion for terryma/vim-multiple-cursors
 
-  if executable(l:local_flow)
-    let g:autocomplete_flow#flowbin = l:local_flow
-  else
-    let g:autocomplete_flow#flowbin = 'flow'
-  endif
+function! Multiple_cursors_before()
+    let b:deoplete_disable_auto_complete = 1
+endfunction
+
+function! Multiple_cursors_after()
+    let b:deoplete_disable_auto_complete = 0
 endfunction
