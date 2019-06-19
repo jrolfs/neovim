@@ -563,6 +563,3 @@ nnoremap <silent> <Leader>tT :TestFile<CR>
 nnoremap <silent> <Leader>ta :TestSuite<CR>
 nnoremap <silent> <Leader>tl :TestLast<CR>
 nnoremap <silent> <Leader>tg :TestVisit<CR>
-
-
-
