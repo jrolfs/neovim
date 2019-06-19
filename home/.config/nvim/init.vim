@@ -193,10 +193,6 @@ let g:signify_sign_show_text = 1
 let g:colorizer_auto_map = 1
 let g:colorizer_disable_bufleave = 1
 
-" Omnifunc
-inoremap <C-Space> <C-x><C-o>
-imap <C-@> <C-Space>
-
 let g:session_autoload = 'no'
 let g:session_autosave = 'yes'
 let g:session_autosave_periodic = 1
@@ -401,6 +397,10 @@ cnoreabbrev Tc tabc
 cnoreabbrev oS OpenSession
 cnoreabbrev sS SaveSession
 cnoreabbrev cS CloseSession
+
+" Omnifunc
+inoremap <C-Space> <C-x><C-o>
+imap <C-@> <C-Space>
 
 " Source configuration
 noremap <silent> <Leader>C :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
