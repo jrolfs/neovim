@@ -130,6 +130,7 @@ colorscheme seoul256
 let g:seoul256_srgb = 1
 
 " Interface
+set noshowmode
 set fillchars+=vert:⎸
 set winminwidth=0
 set winminheight=0
@@ -143,25 +144,7 @@ set undofile
 " Tab Size
 set smartindent
 set expandtab
-
-" Polyglot
-let g:polyglot_disabled = ['javascript', 'jsx', 'typescript']
-
-" Sleuth
-let g:sleuth_automatic = 1
-
-" Taboo
-let g:taboo_tab_format = ' %m %I%P  '
-let g:taboo_renamed_tab_format = '  %m%I%l  '
-let g:taboo_modified_tab_flag = '✎'
-
-" Signify
-let g:signify_sign_show_text = 1
-
-" Colorizer
-let g:colorizer_auto_map = 1
-let g:colorizer_disable_bufleave = 1
-
+"
 " List trailing
 set listchars=tab:\ \ ,trail:·
 set list
@@ -189,12 +172,30 @@ set hidden
 set colorcolumn=0
 set nowrap
 
+" Session
+set sessionoptions+=tabpages,globals
+
+" Polyglot
+let g:polyglot_disabled = ['javascript', 'jsx', 'typescript']
+
+" Sleuth
+let g:sleuth_automatic = 1
+
+" Taboo
+let g:taboo_tab_format = ' %m %I%P  '
+let g:taboo_renamed_tab_format = '  %m%I%l  '
+let g:taboo_modified_tab_flag = '✎'
+
+" Signify
+let g:signify_sign_show_text = 1
+
+" Colorizer
+let g:colorizer_auto_map = 1
+let g:colorizer_disable_bufleave = 1
+
 " Omnifunc
 inoremap <C-Space> <C-x><C-o>
 imap <C-@> <C-Space>
-
-" Session
-set sessionoptions+=tabpages,globals
 
 let g:session_autoload = 'no'
 let g:session_autosave = 'yes'
@@ -250,8 +251,6 @@ let g:JavaComplete_BaseDir = '~/.cache'
 let g:tagbar_autofocus = 1
 
 " Airline
-set noshowmode
-
 let g:airline_theme = 'seoul256'
 
 let g:airline_extensions = ['ale'] + (g:gui_oni ? [] : ['branch'])
