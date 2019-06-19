@@ -328,10 +328,6 @@ set wildignore+=*.png,*.jpg,*.gif
 " Neosnippet
 let g:neosnippet#enable_completed_snippet = 1
 
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-
 " JSX
 let g:jsx_ext_required = 0
 
@@ -562,3 +558,8 @@ nnoremap <silent> <Leader>tT :TestFile<CR>
 nnoremap <silent> <Leader>ta :TestSuite<CR>
 nnoremap <silent> <Leader>tl :TestLast<CR>
 nnoremap <silent> <Leader>tg :TestVisit<CR>
+
+" Neosnippet
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
