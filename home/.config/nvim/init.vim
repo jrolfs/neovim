@@ -380,7 +380,7 @@ let g:test#strategy = 'neoterm'
 
 
 "
-" Mappings
+" @section Mappings, mappings
 
 " Abbreviations
 cnoreabbrev Wq wq
