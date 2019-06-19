@@ -2,7 +2,7 @@
 " Syntax
 
 augroup syntax
-  autocmd! BufRead,BufNewFile .babelrc,.jshintrc,.eslintrc*,.nycrc, .prettierrc, setlocal filetype=json
+  autocmd! BufRead,BufNewFile .babelrc,.jshintrc,.eslintrc*,.nycrc setlocal filetype=json
   autocmd! BufRead,BufNewFile *.boot setlocal filetype=clojure
   autocmd! BufRead,BufNewFile *.hst setlocal syntax=sh
   autocmd! BufRead,BufNewFile Dockerfile.* setlocal syntax=dockerfile
@@ -18,15 +18,6 @@ augroup END
 
 augroup terminal_insert
   autocmd! BufEnter * if &buftype == 'terminal' | :startinsert | endif
-augroup END
-
-
-"
-" Deoplete
-
-augroup deoplete
-  autocmd! BufEnter *.ts call deoplete#disable()
-  autocmd! BufLeave *.ts call deoplete#enable()
 augroup END
 
 
