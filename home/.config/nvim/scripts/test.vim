@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 function! ToggleTestStrategies()
   let l:directory = expand('%:p')
   let l:mocha_options = 'test#javascript#mocha#options'

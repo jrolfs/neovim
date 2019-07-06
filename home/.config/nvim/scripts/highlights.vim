@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 function! s:SetChooseWinHighlights() abort
   execute 'highlight! link ChooseWinLabel airline_x'
   execute 'highlight! link ChooseWinLabelCurrent airline_y'

@@ -3,12 +3,12 @@ scriptencoding utf-8
 ""
 " @section External, external
 
-runtime scripts/environments.vim
 runtime scripts/utilities.vim
 runtime scripts/highlights.vim
 runtime scripts/autocommands.vim
 runtime scripts/autocomplete.vim
 runtime scripts/test.vim
+runtime scripts/ui.vim
 
 let s:xdg_data = $XDG_DATA_HOME
 let s:data = s:xdg_data . '/nvim/'
@@ -249,7 +249,7 @@ let g:tagbar_autofocus = 1
 " Airline
 let g:airline_theme = 'seoul256'
 
-let g:airline_extensions = ['ale'] + (g:gui_oni ? [] : ['branch'])
+let g:airline_extensions = ['ale', 'branch']
 let g:airline_powerline_fonts = 1
 
 let airline#extensions#ale#error_symbol = "\ubb"
