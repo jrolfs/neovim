@@ -366,7 +366,7 @@ let g:ale_linters = {
   \ }
 
 let g:ale_fixers = {
-  \   'javascript': ['prettier_eslint'],
+  \   'javascript': ['prettier'],
   \   'typescript': ['prettier'],
   \   'json': ['prettier'],
   \   'css': ['prettier'],
