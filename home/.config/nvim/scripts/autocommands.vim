@@ -14,12 +14,21 @@ augroup vimtest
   autocmd! DirChanged * call ToggleTestStrategies()
 augroup END
 
+function! s:terminal_insert()
+  if &buftype ==# 'terminal'
+    :startinsert
+    :CocDisable
+  else
+    :CocEnable
+  endif
+endfunction
+
 
 "
 " Terminal
 
 augroup terminal_insert
-  autocmd! BufEnter * if &buftype == 'terminal' | :startinsert | endif
+  autocmd! BufEnter * call <SID>terminal_insert()
 augroup END
 
 

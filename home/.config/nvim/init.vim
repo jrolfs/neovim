@@ -335,6 +335,19 @@ let g:jsdoc_input_description = 1
 
 " skim
 let $SKIM_DEFAULT_COMMAND = 'fd --ignore-case --hidden --type f --exclude "\.git"'
+let s:ripgrep_find_command = 'rg
+  \ --column
+  \ --line-number
+  \ --no-heading
+  \ --fixed-strings
+  \ --ignore-case
+  \ --no-ignore
+  \ --hidden
+  \ --follow
+  \ --glob "!.git/*"
+  \ --color "always"'
+
+command! -bang -nargs=* Find call fzf#vim#grep(s:ripgrep_find_command.shellescape(<q-args>), 1, <bang>0)
 
 let g:fzf_colors = {
   \ 'fg':      ['fg', 'Todo'],
@@ -417,6 +430,9 @@ nnoremap [b :bprev<cr>
 
 noremap ]w :tabnext<CR>
 noremap [w :tabprevious<CR>
+
+" Airline
+nnoremap <silent> <Leader>uh :call AirlineToggleShowHighlight()
 
 " Denite
 nnoremap <Leader>dp :<C-u>Denite file_rec<CR>
@@ -525,11 +541,11 @@ tmap <C-w> <C-e><C-w>
 " tmap <C-l> <Leader><ESC><C-l>
 
 " Neoterm
-nmap <silent> <Leader>ntt :Ttoggle<CR><ESC>
-nmap <silent> <Leader>ntx :Tclose<CR>
-nmap <silent> <Leader>nto :Topen<CR><ESC>
-nmap <silent> <Leader>ntc :Tclear<CR>
-nmap <silent> <Leader>ntk :Tkill<CR>
+nmap <silent> <Leader>nt :Ttoggle<CR><ESC>
+nmap <silent> <Leader>nx :Tclose<CR>
+nmap <silent> <Leader>no :Topen<CR><ESC>
+nmap <silent> <Leader>nc :Tclear<CR>
+nmap <silent> <Leader>nk :Tkill<CR>
 
 " EasyAlign
 xmap ga <Plug>(EasyAlign)
@@ -552,13 +568,14 @@ nmap <Leader>js <Plug>(jsdoc)
 noremap <F8> :TagbarToggle<CR>
 
 " vim-test
-nnoremap <silent> <Leader>tt :TestNearest<CR>
-nnoremap <silent> <Leader>tT :TestFile<CR>
-nnoremap <silent> <Leader>ta :TestSuite<CR>
-nnoremap <silent> <Leader>tl :TestLast<CR>
-nnoremap <silent> <Leader>tg :TestVisit<CR>
+nnoremap <silent> <Leader>st :TestNearest<CR>
+nnoremap <silent> <Leader>sT :TestFile<CR>
+nnoremap <silent> <Leader>sa :TestSuite<CR>
+nnoremap <silent> <Leader>sl :TestLast<CR>
+nnoremap <silent> <Leader>sg :TestVisit<CR>
 
 " Neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
+
