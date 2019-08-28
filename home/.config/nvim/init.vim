@@ -365,9 +365,7 @@ let g:ale_sign_error = "\uf057"
 let g:ale_sign_warning = "\uf071"
 let g:ale_completion_enabled = 0
 
-" COC
-let g:coc_status_error_sign = "\uf057"
-let g:coc_status_warning_sign = "\uf071"
+let g:ale_javascript_eslint_options = '--ext .js,.jsx,.ts,.tsx'
 
 let g:ale_linters = {
   \   'javascript': ['eslint', 'flow'],
