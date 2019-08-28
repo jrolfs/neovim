@@ -363,7 +363,7 @@ let g:fzf_colors = {
 " ALE
 let g:ale_sign_error = "\uf057"
 let g:ale_sign_warning = "\uf071"
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
 
 " COC
 let g:coc_status_error_sign = "\uf057"
