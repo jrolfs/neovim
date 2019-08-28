@@ -368,8 +368,8 @@ let g:ale_completion_enabled = 0
 let g:ale_javascript_eslint_options = '--ext .js,.jsx,.ts,.tsx'
 
 let g:ale_linters = {
-  \   'javascript': ['eslint', 'flow'],
-  \   'typescript': ['tslint', 'tsserver']
+  \   'javascript': ['eslint'],
+  \   'typescript': ['eslint']
   \ }
 
 let g:ale_fixers = {
