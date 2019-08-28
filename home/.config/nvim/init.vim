@@ -381,6 +381,10 @@ let g:ale_fixers = {
   \   'html': ['html-tidy']
   \ }
 
+" COC
+let g:coc_status_error_sign = "\uf057"
+let g:coc_status_warning_sign = "\uf071"
+
 " vim-test
 let g:test#ruby#rspec#executable = '$(rbenv which zeus) rspec'
 let g:test#strategy = 'neoterm'
