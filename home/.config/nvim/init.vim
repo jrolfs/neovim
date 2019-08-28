@@ -385,6 +385,17 @@ let g:ale_fixers = {
 let g:coc_status_error_sign = "\uf057"
 let g:coc_status_warning_sign = "\uf071"
 
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ 'coc-json',
+  \ 'coc-emoji',
+  \ 'coc-css',
+  \ 'coc-yaml',
+  \ 'coc-yank',
+  \ 'coc-svg',
+  \ 'coc-git',
+  \ ]
+
 " vim-test
 let g:test#ruby#rspec#executable = '$(rbenv which zeus) rspec'
 let g:test#strategy = 'neoterm'
