@@ -16,8 +16,8 @@ augroup END
 
 function! s:terminal_insert()
   if &buftype ==# 'terminal'
-    :startinsert
     :CocDisable
+    :startinsert
   else
     :CocEnable
   endif
