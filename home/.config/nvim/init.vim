@@ -581,11 +581,11 @@ nmap <Leader>js <Plug>(jsdoc)
 noremap <F8> :TagbarToggle<CR>
 
 " vim-test
-nnoremap <silent> <Leader>st :TestNearest<CR>
-nnoremap <silent> <Leader>sT :TestFile<CR>
-nnoremap <silent> <Leader>sa :TestSuite<CR>
-nnoremap <silent> <Leader>sl :TestLast<CR>
-nnoremap <silent> <Leader>sg :TestVisit<CR>
+nnoremap <silent> <C-t>t :TestNearest<CR>
+nnoremap <silent> <C-t>T :TestFile<CR>
+nnoremap <silent> <C-t>a :TestSuite<CR>
+nnoremap <silent> <C-t>l :TestLast<CR>
+nnoremap <silent> <C-t>g :TestVisit<CR>
 
 " Neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
