@@ -33,7 +33,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'lotabout/skim', { 'dir': '$XDG_DATA_HOME/nvim/skim' }
 Plug 'lotabout/skim.vim'
-Plug 'mhinz/vim-signify'
 Plug 'qpkorr/vim-bufkill'
 Plug 'romainl/vim-qf'
 Plug 'sjl/gundo.vim'
@@ -185,9 +184,6 @@ let g:sleuth_automatic = 1
 let g:taboo_tab_format = ' %m %I%P  '
 let g:taboo_renamed_tab_format = '  %m%I%l  '
 let g:taboo_modified_tab_flag = '✎'
-
-" Signify
-let g:signify_sign_show_text = 1
 
 " Colorizer
 let g:colorizer_auto_map = 1
