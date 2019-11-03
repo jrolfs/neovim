@@ -71,6 +71,7 @@ Plug 'danro/rename.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'brooth/far.vim'
 Plug 't9md/vim-choosewin'
+Plug 'lambdalisue/suda.vim'
 
 ""
 " @section Plugins, Manipulation
