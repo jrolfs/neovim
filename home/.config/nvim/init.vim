@@ -69,6 +69,7 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'danro/rename.vim'
 Plug 'mhinz/vim-grepper'
+Plug 'brooth/far.vim'
 Plug 't9md/vim-choosewin'
 
 ""
@@ -228,6 +229,9 @@ let g:grepper = {
   \   'ag': { 'grepprg': '/run/current-system/sw/bin/ag' },
   \   'rg': { 'grepprg': '/run/current-system/sw/bin/rg' }
   \ }
+
+" Far
+let g:far#source = 'rgnvim'
 
 " Python
 let g:python_host_prog = '/run/current-system/sw/bin/nvim-python'
