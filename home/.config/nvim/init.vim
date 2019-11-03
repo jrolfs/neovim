@@ -91,7 +91,6 @@ Plug 'easymotion/vim-easymotion'
 " @section Plugins, syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'othree/yajs.vim'
-Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mxw/vim-jsx'
 Plug 'jrolfs/vim-github-hub', { 'branch': 'support-commit' }
 Plug 'vim-pandoc/vim-pandoc'
@@ -173,7 +172,7 @@ set nowrap
 set sessionoptions+=tabpages,globals
 
 " Polyglot
-let g:polyglot_disabled = ['javascript', 'jsx', 'typescript']
+let g:polyglot_disabled = ['javascript', 'jsx']
 
 " Sleuth
 let g:sleuth_automatic = 1
