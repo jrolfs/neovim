@@ -504,6 +504,8 @@ nmap <silent> <C-g>ld :CocList diagnostics<CR>
 nmap <silent> <C-g>ls :CocList sources<CR>
 nmap <silent> <C-g>le :CocList extensions<CR>
 
+nmap <silent> <C-g>Tr :CocCommand tsserver.restart<CR>
+
 " coc-git
 nmap ]c <Plug>(coc-git-nextchunk)
 nmap [c <Plug>(coc-git-prevchunk)
