@@ -26,7 +26,7 @@ Plug 'arzg/seoul8'
 Plug 'chrisbra/Recover.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'jrolfs/taboo.vim', { 'branch': 'unicode-tab-numbers' }
+Plug 'gcmt/taboo.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'lotabout/skim', { 'dir': '$XDG_DATA_HOME/nvim/skim' }
