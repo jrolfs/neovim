@@ -21,9 +21,8 @@ call plug#begin('$XDG_DATA_HOME/nvim/plugged')
 
 ""
 " @section Plugins, interface
-Plug '$SOURCES/junegunn/seoul256.vim'
 Plug '$SOURCES/mhartington/oceanic-next'
-Plug '$SOURCES/vim-airline/vim-airline-themes'
+Plug 'jrolfs/seoul256.vim', { 'branch': 'wip' }
 Plug 'arzg/seoul8'
 Plug 'chrisbra/Recover.vim'
 Plug 'edkolev/tmuxline.vim'
