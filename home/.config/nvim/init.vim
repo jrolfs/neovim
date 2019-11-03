@@ -375,13 +375,17 @@ let g:ale_linters = {
   \ }
 
 let g:ale_fixers = {
-  \   'javascript': ['prettier'],
-  \   'typescript': ['prettier'],
+  \   'css': ['prettier'],
+  \   'graphql': ['prettier'],
+  \   'html': ['prettier', 'html-tidy'],
+  \   'javascript': ['eslint', 'prettier'],
   \   'json': ['prettier'],
   \   'json5': ['prettier'],
-  \   'css': ['prettier'],
+  \   'markdown': ['prettier'],
+  \   'mdx': ['prettier'],
   \   'scss': ['prettier'],
-  \   'html': ['html-tidy']
+  \   'typescript': ['eslint', 'prettier'],
+  \   'yaml': ['prettier']
   \ }
 
 " COC
