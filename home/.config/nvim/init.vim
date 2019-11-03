@@ -394,6 +394,7 @@ let g:coc_status_warning_sign = "\uf071"
 
 let g:coc_global_extensions = [
   \ 'coc-tsserver',
+  \ 'coc-solargraph',
   \ 'coc-json',
   \ 'coc-emoji',
   \ 'coc-css',
