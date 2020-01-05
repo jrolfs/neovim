@@ -86,7 +86,7 @@ Plug 'junegunn/vim-easy-align'
 
 ""
 " @section Plugins, motion
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi'
 Plug 'tpope/vim-repeat'
 Plug 'easymotion/vim-easymotion'
 
