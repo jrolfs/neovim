@@ -169,6 +169,7 @@ set number relativenumber
 
 " Buffers
 set hidden
+set autoread
 
 " Ruler
 set colorcolumn=0
