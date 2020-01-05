@@ -404,7 +404,6 @@ let g:coc_global_extensions = [
   \ 'coc-emoji',
   \ 'coc-css',
   \ 'coc-yaml',
-  \ 'coc-yank',
   \ 'coc-svg',
   \ 'coc-git',
   \ ]
