@@ -488,6 +488,7 @@ nmap <C-g>i <Plug>(coc-implementation)
 nmap <C-g>r <Plug>(coc-references)
 
 nmap <C-g>R <Plug>(coc-rename)
+nmap <C-g>F <Plug>(coc-refactor)
 
 map <C-g>f <Plug>(coc-format-selected)
 nmap <C-g>f <Plug>(coc-format)
