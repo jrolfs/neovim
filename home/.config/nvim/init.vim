@@ -22,6 +22,7 @@ call plug#begin('$XDG_DATA_HOME/nvim/plugged')
 ""
 " @section Plugins, interface
 Plug 'jrolfs/seoul256.vim', { 'branch': 'wip' }
+Plug 'hzchirs/vim-material'
 Plug 'arzg/seoul8'
 Plug 'chrisbra/Recover.vim'
 Plug 'edkolev/tmuxline.vim'
