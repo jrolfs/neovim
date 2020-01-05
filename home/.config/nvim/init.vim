@@ -94,7 +94,7 @@ Plug 'easymotion/vim-easymotion'
 " @section Plugins, syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'othree/yajs.vim'
-Plug 'mxw/vim-jsx'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'jrolfs/vim-github-hub', { 'branch': 'support-commit' }
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
@@ -118,6 +118,7 @@ let g:mapleader = ' '
 " Syntax
 set termguicolors
 set background=dark
+filetype plugin indent on
 
 syntax enable
 filetype plugin on
@@ -143,6 +144,8 @@ set undofile
 " Tab Size
 set smartindent
 set expandtab
+set autoindent
+
 "
 " List trailing
 set listchars=tab:\ \ ,trail:·
@@ -175,7 +178,7 @@ set nowrap
 set sessionoptions+=tabpages,globals
 
 " Polyglot
-let g:polyglot_disabled = ['javascript', 'jsx']
+let g:polyglot_disabled = ['javascript', 'typescript']
 
 " Sleuth
 let g:sleuth_automatic = 1
