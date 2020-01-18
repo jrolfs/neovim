@@ -1,15 +1,5 @@
 scriptencoding utf-8
 
-""
-" @section External, external
-
-runtime scripts/utilities.vim
-runtime scripts/highlights.vim
-runtime scripts/autocommands.vim
-runtime scripts/autocomplete.vim
-runtime scripts/test.vim
-runtime scripts/ui.vim
-
 let s:xdg_data = $XDG_DATA_HOME
 let s:data = s:xdg_data . '/nvim/'
 
@@ -21,45 +11,48 @@ call plug#begin('$XDG_DATA_HOME/nvim/plugged')
 
 ""
 " @section Plugins, interface
-Plug 'jrolfs/seoul256.vim', { 'branch': 'wip' }
-Plug 'hzchirs/vim-material'
-Plug 'arzg/seoul8'
-Plug 'chrisbra/Recover.vim'
+Plug 'editorconfig/editorconfig-vim'
+
+Plug 'gruvbox-material/vim', { 'as': 'gruvbox-material' }
 Plug 'edkolev/tmuxline.vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'gcmt/taboo.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'lotabout/skim', { 'dir': '$XDG_DATA_HOME/nvim/skim' }
-Plug 'lotabout/skim.vim'
-Plug 'qpkorr/vim-bufkill'
-Plug 'romainl/vim-qf'
 Plug 'sjl/gundo.vim'
 Plug 'szw/vim-maximizer'
 Plug 'vim-airline/vim-airline'
-Plug 'wellle/targets.vim'
+Plug 'qpkorr/vim-bufkill'
+Plug 'chrisbra/Recover.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
-Plug 'metakirby5/codi.vim'
 
 ""
-" @section Plugins, completion
+" @section Plugins, search
+Plug 'lotabout/skim', { 'dir': '$XDG_DATA_HOME/nvim/skim' }
+Plug 'lotabout/skim.vim'
+Plug 'mhinz/vim-grepper'
+Plug 'brooth/far.vim'
+
+""
+" @section Plugins, completion / formatting / linting
 Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'w0rp/ale'
+
+
+""
+" @section Plugins, terminal / repl
+Plug 'metakirby5/codi.vim'
+Plug 'kassio/neoterm'
+Plug 'janko-m/vim-test'
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
 
 ""
 " @section Plugins, tools
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'tpope/vim-unimpaired'
 Plug 'moll/vim-node'
-Plug 'mattn/webapi-vim'
-Plug 'mattn/gist-vim'
-Plug 'janko-m/vim-test'
-Plug 'w0rp/ale'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'heavenshell/vim-jsdoc'
-Plug 'kassio/neoterm'
+
 
 ""
 " @section Plugins, files
@@ -69,38 +62,32 @@ Plug 'Shougo/tabpagebuffer.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'danro/rename.vim'
-Plug 'mhinz/vim-grepper'
-Plug 'brooth/far.vim'
 Plug 't9md/vim-choosewin'
 Plug 'lambdalisue/suda.vim'
 
 ""
-" @section Plugins, Manipulation
+" @section Plugins, motion
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sleuth'
-Plug 'guns/vim-sexp', { 'for': 'clojure' }
-Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'junegunn/vim-easy-align'
-
-""
-" @section Plugins, motion
 Plug 'mg979/vim-visual-multi'
 Plug 'tpope/vim-repeat'
 Plug 'easymotion/vim-easymotion'
+Plug 'wellle/targets.vim'
+Plug 'tpope/vim-unimpaired'
 
 ""
 " @section Plugins, syntax
 Plug 'sheerun/vim-polyglot'
-Plug 'othree/yajs.vim'
-Plug 'HerringtonDarkholme/yats.vim'
 Plug 'jrolfs/vim-github-hub', { 'branch': 'support-commit' }
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'chrisbra/Colorizer'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
+Plug 'heavenshell/vim-jsdoc'
 
 ""
 " @section Plugins, icons
@@ -120,14 +107,14 @@ set termguicolors
 set background=dark
 filetype plugin indent on
 
+set signcolumn=auto:3
+
 syntax enable
 filetype plugin on
 
-let g:seoul256_background = 238
-let g:seoul256_srgb = 0
+let g:gruvbox_material_background = 'soft'
 
-colorscheme seoul256
-let g:seoul256_srgb = 1
+colorscheme gruvbox-material
 
 " Interface
 set noshowmode
@@ -137,8 +124,8 @@ set winminheight=0
 set updatetime=100
 
 " Undo
-silent !mkdir ~/.vim/backups > /dev/null 2>&1
-set undodir=~/.vim/backups
+silent !mkdir $XDG_DATA_HOME/nvim/backups > /dev/null 2>&1
+set undodir=$XDG_DATA_HOME/nvim/backups
 set undofile
 
 " Tab Size
@@ -179,7 +166,7 @@ set nowrap
 set sessionoptions+=tabpages,globals
 
 " Polyglot
-let g:polyglot_disabled = ['javascript', 'typescript']
+let g:polyglot_disabled = []
 
 " Sleuth
 let g:sleuth_automatic = 1
@@ -250,7 +237,7 @@ let g:JavaComplete_BaseDir = '~/.cache'
 let g:tagbar_autofocus = 1
 
 " Airline
-let g:airline_theme = 'seoul256'
+let g:airline_theme = 'gruvbox_material'
 
 let g:airline_extensions = ['ale', 'branch']
 let g:airline_powerline_fonts = 1
@@ -267,20 +254,6 @@ let g:webdevicons_enable_airline_statusline = 0
 let g:airline_section_x = '%{WebDevIconsGetFileTypeSymbol()}%  '
 let g:airline_section_y = '%{WebDevIconsGetFileFormatSymbol()}% '
 let g:airline_section_z = '%3p％%3v⮐ '
-
-let g:airline_mode_map = {
-  \ '__' : '-',
-  \ 'n'  : 'N',
-  \ 'i'  : 'I',
-  \ 'R'  : 'R',
-  \ 'c'  : 'C',
-  \ 'v'  : 'V',
-  \ 'V'  : 'V',
-  \ '' : 'V',
-  \ 's'  : 'S',
-  \ 'S'  : 'S',
-  \ '' : 'S',
-  \ }
 
 let g:airline#extensions#default#section_truncate_width = {
   \ 'a': 30,
@@ -368,8 +341,8 @@ let g:fzf_colors = {
   \ }
 
 " ALE
-let g:ale_sign_error = "\uf057"
-let g:ale_sign_warning = "\uf071"
+let g:ale_sign_error = ""
+let g:ale_sign_warning = ""
 let g:ale_completion_enabled = 0
 
 let g:ale_javascript_eslint_options = '--ext .js,.jsx,.ts,.tsx'
@@ -437,7 +410,7 @@ inoremap <C-Space> <C-x><C-o>
 imap <C-@> <C-Space>
 
 " Source configuration
-noremap <silent> <Leader>C :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
+noremap <silent> <leader>C :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
 
 " Navigation
 nnoremap ]q :cnext<cr>zz
@@ -453,57 +426,57 @@ noremap ]w :tabnext<CR>
 noremap [w :tabprevious<CR>
 
 " Airline
-nnoremap <silent> <Leader>uh :call AirlineToggleShowHighlight()
+nnoremap <silent> <C-s>h <plug>(airline-toggle-highlight)
 
 " Denite
-nnoremap <Leader>dp :<C-u>Denite file_rec<CR>
-nnoremap <Leader>df :<C-u>Denite grep:. -mode=normal<CR>
-nnoremap <Leader>ds :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
-nnoremap <Leader>dr :<C-u>Denite -resume<CR>
+nnoremap <leader>dp :<C-u>Denite file_rec<CR>
+nnoremap <leader>df :<C-u>Denite grep:. -mode=normal<CR>
+nnoremap <leader>ds :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
+nnoremap <leader>dr :<C-u>Denite -resume<CR>
 
 " Unite
-nnoremap <Leader>b :Unite buffer<CR>
-nnoremap <Leader>B :Unite buffer<CR>
+nnoremap <leader>b :Unite buffer<CR>
+nnoremap <leader>B :Unite buffer<CR>
 
 " FZF
 noremap <C-p> :Files<CR>
 noremap <C-b> :Buffers<CR>
 
 " ALE
-nmap <Leader>al <Plug>(ale_lint)
-nmap <Leader>af <Plug>(ale_fix)
-nmap <Leader>ap <Plug>(ale_previous)
-nmap <Leader>an <Plug>(ale_next)
-nmap <Leader>agg :ALEGoToDefinition<CR>
-nmap <Leader>agt :ALEGoToDefinitionInTab<CR>
-nmap <Leader>ags :sp<CR>:ALEGoToDefinition<CR>
-nmap <Leader>agv :vs<CR>:ALEGoToDefinition<CR>
-nmap <Leader>ad :ALEDetail<CR>
+nmap <leader>al <plug>(ale_lint)
+nmap <leader>af <plug>(ale_fix)
+nmap <leader>ap <plug>(ale_previous)
+nmap <leader>an <plug>(ale_next)
+nmap <leader>agg :ALEGoToDefinition<CR>
+nmap <leader>agt :ALEGoToDefinitionInTab<CR>
+nmap <leader>ags :sp<CR>:ALEGoToDefinition<CR>
+nmap <leader>agv :vs<CR>:ALEGoToDefinition<CR>
+nmap <leader>ad :ALEDetail<CR>
 
 " COC
-nmap <C-g>t <Plug>(coc-type-definition)
-nmap <C-g>d <Plug>(coc-definition)
-nmap <C-g>D <Plug>(coc-declaration)
-nmap <C-g>i <Plug>(coc-implementation)
-nmap <C-g>r <Plug>(coc-references)
+nmap <C-g>t <plug>(coc-type-definition)
+nmap <C-g>d <plug>(coc-definition)
+nmap <C-g>D <plug>(coc-declaration)
+nmap <C-g>i <plug>(coc-implementation)
+nmap <C-g>r <plug>(coc-references)
 
-nmap <C-g>R <Plug>(coc-rename)
-nmap <C-g>F <Plug>(coc-refactor)
+nmap <C-g>R <plug>(coc-rename)
+nmap <C-g>F <plug>(coc-refactor)
 
-map <C-g>f <Plug>(coc-format-selected)
-nmap <C-g>f <Plug>(coc-format)
+map <C-g>f <plug>(coc-format-selected)
+nmap <C-g>f <plug>(coc-format)
 
-nmap <C-g>a <Plug>(coc-codeaction)
-map <C-g>a <Plug>(coc-codeaction-selected)
+nmap <C-g>a <plug>(coc-codeaction)
+map <C-g>a <plug>(coc-codeaction-selected)
 
-nmap <C-g>o <Plug>(coc-openlink)
-nmap <C-g>l <Plug>(coc-codelens-action)
-nmap <C-g>F <Plug>(coc-fix-current)
+nmap <C-g>o <plug>(coc-openlink)
+nmap <C-g>l <plug>(coc-codelens-action)
+nmap <C-g>F <plug>(coc-fix-current)
 
-nmap <C-g>x <Plug>(coc-float-hide)
-nmap <C-g>j <Plug>(coc-float-jump)
+nmap <C-g>x <plug>(coc-float-hide)
+nmap <C-g>j <plug>(coc-float-jump)
 
-nmap <C-g>I <Plug>(coc-diagnostic-info)
+nmap <C-g>I <plug>(coc-diagnostic-info)
 
 nmap <silent> <C-g>ld :CocList diagnostics<CR>
 nmap <silent> <C-g>ls :CocList sources<CR>
@@ -512,43 +485,43 @@ nmap <silent> <C-g>le :CocList extensions<CR>
 nmap <silent> <C-g>Tr :CocCommand tsserver.restart<CR>
 
 " coc-git
-nmap ]c <Plug>(coc-git-nextchunk)
-nmap [c <Plug>(coc-git-prevchunk)
+nmap ]c <plug>(coc-git-nextchunk)
+nmap [c <plug>(coc-git-prevchunk)
 
 " VimFiler
-noremap <Leader>le :VimFilerExplorer -project -winwidth=50<CR>
-noremap <Leader>lE :VimFilerExplorer -find -winwidth=50<CR>
-noremap <Leader>ls :VimFilerBuffer<CR>
-noremap <Leader>lS :VimFiler<CR>
+noremap <leader>le :VimFilerExplorer -project -winwidth=50<CR>
+noremap <leader>lE :VimFilerExplorer -find -winwidth=50<CR>
+noremap <leader>ls :VimFilerBuffer<CR>
+noremap <leader>lS :VimFiler<CR>
 
-noremap <Leader>ly :let @+ = expand("%")<CR>
-noremap <Leader>lcd :tcd %:p:h<CR>
+noremap <leader>ly :let @+ = expand("%")<CR>
+noremap <leader>lcd :tcd %:p:h<CR>
 
 " Gundo
-nnoremap <silent> <Leader>z :GundoToggle<CR>
+nnoremap <silent> <leader>z :GundoToggle<CR>
 
 " GitGutter
-nnoremap <Leader>GG :GitGutter<CR>
+nnoremap <leader>GG :GitGutter<CR>
 
 " Choosewin
-map - <Plug>(choosewin)
+map - <plug>(choosewin)
 
 " Search
-noremap <silent> <Leader>/ :noh<CR>
+noremap <silent> <leader>/ :noh<CR>
 
 " Maximixer
 nnoremap <C-w>z :MaximizerToggle<CR>
 
 " Find/Replace
-nnoremap <Leader>rp :%s/"//g<Left><Left>
+nnoremap <leader>rp :%s/"//g<Left><Left>
 
 " Grepper
-nnoremap <Leader>gg :Grepper -tool git -noswitch<CR>
-nnoremap <Leader>ga :Grepper -tool ag -grepprg ag --vimgrep<CR>
-nnoremap <Leader>gr :Grepper -tool rg -grepprg rg<CR>
+nnoremap <leader>gg :Grepper -tool git -noswitch<CR>
+nnoremap <leader>ga :Grepper -tool ag -grepprg ag --vimgrep<CR>
+nnoremap <leader>gr :Grepper -tool rg -grepprg rg<CR>
 
-nmap gs <Plug>(GrepperOperator)
-xmap gs <Plug>(GrepperOperator)
+nmap gs <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)
 
 " Pane navigation
 nnoremap <C-j> <C-W><C-j>
@@ -557,40 +530,40 @@ nnoremap <C-l> <C-W><C-l>
 nnoremap <C-h> <C-W><C-h>
 
 " Quickfix
-nnoremap <Leader>qq :ccl<CR>
+nnoremap <leader>qq :ccl<CR>
 
 " Terminal
 tnoremap <C-e> <C-\><C-n>
 tmap <C-w> <C-e><C-w>
 
-" tmap <C-h> <Leader><ESC><C-h>
-" tmap <C-j> <Leader><ESC><C-j>
-" tmap <C-k> <Leader><ESC><C-k>
-" tmap <C-l> <Leader><ESC><C-l>
+" tmap <C-h> <leader><ESC><C-h>
+" tmap <C-j> <leader><ESC><C-j>
+" tmap <C-k> <leader><ESC><C-k>
+" tmap <C-l> <leader><ESC><C-l>
 
 " Neoterm
-nmap <silent> <Leader>nt :Ttoggle<CR><ESC>
-nmap <silent> <Leader>nx :Tclose<CR>
-nmap <silent> <Leader>no :Topen<CR><ESC>
-nmap <silent> <Leader>nc :Tclear<CR>
-nmap <silent> <Leader>nk :Tkill<CR>
+nmap <silent> <leader>nt :Ttoggle<CR><ESC>
+nmap <silent> <leader>nx :Tclose<CR>
+nmap <silent> <leader>no :Topen<CR><ESC>
+nmap <silent> <leader>nc :Tclear<CR>
+nmap <silent> <leader>nk :Tkill<CR>
 
 " EasyAlign
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
+xmap ga <plug>(EasyAlign)
+nmap ga <plug>(EasyAlign)
 
 " EasyMotion
-map <Leader> <Plug>(easymotion-prefix)
+map <leader> <plug>(easymotion-prefix)
 
 " Location list
-nnoremap <Leader>lo :lopen<CR>
-nnoremap <Leader>lc :lclose<CR>
-nnoremap <Leader>l, :ll<CR>
-nnoremap <Leader>ln :lnext<CR>
-nnoremap <Leader>lp :lprev<CR>
+nnoremap <leader>lo :lopen<CR>
+nnoremap <leader>lc :lclose<CR>
+nnoremap <leader>l, :ll<CR>
+nnoremap <leader>ln :lnext<CR>
+nnoremap <leader>lp :lprev<CR>
 
 " JSDoc
-nmap <Leader>js <Plug>(jsdoc)
+nmap <leader>js <plug>(jsdoc)
 
 " Tags
 noremap <F8> :TagbarToggle<CR>
@@ -603,7 +576,7 @@ nnoremap <silent> <C-t>l :TestLast<CR>
 nnoremap <silent> <C-t>g :TestVisit<CR>
 
 " Neosnippet
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
+imap <C-k> <plug>(neosnippet_expand_or_jump)
+smap <C-k> <plug>(neosnippet_expand_or_jump)
+xmap <C-k> <plug>(neosnippet_expand_target)
 

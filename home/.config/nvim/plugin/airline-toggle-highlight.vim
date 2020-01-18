@@ -1,12 +1,12 @@
 scriptencoding utf-8
 
-function! SyntaxItem()
+function SyntaxItem()
   return synIDattr(synID(line('.'), col('.'), 1), 'name')
 endfunction
 
 let g:airline_show_highlight = 0
 
-function! AirlineToggleShowHighlight()
+function AirlineToggleShowHighlight()
   if g:airline_show_highlight == 0
     let g:airline_section_z = '%{SyntaxItem()}'
     let g:airline_show_highlight = 1
@@ -17,3 +17,5 @@ function! AirlineToggleShowHighlight()
 
   :AirlineRefresh
 endfunction
+
+nnoremap <Plug>(airline-toggle-highlight) :<C-U>call <SID>AirlineToggleShowHighlight()<CR>
