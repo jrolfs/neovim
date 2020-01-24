@@ -1,13 +1,11 @@
 scriptencoding utf-8
 
-let s:xdg_data = $XDG_DATA_HOME
-let s:data = s:xdg_data . '/nvim/'
-
+let g:init = 'init.vim'
 
 ""
 " @section Plugins, plugins
 
-call plug#begin('$XDG_DATA_HOME/nvim/plugged')
+call plug#begin(stdpath('data') . '/plugged')
 
 ""
 " @section Plugins, interface
@@ -39,7 +37,6 @@ Plug 'brooth/far.vim'
 Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 Plug 'w0rp/ale'
 
-
 ""
 " @section Plugins, terminal / repl
 Plug 'metakirby5/codi.vim'
@@ -52,7 +49,6 @@ Plug 'mattn/gist-vim'
 " @section Plugins, tools
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'moll/vim-node'
-
 
 ""
 " @section Plugins, files
@@ -95,76 +91,11 @@ Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
+runtime settings/interface.vim
+runtime settings/common.vim
 
 ""
 " @section Settings, settings
-
-" Leader
-let g:mapleader = ' '
-
-" Syntax
-set termguicolors
-set background=dark
-filetype plugin indent on
-
-set signcolumn=auto:3
-
-syntax enable
-filetype plugin on
-
-let g:gruvbox_material_background = 'soft'
-
-colorscheme gruvbox-material
-
-" Interface
-set noshowmode
-set fillchars+=vert:⎸
-set winminwidth=0
-set winminheight=0
-set updatetime=100
-
-" Undo
-silent !mkdir $XDG_DATA_HOME/nvim/backups > /dev/null 2>&1
-set undodir=$XDG_DATA_HOME/nvim/backups
-set undofile
-
-" Tab Size
-set smartindent
-set expandtab
-set autoindent
-
-"
-" List trailing
-set listchars=tab:\ \ ,trail:·
-set list
-
-" Cursor
-set cursorline
-
-" Search
-set smartcase
-set showmatch
-
-" Movement
-set nostartofline
-
-" Status Line
-set laststatus=2
-
-" Line Numbers
-set number relativenumber
-
-" Buffers
-set hidden
-set autoread
-
-" Ruler
-set colorcolumn=0
-set nowrap
-
-" Session
-set sessionoptions+=tabpages,globals
-
 " Polyglot
 let g:polyglot_disabled = []
 
@@ -185,7 +116,7 @@ let g:session_autosave = 'yes'
 let g:session_autosave_periodic = 1
 let g:session_autosave_silent = 1
 let g:session_command_aliases = 1
-let g:session_directory = s:data . 'sessions'
+let g:session_directory = stdpath('data') . 'sessions'
 
 " Denite
 call denite#custom#option('_', {
@@ -282,19 +213,6 @@ let g:pandoc#syntax#codeblocks#embeds#langs = [
   \ ]
 
 " Completion
-set completeopt-=preview
-set wildmode=list:full
-set wildmenu
-set wildignore+=*vim/backups*
-set wildignore+=*sass-cache*
-set wildignore+=*cache*
-set wildignore+=*logs*
-set wildignore+=*node_modules/**
-set wildignore+=*DS_Store*
-set wildignore+=*.gem
-set wildignore+=log/**
-set wildignore+=tmp/**
-set wildignore+=*.png,*.jpg,*.gif
 
 " Neosnippet
 let g:neosnippet#enable_completed_snippet = 1
@@ -389,44 +307,9 @@ let g:test#strategy = 'neoterm'
 "
 " @section Mappings, mappings
 
-" Abbreviations
-cnoreabbrev Wq wq
-cnoreabbrev WQ wq
-cnoreabbrev Vs vs
-cnoreabbrev W w
-cnoreabbrev Q q
-cnoreabbrev Qa qa
-cnoreabbrev Bd bd
-cnoreabbrev bD bd
-cnoreabbrev t tabe
-cnoreabbrev tc tabc
-cnoreabbrev Tc tabc
-cnoreabbrev oS OpenSession
-cnoreabbrev sS SaveSession
-cnoreabbrev cS CloseSession
-
 " Omnifunc
 inoremap <C-Space> <C-x><C-o>
 imap <C-@> <C-Space>
-
-" Source configuration
-noremap <silent> <leader>C :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
-
-" Navigation
-nnoremap ]q :cnext<cr>zz
-nnoremap [q :cprev<cr>zz
-
-nnoremap ]l :lnext<cr>zz
-nnoremap [l :lprev<cr>zz
-
-nnoremap ]b :bnext<cr>
-nnoremap [b :bprev<cr>
-
-noremap ]w :tabnext<CR>
-noremap [w :tabprevious<CR>
-
-" Airline
-nnoremap <silent> <C-s>h <plug>(airline-toggle-highlight)
 
 " Denite
 nnoremap <leader>dp :<C-u>Denite file_rec<CR>
@@ -506,9 +389,6 @@ nnoremap <leader>GG :GitGutter<CR>
 " Choosewin
 map - <plug>(choosewin)
 
-" Search
-noremap <silent> <leader>/ :noh<CR>
-
 " Maximixer
 nnoremap <C-w>z :MaximizerToggle<CR>
 
@@ -523,23 +403,9 @@ nnoremap <leader>gr :Grepper -tool rg -grepprg rg<CR>
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
 
-" Pane navigation
-nnoremap <C-j> <C-W><C-j>
-nnoremap <C-k> <C-W><C-k>
-nnoremap <C-l> <C-W><C-l>
-nnoremap <C-h> <C-W><C-h>
-
-" Quickfix
-nnoremap <leader>qq :ccl<CR>
-
 " Terminal
 tnoremap <C-e> <C-\><C-n>
 tmap <C-w> <C-e><C-w>
-
-" tmap <C-h> <leader><ESC><C-h>
-" tmap <C-j> <leader><ESC><C-j>
-" tmap <C-k> <leader><ESC><C-k>
-" tmap <C-l> <leader><ESC><C-l>
 
 " Neoterm
 nmap <silent> <leader>nt :Ttoggle<CR><ESC>
@@ -551,9 +417,6 @@ nmap <silent> <leader>nk :Tkill<CR>
 " EasyAlign
 xmap ga <plug>(EasyAlign)
 nmap ga <plug>(EasyAlign)
-
-" EasyMotion
-map <leader> <plug>(easymotion-prefix)
 
 " Location list
 nnoremap <leader>lo :lopen<CR>
@@ -580,3 +443,4 @@ imap <C-k> <plug>(neosnippet_expand_or_jump)
 smap <C-k> <plug>(neosnippet_expand_or_jump)
 xmap <C-k> <plug>(neosnippet_expand_target)
 
+runtime mappings/common.vim
