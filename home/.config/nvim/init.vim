@@ -83,6 +83,7 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'chrisbra/Colorizer'
 Plug 'jparise/vim-graphql'
 Plug 'heavenshell/vim-jsdoc'
+Plug 'tridactyl/vim-tridactyl'
 
 ""
 " @section Plugins, icons
@@ -95,6 +96,7 @@ runtime settings/common.vim
 
 ""
 " @section Settings, settings
+
 " Polyglot
 let g:polyglot_disabled = []
 
