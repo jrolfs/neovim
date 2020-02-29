@@ -267,6 +267,7 @@ let g:ale_fixers = {
   \   'mdx': ['prettier'],
   \   'scss': ['prettier'],
   \   'typescript': ['eslint', 'prettier'],
+  \   'typescriptreact': ['eslint', 'prettier'],
   \   'yaml': ['prettier']
   \ }
 
