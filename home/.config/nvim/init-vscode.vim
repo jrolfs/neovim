@@ -35,7 +35,20 @@ runtime mappings/common.vim
 "
 " @section Mappings, mappings
 
-xmap gc  <Plug>VSCodeCommentary
-nmap gc  <Plug>VSCodeCommentary
-omap gc  <Plug>VSCodeCommentary
-nmap gcc <Plug>VSCodeCommentaryLine
+xmap gc  <plug>VSCodeCommentary
+nmap gc  <plug>VSCodeCommentary
+omap gc  <plug>VSCodeCommentary
+nmap gcc <plug>VSCodeCommentaryLine
+
+noremap [w :<C-u>call VSCodeCall('workbench.action.previousEditor')<cr>
+noremap ]w :<C-u>call VSCodeCall('workbench.action.nextEditor')<cr>
+
+noremap [c :<C-u>call VSCodeCall('workbench.action.editor.previousChange')<cr>
+noremap ]c :<C-u>call VSCodeCall('workbench.action.editor.nextChange')<cr>
+
+noremap <c-w>H :<C-u>call VSCodeCall('workbench.action.moveActiveEditorGroupLeft')<cr>
+noremap <c-w>J :<C-u>call VSCodeCall('workbench.action.moveActiveEditorGroupDown')<cr>
+noremap <c-w>K :<C-u>call VSCodeCall('workbench.action.moveActiveEditorGroupUp')<cr>
+noremap <c-w>L :<C-u>call VSCodeCall('workbench.action.moveActiveEditorGroupRight')<cr>
+
+noremap <leader>af :<C-u>call VSCodeCall('editor.action.formatDocument')<cr>
