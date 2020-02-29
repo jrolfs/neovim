@@ -1,19 +1,3 @@
-" Abbreviations
-cnoreabbrev Wq wq
-cnoreabbrev WQ wq
-cnoreabbrev Vs vs
-cnoreabbrev W w
-cnoreabbrev Q q
-cnoreabbrev Qa qa
-cnoreabbrev Bd bd
-cnoreabbrev bD bd
-cnoreabbrev t tabe
-cnoreabbrev tc tabc
-cnoreabbrev Tc tabc
-cnoreabbrev oS OpenSession
-cnoreabbrev sS SaveSession
-cnoreabbrev cS CloseSession
-
 " Pane navigation
 map <C-j> <C-w>j
 map <C-k> <C-w>k
