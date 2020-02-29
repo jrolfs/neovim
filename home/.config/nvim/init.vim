@@ -34,7 +34,7 @@ Plug 'brooth/far.vim'
 
 ""
 " @section Plugins, completion / formatting / linting
-Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install()} }
 Plug 'w0rp/ale'
 
 ""
