@@ -81,7 +81,6 @@ Plug 'jrolfs/vim-github-hub', { 'branch': 'support-commit' }
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'chrisbra/Colorizer'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
 Plug 'heavenshell/vim-jsdoc'
 
