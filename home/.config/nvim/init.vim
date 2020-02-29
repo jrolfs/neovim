@@ -244,21 +244,6 @@ let s:ripgrep_find_command = 'rg
 
 command! -bang -nargs=* Find call fzf#vim#grep(s:ripgrep_find_command.shellescape(<q-args>), 1, <bang>0)
 
-let g:fzf_colors = {
-  \ 'fg':      ['fg', 'Todo'],
-  \ 'hl':      ['fg', 'Todo'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'Normal', 'Normal'],
-  \ 'hl+':     ['fg', 'Special'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Include'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment']
-  \ }
-
 " ALE
 let g:ale_sign_error = ""
 let g:ale_sign_warning = ""
