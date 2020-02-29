@@ -245,8 +245,8 @@ let s:ripgrep_find_command = 'rg
 command! -bang -nargs=* Find call fzf#vim#grep(s:ripgrep_find_command.shellescape(<q-args>), 1, <bang>0)
 
 " ALE
-let g:ale_sign_error = ""
-let g:ale_sign_warning = ""
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
 let g:ale_completion_enabled = 0
 
 let g:ale_javascript_eslint_options = '--ext .js,.jsx,.ts,.tsx'
