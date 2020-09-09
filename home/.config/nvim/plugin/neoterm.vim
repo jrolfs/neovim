@@ -4,10 +4,15 @@ scriptencoding utf-8
 
 function s:terminal_insert()
   if &buftype ==# 'terminal'
-    :CocDisable
+    if exists(':CocDisable')
+      :CocDisable
+    endif
+
     :startinsert
   else
-    :CocEnable
+    if exists(':CocEnable')
+      :CocEnable
+    endif
   endif
 endfunction
 
