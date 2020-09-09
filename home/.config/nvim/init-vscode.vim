@@ -56,3 +56,4 @@ noremap <c-w>K :<C-u>call VSCodeCall('workbench.action.moveActiveEditorGroupUp')
 noremap <c-w>L :<C-u>call VSCodeCall('workbench.action.moveActiveEditorGroupRight')<cr>
 
 noremap <leader>af :<C-u>call VSCodeCall('editor.action.formatDocument')<cr>
+noremap <leader>ef :<C-u>call VSCodeCall('eslint.executeAutofix')<cr>
