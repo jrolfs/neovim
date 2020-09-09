@@ -49,6 +49,8 @@ Plug 'mattn/gist-vim'
 ""
 " @section Plugins, tools
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'tpope/vim-fugitive'
+Plug 'sjl/splice.vim'
 Plug 'moll/vim-node'
 
 ""
@@ -64,16 +66,16 @@ Plug 'lambdalisue/suda.vim'
 
 ""
 " @section Plugins, motion
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-sleuth'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/vim-easy-align'
 Plug 'mg979/vim-visual-multi'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'easymotion/vim-easymotion'
-Plug 'wellle/targets.vim'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'wellle/targets.vim'
 
 ""
 " @section Plugins, syntax
