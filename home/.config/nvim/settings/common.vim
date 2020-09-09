@@ -1,5 +1,6 @@
 " Leader
 let g:mapleader = ' '
+let g:maplocalleader = ','
 
 " Syntax
 syntax enable
