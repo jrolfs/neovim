@@ -404,10 +404,6 @@ nmap <silent> <leader>no :Topen<CR><ESC>
 nmap <silent> <leader>nc :Tclear<CR>
 nmap <silent> <leader>nk :Tkill<CR>
 
-" EasyAlign
-xmap ga <plug>(EasyAlign)
-nmap ga <plug>(EasyAlign)
-
 " Location list
 nnoremap <leader>lo :lopen<CR>
 nnoremap <leader>lc :lclose<CR>
