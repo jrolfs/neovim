@@ -57,3 +57,6 @@ noremap <c-w>L :<C-u>call VSCodeCall('workbench.action.moveActiveEditorGroupRigh
 
 noremap <leader>af :<C-u>call VSCodeCall('editor.action.formatDocument')<cr>
 noremap <leader>ef :<C-u>call VSCodeCall('eslint.executeAutofix')<cr>
+
+noremap <leader>z :<C-u>call VSCodeCall('workbench.action.maximizeEditor')<cr>
+noremap <leader>= :<C-u>call VSCodeCall('workbench.action.evenEditorWidths')<cr>
