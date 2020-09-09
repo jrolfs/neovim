@@ -31,6 +31,7 @@ Plug 'lotabout/skim', { 'dir': '$XDG_DATA_HOME/nvim/skim' }
 Plug 'lotabout/skim.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'brooth/far.vim'
+Plug 'tpope/vim-abolish'
 
 ""
 " @section Plugins, completion / formatting / linting

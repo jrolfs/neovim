@@ -23,6 +23,10 @@ Plug 'tpope/vim-unimpaired'
 Plug 'wellle/targets.vim'
 
 ""
+" @section Plugins, search
+Plug 'tpope/vim-abolish'
+
+""
 " @section Plugins, syntax
 Plug 'heavenshell/vim-jsdoc'
 
