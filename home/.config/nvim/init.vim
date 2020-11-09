@@ -67,6 +67,7 @@ Plug 'lambdalisue/suda.vim'
 ""
 " @section Plugins, motion
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'chamindra/marvim'
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/vim-easy-align'
 Plug 'mg979/vim-visual-multi'

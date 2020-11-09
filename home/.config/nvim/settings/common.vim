@@ -1,3 +1,9 @@
+scriptencoding utf-8
+
+""
+" @section General
+
+"
 " Leader
 let g:mapleader = ' '
 let g:maplocalleader = ','
@@ -51,3 +57,8 @@ set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
+
+""
+" @section Plugins
+
+let g:marvim_store = $XDG_DATA_HOME . '/nvim/macros'
