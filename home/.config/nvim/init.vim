@@ -101,9 +101,6 @@ runtime settings/common.vim
 ""
 " @section Settings, settings
 
-" Polyglot
-let g:polyglot_disabled = []
-
 " Sleuth
 let g:sleuth_automatic = 1
 
