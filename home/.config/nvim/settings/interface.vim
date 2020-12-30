@@ -5,7 +5,7 @@ colorscheme gruvbox-material
 set updatetime=100
 
 set background=dark
-set fillchars+=vert: 
+set fillchars+=vert:·
 
 set cursorline
 set signcolumn=auto:2
