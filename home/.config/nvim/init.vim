@@ -49,6 +49,7 @@ Plug 'mattn/gist-vim'
 ""
 " @section Plugins, tools
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-fugitive'
 Plug 'sjl/splice.vim'
 Plug 'moll/vim-node'
