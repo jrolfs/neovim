@@ -24,7 +24,10 @@ noremap ]w :tabnext<cr>
 noremap [w :tabprevious<cr>
 
 " Source configuration
-nmap <leader>C <plug>(source-configuration)
+nmap <leader>C <plug>(configuration-source)
+
+" Show highlights
+nmap <leader>H <plug>(configuration-show-highlights)
 
 " EasyAlign
 xmap ga <plug>(EasyAlign)
