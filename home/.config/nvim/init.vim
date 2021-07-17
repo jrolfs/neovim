@@ -90,6 +90,7 @@ Plug 'chrisbra/Colorizer'
 Plug 'jparise/vim-graphql'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'tridactyl/vim-tridactyl'
+Plug 'powerman/vim-plugin-AnsiEsc'
 
 ""
 " @section Plugins, icons
