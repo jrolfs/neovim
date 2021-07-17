@@ -61,4 +61,4 @@ set wildignore+=*.png,*.jpg,*.gif
 ""
 " @section Plugins
 
-let g:marvim_store = $XDG_DATA_HOME . '/nvim/macros'
+let g:marvim_store = g:xdg_data_home . '/nvim/macros'

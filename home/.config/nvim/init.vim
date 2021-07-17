@@ -1,6 +1,7 @@
 scriptencoding utf-8
 
 let g:init = 'init.vim'
+let g:xdg_data_home = $XDG_DATA_HOME
 
 ""
 " @section Plugins, plugins
@@ -27,7 +28,7 @@ Plug 'xolox/vim-session'
 
 ""
 " @section Plugins, search
-Plug 'lotabout/skim', { 'dir': '$XDG_DATA_HOME/nvim/skim' }
+Plug 'lotabout/skim', { 'dir': g:xdg_data_home . '/nvim/skim' }
 Plug 'lotabout/skim.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'brooth/far.vim'
