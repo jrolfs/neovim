@@ -1,5 +1,7 @@
 scriptencoding utf-8
 
+runtime settings/globals.vim
+
 let g:init = 'init-vscode.vim'
 
 

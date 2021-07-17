@@ -1,7 +1,8 @@
 scriptencoding utf-8
 
+runtime settings/globals.vim
+
 let g:init = 'init.vim'
-let g:xdg_data_home = $XDG_DATA_HOME
 
 ""
 " @section Plugins, plugins
