@@ -83,15 +83,16 @@ Plug 'wellle/targets.vim'
 
 ""
 " @section Plugins, syntax
-Plug 'sheerun/vim-polyglot'
+Plug 'LnL7/vim-nix'
+Plug 'chrisbra/Colorizer'
+Plug 'heavenshell/vim-jsdoc'
+Plug 'jparise/vim-graphql'
 Plug 'jrolfs/vim-github-hub', { 'branch': 'support-commit' }
+Plug 'powerman/vim-plugin-AnsiEsc'
+Plug 'sheerun/vim-polyglot'
+Plug 'tridactyl/vim-tridactyl'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'chrisbra/Colorizer'
-Plug 'jparise/vim-graphql'
-Plug 'heavenshell/vim-jsdoc'
-Plug 'tridactyl/vim-tridactyl'
-Plug 'powerman/vim-plugin-AnsiEsc'
 
 ""
 " @section Plugins, icons
