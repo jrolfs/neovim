@@ -161,6 +161,9 @@ let g:grepper = {
   \   'rg': { 'grepprg': '/run/current-system/sw/bin/rg' }
   \ }
 
+" Gundo
+let g:gundo_prefer_python3 = 1
+
 " Far
 let g:far#source = 'rgnvim'
 
