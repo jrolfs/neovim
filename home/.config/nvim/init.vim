@@ -62,10 +62,10 @@ Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/tabpagebuffer.vim'
 Plug 'Shougo/unite.vim'
-Plug 'Shougo/vimfiler.vim'
 Plug 'danro/rename.vim'
-Plug 't9md/vim-choosewin'
 Plug 'lambdalisue/suda.vim'
+Plug 't9md/vim-choosewin'
+Plug 'tpope/vim-vinegar'
 
 ""
 " @section Plugins, motion
@@ -201,10 +201,6 @@ let g:airline#extensions#default#section_truncate_width = {
   \ 'warning': 30,
   \ 'error': 30,
   \ }
-
-" Vimfiler
-let g:vimfiler_as_default_explorer = 1
-let g:vimfiler_ignore_pattern = ['^\.git$', '^\.DS_Store$']
 
 " Pandoc
 let g:pandoc#modules#disabled = ['chdir', 'folding']
@@ -363,11 +359,8 @@ nmap <silent> <C-g>Tr :CocCommand tsserver.restart<CR>
 nmap ]c <plug>(coc-git-nextchunk)
 nmap [c <plug>(coc-git-prevchunk)
 
-" VimFiler
-noremap <leader>le :VimFilerExplorer -project -winwidth=50<CR>
-noremap <leader>lE :VimFilerExplorer -find -winwidth=50<CR>
-noremap <leader>ls :VimFilerBuffer<CR>
-noremap <leader>lS :VimFiler<CR>
+" netrw
+noremap <leader>ls :Explore<CR>
 
 noremap <leader>ly :let @+ = expand("%")<CR>
 noremap <leader>lcd :tcd %:p:h<CR>
