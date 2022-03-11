@@ -13,8 +13,14 @@ syntax enable
 filetype plugin indent on
 
 " Undo
-silent !mkdir $XDG_DATA_HOME/nvim/backups > /dev/null 2>&1
-set undodir=$XDG_DATA_HOME/nvim/backups
+silent !mkdir ${XDG_DATA_HOME:-$HOME/.local/share/nvim}/nvim/backups > /dev/null 2>&1
+
+if empty($XDG_DATA_HOME)
+  set undodir=$HOME/.local/share/nvim/backups
+else
+  set undodir=$XDG_DATA_HOME/nvim/backups
+endif
+
 set undofile
 
 " Tab Size
