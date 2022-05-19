@@ -86,6 +86,7 @@ Plug 'wellle/targets.vim'
 Plug 'LnL7/vim-nix'
 Plug 'chrisbra/Colorizer'
 Plug 'direnv/direnv.vim'
+Plug 'fladson/vim-kitty', { 'branch': 'main' }
 Plug 'heavenshell/vim-jsdoc'
 Plug 'jparise/vim-graphql'
 Plug 'jrolfs/vim-github-hub', { 'branch': 'support-commit' }
