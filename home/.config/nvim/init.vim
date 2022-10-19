@@ -83,6 +83,7 @@ Plug 'wellle/targets.vim'
 
 ""
 " @section Plugins, syntax
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'LnL7/vim-nix'
 Plug 'direnv/direnv.vim'
 Plug 'fladson/vim-kitty', { 'branch': 'main' }
