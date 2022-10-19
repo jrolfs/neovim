@@ -36,8 +36,9 @@ Plug 'tpope/vim-abolish'
 
 ""
 " @section Plugins, completion / formatting / linting
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install()} }
 Plug 'w0rp/ale'
+Plug 'neovim/nvim-lspconfig'
+Plug 'dundalek/lazy-lsp.nvim'
 
 ""
 " @section Plugins, terminal / repl
@@ -216,8 +217,6 @@ let g:pandoc#syntax#codeblocks#embeds#langs = [
   \   'bash=sh'
   \ ]
 
-" Completion
-
 " Neosnippet
 let g:neosnippet#enable_completed_snippet = 1
 
@@ -258,21 +257,6 @@ let g:ale_fixers = {
   \   'yaml': ['prettier']
   \ }
 
-" COC
-let g:coc_status_error_sign = "\uf057"
-let g:coc_status_warning_sign = "\uf071"
-
-let g:coc_global_extensions = [
-  \ 'coc-tsserver',
-  \ 'coc-solargraph',
-  \ 'coc-json',
-  \ 'coc-emoji',
-  \ 'coc-css',
-  \ 'coc-yaml',
-  \ 'coc-svg',
-  \ 'coc-git',
-  \ ]
-
 " vim-test
 let g:test#ruby#rspec#executable = '$(rbenv which zeus) rspec'
 let g:test#strategy = 'neoterm'
@@ -309,41 +293,6 @@ nmap <leader>agt :ALEGoToDefinitionInTab<CR>
 nmap <leader>ags :sp<CR>:ALEGoToDefinition<CR>
 nmap <leader>agv :vs<CR>:ALEGoToDefinition<CR>
 nmap <leader>ad :ALEDetail<CR>
-
-" COC
-nmap <C-g>t <plug>(coc-type-definition)
-nmap <C-g>d <plug>(coc-definition)
-nmap <C-g>D <plug>(coc-declaration)
-nmap <C-g>i <plug>(coc-implementation)
-nmap <C-g>r <plug>(coc-references)
-
-nmap <C-g>R <plug>(coc-rename)
-nmap <C-g>F <plug>(coc-refactor)
-
-map <C-g>f <plug>(coc-format-selected)
-nmap <C-g>f <plug>(coc-format)
-
-nmap <C-g>a <plug>(coc-codeaction)
-map <C-g>a <plug>(coc-codeaction-selected)
-
-nmap <C-g>o <plug>(coc-openlink)
-nmap <C-g>l <plug>(coc-codelens-action)
-nmap <C-g>F <plug>(coc-fix-current)
-
-nmap <C-g>x <plug>(coc-float-hide)
-nmap <C-g>j <plug>(coc-float-jump)
-
-nmap <C-g>I <plug>(coc-diagnostic-info)
-
-nmap <silent> <C-g>ld :CocList diagnostics<CR>
-nmap <silent> <C-g>ls :CocList sources<CR>
-nmap <silent> <C-g>le :CocList extensions<CR>
-
-nmap <silent> <C-g>Tr :CocCommand tsserver.restart<CR>
-
-" coc-git
-nmap ]c <plug>(coc-git-nextchunk)
-nmap [c <plug>(coc-git-prevchunk)
 
 " netrw
 noremap <leader>ls :Explore<CR>
@@ -411,3 +360,13 @@ smap <C-k> <plug>(neosnippet_expand_or_jump)
 xmap <C-k> <plug>(neosnippet_expand_target)
 
 runtime mappings/common.vim
+
+" Completion
+
+lua << EOF
+require('lazy-lsp').setup {
+  excluded_servers = {},
+  default_config = {},
+  configs = {},
+}
+EOF
