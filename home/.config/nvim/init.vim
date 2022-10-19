@@ -32,7 +32,6 @@ Plug 'xolox/vim-session'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'mhinz/vim-grepper'
-Plug 'brooth/far.vim'
 Plug 'tpope/vim-abolish'
 
 ""
@@ -165,9 +164,6 @@ let g:grepper = {
 
 " Gundo
 let g:gundo_prefer_python3 = 1
-
-" Far
-let g:far#source = 'rgnvim'
 
 " Python
 let g:python_host_prog = '/run/current-system/sw/bin/nvim-python'
