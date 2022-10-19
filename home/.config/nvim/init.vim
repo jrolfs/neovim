@@ -29,8 +29,8 @@ Plug 'xolox/vim-session'
 
 ""
 " @section Plugins, search
-Plug 'lotabout/skim', { 'dir': g:xdg_data_home . '/nvim/skim' }
-Plug 'lotabout/skim.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'mhinz/vim-grepper'
 Plug 'brooth/far.vim'
 Plug 'tpope/vim-abolish'
@@ -235,22 +235,6 @@ let g:multi_cursor_exit_from_insert_mode = 0
 let g:jsdoc_allow_input_prompt = 1
 let g:jsdoc_input_description = 1
 
-" skim
-let $SKIM_DEFAULT_COMMAND = 'fd --ignore-case --hidden --type f --exclude "\.git"'
-let s:ripgrep_find_command = 'rg
-  \ --column
-  \ --line-number
-  \ --no-heading
-  \ --fixed-strings
-  \ --ignore-case
-  \ --no-ignore
-  \ --hidden
-  \ --follow
-  \ --glob "!.git/*"
-  \ --color "always"'
-
-command! -bang -nargs=* Find call fzf#vim#grep(s:ripgrep_find_command.shellescape(<q-args>), 1, <bang>0)
-
 " ALE
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
@@ -315,9 +299,9 @@ nnoremap <leader>dr :<C-u>Denite -resume<CR>
 nnoremap <leader>b :Unite buffer<CR>
 nnoremap <leader>B :Unite buffer<CR>
 
-" FZF
-noremap <C-p> :Files<CR>
-noremap <C-b> :Buffers<CR>
+" Telescope
+noremap <C-p> :Telescope git_files<CR>
+noremap <C-b> :Telescope buffers<CR>
 
 " ALE
 nmap <leader>al <plug>(ale_lint)
