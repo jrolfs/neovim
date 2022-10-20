@@ -3,6 +3,8 @@ scriptencoding utf-8
 ""
 " @section General
 
+let &runtimepath .= ', "~/.config/nvim/lua"'
+
 "
 " Leader
 let g:mapleader = ' '
