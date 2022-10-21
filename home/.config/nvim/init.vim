@@ -13,8 +13,10 @@ call plug#begin(stdpath('data') . '/plugged')
 " @section Plugins, interface
 Plug 'editorconfig/editorconfig-vim'
 
+" Themes
 Plug 'gruvbox-material/vim', { 'as': 'gruvbox-material' }
-Plug 'edkolev/tmuxline.vim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'gcmt/taboo.vim'
 Plug 'junegunn/goyo.vim'
@@ -362,12 +364,4 @@ xmap <C-k> <plug>(neosnippet_expand_target)
 
 runtime mappings/common.vim
 
-" Completion
-
-lua << EOF
-require('lazy-lsp').setup {
-  excluded_servers = {},
-  default_config = {},
-  configs = {},
-}
-EOF
+lua require('init')
