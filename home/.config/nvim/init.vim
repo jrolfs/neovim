@@ -23,7 +23,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'sjl/gundo.vim'
 Plug 'szw/vim-maximizer'
-Plug 'vim-airline/vim-airline'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'chrisbra/Recover.vim'
 Plug 'xolox/vim-misc'
@@ -178,35 +178,6 @@ let g:JavaComplete_BaseDir = '~/.cache'
 
 " Tags
 let g:tagbar_autofocus = 1
-
-" Airline
-let g:airline_theme = 'gruvbox_material'
-
-let g:airline_extensions = ['ale', 'branch']
-let g:airline_powerline_fonts = 1
-
-let airline#extensions#ale#error_symbol = "\ubb"
-let airline#extensions#ale#warning_symbol = "\u2248"
-
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-
-let g:webdevicons_enable_airline_statusline = 0
-let g:airline_section_x = '%{WebDevIconsGetFileTypeSymbol()}%  '
-let g:airline_section_y = '%{WebDevIconsGetFileFormatSymbol()}% '
-let g:airline_section_z = '%3p％%3v⮐ '
-
-let g:airline#extensions#default#section_truncate_width = {
-  \ 'a': 30,
-  \ 'b': 30,
-  \ 'x': 45,
-  \ 'y': 120,
-  \ 'z': 45,
-  \ 'warning': 30,
-  \ 'error': 30,
-  \ }
 
 " Pandoc
 let g:pandoc#modules#disabled = ['chdir', 'folding']
