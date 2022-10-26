@@ -17,15 +17,16 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'gruvbox-material/vim', { 'as': 'gruvbox-material' }
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'chrisbra/Recover.vim'
 Plug 'gcmt/taboo.vim'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'sjl/gundo.vim'
-Plug 'szw/vim-maximizer'
+Plug 'lewis6991/gitsigns.nvim', { 'branch': 'main' }
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'qpkorr/vim-bufkill'
-Plug 'chrisbra/Recover.vim'
+Plug 'sjl/gundo.vim'
+Plug 'szw/vim-maximizer'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 
