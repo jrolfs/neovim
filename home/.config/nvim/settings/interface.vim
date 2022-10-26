@@ -5,6 +5,8 @@ colorscheme gruvbox-material
 
 set updatetime=100
 
+set shortmess=a
+
 set background=dark
 set fillchars+=vert:·
 
