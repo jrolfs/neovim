@@ -60,10 +60,6 @@ Plug 'moll/vim-node'
 
 ""
 " @section Plugins, files
-Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/denite.nvim'
-Plug 'Shougo/tabpagebuffer.vim'
-Plug 'Shougo/unite.vim'
 Plug 'danro/rename.vim'
 Plug 'lambdalisue/suda.vim'
 Plug 't9md/vim-choosewin'
@@ -129,35 +125,6 @@ let g:session_autosave_periodic = 1
 let g:session_autosave_silent = 1
 let g:session_command_aliases = 1
 let g:session_directory = stdpath('data') . 'sessions'
-
-" Denite
-call denite#custom#option('_', {
-  \   'prompt': 'λ:',
-  \   'empty': 0,
-  \   'winheight': 16,
-  \   'source_names': 'short',
-  \   'vertical_preview': 1,
-  \   'auto-accel': 1,
-  \   'auto-resume': 1,
-  \ })
-
-call denite#custom#var('grep', 'command', ['rg'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
-call denite#custom#var('grep', 'default_opts', [
-  \ '--hidden',
-  \ '--vimgrep',
-  \ '--no-heading',
-  \ '-S'
-  \ ])
-call denite#custom#source(
-  \ 'buffer',
-  \ 'matchers', [
-  \   'matcher/fuzzy',
-  \   'matcher/project_files'
-  \ ])
 
 " Grepper
 let g:grepper = {
@@ -242,16 +209,6 @@ let g:test#strategy = 'neoterm'
 " Omnifunc
 inoremap <C-Space> <C-x><C-o>
 imap <C-@> <C-Space>
-
-" Denite
-nnoremap <leader>dp :<C-u>Denite file_rec<CR>
-nnoremap <leader>df :<C-u>Denite grep:. -mode=normal<CR>
-nnoremap <leader>ds :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
-nnoremap <leader>dr :<C-u>Denite -resume<CR>
-
-" Unite
-nnoremap <leader>b :Unite buffer<CR>
-nnoremap <leader>B :Unite buffer<CR>
 
 " Telescope
 noremap <C-p> :Telescope git_files<CR>
