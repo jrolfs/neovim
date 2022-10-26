@@ -38,9 +38,10 @@ Plug 'tpope/vim-abolish'
 
 ""
 " @section Plugins, completion / formatting / linting
-Plug 'w0rp/ale'
-Plug 'neovim/nvim-lspconfig'
 Plug 'dundalek/lazy-lsp.nvim'
+Plug 'folke/trouble.nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'w0rp/ale'
 
 ""
 " @section Plugins, terminal / repl
