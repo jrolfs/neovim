@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 let g:catppuccin_flavour = 'frappe'
 let g:gruvbox_material_background = 'soft'
 
@@ -18,5 +20,7 @@ set winminwidth=0
 
 set laststatus=2
 set noshowmode
+
+set shortmess=a
 
 set termguicolors
