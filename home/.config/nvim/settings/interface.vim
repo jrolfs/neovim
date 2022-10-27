@@ -1,6 +1,8 @@
 let g:catppuccin_flavour = 'frappe'
 let g:gruvbox_material_background = 'soft'
 
+let g:netrw_keepdir = 0
+
 colorscheme gruvbox-material
 
 set updatetime=100
