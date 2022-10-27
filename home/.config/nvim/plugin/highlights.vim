@@ -27,4 +27,4 @@ function s:highlights()
 
 endfunction
 
-autocmd ColorScheme,VimEnter * call s:highlights()
+" autocmd ColorScheme,VimEnter * call s:highlights()

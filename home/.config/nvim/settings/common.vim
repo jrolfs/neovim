@@ -3,7 +3,8 @@ scriptencoding utf-8
 ""
 " @section General
 
-let &runtimepath .= ', "~/.config/nvim/lua"'
+let g:lua_home = "~/.config/nvim/lua"
+let &runtimepath .= ', ' . g:lua_home
 
 "
 " Leader

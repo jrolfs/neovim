@@ -15,7 +15,7 @@ Plug 'editorconfig/editorconfig-vim'
 
 " Themes
 Plug 'gruvbox-material/vim', { 'as': 'gruvbox-material' }
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'catppuccin/nvim', { 'as': 'catppuccin', 'branch': 'main' }
 
 Plug 'chrisbra/Recover.vim'
 Plug 'gcmt/taboo.vim'
@@ -30,6 +30,8 @@ Plug 'szw/vim-maximizer'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 
+Plug 'rafcamlet/nvim-luapad'
+
 ""
 " @section Plugins, search
 Plug 'nvim-lua/plenary.nvim'
@@ -40,7 +42,7 @@ Plug 'tpope/vim-abolish'
 ""
 " @section Plugins, completion / formatting / linting
 Plug 'dundalek/lazy-lsp.nvim'
-Plug 'folke/trouble.nvim'
+Plug 'folke/trouble.nvim', { 'branch': 'main' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'w0rp/ale'
 
@@ -83,14 +85,15 @@ Plug 'wellle/targets.vim'
 
 ""
 " @section Plugins, syntax
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'LnL7/vim-nix'
 Plug 'direnv/direnv.vim'
 Plug 'fladson/vim-kitty', { 'branch': 'main' }
+Plug 'folke/neodev.nvim', { 'branch': 'main' }
 Plug 'heavenshell/vim-jsdoc'
 Plug 'jparise/vim-graphql'
 Plug 'jrolfs/vim-github-hub', { 'branch': 'support-commit' }
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'sheerun/vim-polyglot'
 Plug 'tridactyl/vim-tridactyl'

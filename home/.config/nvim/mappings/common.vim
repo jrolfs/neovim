@@ -25,6 +25,7 @@ noremap [w :tabprevious<cr>
 
 " Source configuration
 nmap <leader>C <plug>(configuration-source)
+nmap <leader>CL <plug>(configuration-source-lua)
 
 " Show highlights
 nmap <leader>H <plug>(configuration-show-highlights)
