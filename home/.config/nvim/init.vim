@@ -215,10 +215,6 @@ let g:test#strategy = 'neoterm'
 inoremap <C-Space> <C-x><C-o>
 imap <C-@> <C-Space>
 
-" Telescope
-noremap <C-p> :Telescope git_files<CR>
-noremap <C-b> :Telescope buffers<CR>
-
 " ALE
 nmap <leader>al <plug>(ale_lint)
 nmap <leader>af <plug>(ale_fix)
