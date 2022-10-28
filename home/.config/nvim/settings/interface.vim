@@ -1,7 +1,7 @@
 let g:netrw_keepdir = 0
 let g:vimsyn_embed= 'l'
 
-colorscheme gruvbox-material
+colorscheme catppuccin
 
 set updatetime=100
 
