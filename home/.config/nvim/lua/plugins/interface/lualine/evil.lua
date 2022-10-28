@@ -132,7 +132,8 @@ ins_left {
 ins_left {
   'filename',
   cond = conditions.buffer_not_empty,
-  color = { fg = colors.magenta, gui = 'none' },
+  color = { fg = catppuccin.subtext0, bg = catppuccin.base, gui = 'none' },
+  separator = { left = '', right = '' }
 }
 
 ins_left { 'location' }
