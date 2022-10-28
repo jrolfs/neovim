@@ -1,10 +1,26 @@
 -- Eviline config for lualine
 -- Author: shadmansaleh
 -- Credit: glepnir
-local colors = require("catppuccin.palettes").get_palette()
+
+local catppuccin = require('catppuccin.palettes').get_palette()
+local mode = require('plugins.interface.lualine.mode')
+local lualine = require('lualine')
 
 -- Color table for highlights
 -- stylua: ignore
+local colors = {
+  bg       = catppuccin.surface1,
+  fg       = catppuccin.text,
+  yellow   = catppuccin.yellow,
+  cyan     = catppuccin.sky,
+  darkblue = catppuccin.blue,
+  green    = catppuccin.green,
+  orange   = catppuccin.peach,
+  violet   = catppuccin.muave,
+  magenta  = catppuccin.pink,
+  blue     = catppuccin.sapphire,
+  red      = catppuccin.red,
+}
 
 local conditions = {
   buffer_not_empty = function()
@@ -31,7 +47,7 @@ local config = {
       -- right section. Both are highlighted by c theme .  So we
       -- are just setting default looks o statusline
       normal = { c = { fg = colors.fg, bg = colors.bg } },
-      inactive = { c = { fg = colors.fg, bg = colors.bg } },
+      inactive = { c = { fg = catppuccin.overlay0, bg = catppuccin.base } },
     },
   },
   sections = {
@@ -50,7 +66,7 @@ local config = {
     lualine_b = {},
     lualine_y = {},
     lualine_z = {},
-    lualine_c = {},
+    -- lualine_c = {},
     lualine_x = {},
   },
 }
@@ -116,12 +132,12 @@ ins_left {
 ins_left {
   'filename',
   cond = conditions.buffer_not_empty,
-  color = { fg = colors.magenta, gui = 'bold' },
+  color = { fg = colors.magenta, gui = 'none' },
 }
 
 ins_left { 'location' }
 
-ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
+ins_left { 'progress', color = { fg = colors.fg, gui = 'none' } }
 
 ins_left {
   'diagnostics',
@@ -145,7 +161,7 @@ ins_left {
 ins_left {
   -- Lsp server name .
   function()
-    local msg = 'No Active Lsp'
+    local msg = 'ﮤ'
     local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
     local clients = vim.lsp.get_active_clients()
     if next(clients) == nil then
@@ -154,13 +170,12 @@ ins_left {
     for _, client in ipairs(clients) do
       local filetypes = client.config.filetypes
       if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-        return client.name
+        return 'ﮣ ' .. client.name
       end
     end
     return msg
   end,
-  icon = ' LSP:',
-  color = { fg = '#ffffff', gui = 'bold' },
+  color = { fg = '#ffffff', gui = 'none' },
 }
 
 -- Add components to right sections
@@ -168,26 +183,27 @@ ins_right {
   'o:encoding', -- option component same as &encoding in viml
   fmt = string.upper, -- I'm not sure why it's upper case either ;)
   cond = conditions.hide_in_width,
-  color = { fg = colors.green, gui = 'bold' },
+  icons_enabled = true,
+  color = { fg = catppuccin.overlay1, gui = 'none' },
 }
 
 ins_right {
   'fileformat',
   fmt = string.upper,
-  icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-  color = { fg = colors.green, gui = 'bold' },
+  icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
+  color = { fg = catppuccin.subtext0, gui = 'bold' },
 }
 
 ins_right {
   'branch',
   icon = '',
-  color = { fg = colors.violet, gui = 'bold' },
+  color = { fg = colors.darkblue, gui = 'bold' },
 }
 
 ins_right {
   'diff',
   -- Is it me or the symbol for modified us really weird
-  symbols = { added = ' ', modified = '柳 ', removed = ' ' },
+  symbols = { added = ' ', modified = ' ', removed = ' ' },
   diff_color = {
     added = { fg = colors.green },
     modified = { fg = colors.orange },
