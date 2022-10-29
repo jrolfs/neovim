@@ -107,7 +107,7 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 
 ""
 " @section Plugins, icons
-Plug 'ryanoasis/vim-devicons'
+Plug 'nvim-tree/nvim-web-devicons'
 
 call plug#end()
 
