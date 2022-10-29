@@ -3,8 +3,6 @@
 -- Credit: glepnir
 
 local catppuccin = require('catppuccin.palettes').get_palette()
-local mode = require('plugins.interface.lualine.mode')
-local lualine = require('lualine')
 
 -- Color table for highlights
 -- stylua: ignore
@@ -16,7 +14,7 @@ local colors = {
   darkblue = catppuccin.blue,
   green    = catppuccin.green,
   orange   = catppuccin.peach,
-  violet   = catppuccin.muave,
+  violet   = catppuccin.mauve,
   magenta  = catppuccin.pink,
   blue     = catppuccin.sapphire,
   red      = catppuccin.red,
@@ -47,7 +45,7 @@ local config = {
       -- right section. Both are highlighted by c theme .  So we
       -- are just setting default looks o statusline
       normal = { c = { fg = colors.fg, bg = colors.bg } },
-      inactive = { c = { fg = catppuccin.overlay0, bg = catppuccin.base } },
+      inactive = { c = { fg = catppuccin.overlay0, bg = 'none' } },
     },
   },
   sections = {
@@ -66,7 +64,15 @@ local config = {
     lualine_b = {},
     lualine_y = {},
     lualine_z = {},
-    -- lualine_c = {},
+    lualine_c = {
+      {
+        'filename',
+        cond = conditions.buffer_not_empty,
+        path = 1,
+        shortening_target = 0,
+        color = { fg = catppuccin.overlay1, bg = 'none', gui = 'none' },
+      }
+    },
     lualine_x = {},
   },
 }
@@ -81,13 +87,13 @@ local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
 
-ins_left {
-  function()
-    return '▊'
-  end,
-  color = { fg = colors.blue }, -- Sets highlighting of component
-  padding = { left = 0, right = 1 }, -- We don't need space before this
-}
+-- ins_left {
+--   function()
+--     return ''
+--   end,
+--   color = { fg = colors.blue, bg = 'none' }, -- Sets highlighting of component
+--   padding = { left = 0, right = 0 }, -- We don't need space before this
+-- }
 
 ins_left {
   -- mode component
@@ -97,7 +103,7 @@ ins_left {
   color = function()
     -- auto change color according to neovims mode
     local mode_color = {
-      n = colors.red,
+      n = colors.violet,
       i = colors.green,
       v = colors.blue,
       [''] = colors.blue,
@@ -118,25 +124,28 @@ ins_left {
       ['!'] = colors.red,
       t = colors.red,
     }
-    return { fg = mode_color[vim.fn.mode()] }
+    return { fg = catppuccin.surface1, bg = mode_color[vim.fn.mode()] }
   end,
-  padding = { right = 1 },
+  padding = { right = 1, left = 1 },
+  separator = { left = '', right = '' }
 }
 
-ins_left {
-  -- filesize component
-  'filesize',
-  cond = conditions.buffer_not_empty,
-}
+-- ins_left {
+--   -- filesize component
+--   'filesize',
+--   cond = conditions.buffer_not_empty,
+-- }
 
 ins_left {
   'filename',
   cond = conditions.buffer_not_empty,
-  color = { fg = catppuccin.subtext0, bg = catppuccin.base, gui = 'none' },
-  separator = { left = '', right = '' }
+  color = { fg = catppuccin.subtext0, bg = 'none', gui = 'none' },
 }
 
-ins_left { 'location' }
+ins_left {
+  'location',
+  separator = { left = '' }
+}
 
 ins_left { 'progress', color = { fg = colors.fg, gui = 'none' } }
 
@@ -215,10 +224,10 @@ ins_right {
 
 ins_right {
   function()
-    return '▊'
+    return ''
   end,
-  color = { fg = colors.blue },
-  padding = { left = 1 },
+  color = { fg = colors.bg, bg = 'none' },
+  padding = { left = 0 },
 }
 
 return config
