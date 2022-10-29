@@ -40,11 +40,16 @@ Plug 'mhinz/vim-grepper'
 Plug 'tpope/vim-abolish'
 
 ""
-" @section Plugins, completion / formatting / linting
+" @section Plugins, lsp + completion
 Plug 'dundalek/lazy-lsp.nvim'
 Plug 'folke/trouble.nvim', { 'branch': 'main' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'w0rp/ale'
+Plug 'hrsh7th/cmp-nvim-lsp', { 'branch': 'main' }
+Plug 'hrsh7th/cmp-buffer', { 'branch': 'main' }
+Plug 'hrsh7th/cmp-path', { 'branch': 'main' }
+Plug 'hrsh7th/cmp-cmdline', { 'branch': 'main' }
+Plug 'hrsh7th/nvim-cmp', { 'branch': 'main' }
 
 ""
 " @section Plugins, terminal / repl
