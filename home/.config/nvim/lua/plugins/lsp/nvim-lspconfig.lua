@@ -1,9 +1,9 @@
-local options = { noremap=true, silent=true }
+local options = { noremap = true, silent = true }
 
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, options)
-vim.keymap.set('n', '[d',        vim.diagnostic.goto_prev,  options)
-vim.keymap.set('n', ']d',        vim.diagnostic.goto_next,  options)
-vim.keymap.set('n', '<c-e> m',   vim.diagnostic.goto_next,  options)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, options)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, options)
+vim.keymap.set('n', '<c-e> m', vim.diagnostic.goto_next, options)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, options)
 
 --- This belongs here because `on_attach` is a native LSP thing,
@@ -13,7 +13,7 @@ local on_attach = function(_, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
