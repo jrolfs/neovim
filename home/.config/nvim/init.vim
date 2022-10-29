@@ -44,7 +44,6 @@ Plug 'tpope/vim-abolish'
 Plug 'dundalek/lazy-lsp.nvim'
 Plug 'folke/trouble.nvim', { 'branch': 'main' }
 Plug 'neovim/nvim-lspconfig'
-Plug 'w0rp/ale'
 Plug 'hrsh7th/cmp-nvim-lsp', { 'branch': 'main' }
 Plug 'hrsh7th/cmp-buffer', { 'branch': 'main' }
 Plug 'hrsh7th/cmp-path', { 'branch': 'main' }
@@ -180,33 +179,6 @@ let g:multi_cursor_exit_from_insert_mode = 0
 " JSDoc
 let g:jsdoc_allow_input_prompt = 1
 let g:jsdoc_input_description = 1
-
-" ALE
-let g:ale_sign_error = ''
-let g:ale_sign_warning = ''
-let g:ale_completion_enabled = 0
-
-let g:ale_javascript_eslint_options = '--ext .js,.jsx,.ts,.tsx'
-
-let g:ale_linters = {
-  \   'javascript': ['eslint'],
-  \   'typescript': ['eslint', 'tslint']
-  \ }
-
-let g:ale_fixers = {
-  \   'css': ['prettier'],
-  \   'graphql': ['prettier'],
-  \   'html': ['prettier', 'html-tidy'],
-  \   'javascript': ['eslint', 'prettier'],
-  \   'json': ['prettier'],
-  \   'json5': ['prettier'],
-  \   'markdown': ['prettier'],
-  \   'mdx': ['prettier'],
-  \   'scss': ['prettier'],
-  \   'typescript': ['eslint', 'prettier'],
-  \   'typescriptreact': ['eslint', 'prettier'],
-  \   'yaml': ['prettier']
-  \ }
 
 " vim-test
 let g:test#ruby#rspec#executable = '$(rbenv which zeus) rspec'
