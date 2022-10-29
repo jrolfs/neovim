@@ -1,5 +1,5 @@
 require('lazy-lsp').setup {
-  excluded_servers = {},
+  excluded_servers = { 'denols' },
   default_config = {},
   configs = {},
 }
