@@ -22,7 +22,7 @@ Plug 'gcmt/taboo.vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'lewis6991/gitsigns.nvim', { 'branch': 'main' }
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'sjl/gundo.vim'
@@ -42,13 +42,14 @@ Plug 'tpope/vim-abolish'
 ""
 " @section Plugins, lsp + completion
 Plug 'dundalek/lazy-lsp.nvim'
-Plug 'folke/trouble.nvim', { 'branch': 'main' }
+Plug 'folke/trouble.nvim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/cmp-nvim-lsp', { 'branch': 'main' }
-Plug 'hrsh7th/cmp-buffer', { 'branch': 'main' }
-Plug 'hrsh7th/cmp-path', { 'branch': 'main' }
-Plug 'hrsh7th/cmp-cmdline', { 'branch': 'main' }
-Plug 'hrsh7th/nvim-cmp', { 'branch': 'main' }
+Plug 'echasnovski/mini.completion'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
 
 ""
 " @section Plugins, terminal / repl
@@ -91,8 +92,8 @@ Plug 'wellle/targets.vim'
 " @section Plugins, syntax
 Plug 'LnL7/vim-nix'
 Plug 'direnv/direnv.vim'
-Plug 'fladson/vim-kitty', { 'branch': 'main' }
-Plug 'folke/neodev.nvim', { 'branch': 'main' }
+Plug 'fladson/vim-kitty'
+Plug 'folke/neodev.nvim'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'jparise/vim-graphql'
 Plug 'jrolfs/vim-github-hub', { 'branch': 'support-commit' }
