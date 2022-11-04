@@ -15,7 +15,7 @@ Plug 'editorconfig/editorconfig-vim'
 
 " Themes
 Plug 'gruvbox-material/vim', { 'as': 'gruvbox-material' }
-Plug 'catppuccin/nvim', { 'as': 'catppuccin', 'branch': 'main' }
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 Plug 'chrisbra/Recover.vim'
 Plug 'gcmt/taboo.vim'
