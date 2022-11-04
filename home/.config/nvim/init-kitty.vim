@@ -13,6 +13,7 @@ call plug#begin(stdpath('data') . '/plugged-kitty')
 
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'gruvbox-material/vim', { 'as': 'gruvbox-material' }
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 ""
 " @section Plugins, motion
