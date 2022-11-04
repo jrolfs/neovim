@@ -18,7 +18,7 @@ Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 ""
 " @section Plugins, motion
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'asvetliakov/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'chamindra/marvim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-surround'
