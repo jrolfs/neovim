@@ -41,15 +41,19 @@ Plug 'tpope/vim-abolish'
 
 ""
 " @section Plugins, lsp + completion
-Plug 'dundalek/lazy-lsp.nvim'
-Plug 'folke/trouble.nvim'
-Plug 'neovim/nvim-lspconfig'
-Plug 'echasnovski/mini.completion'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-path'
+
+Plug 'dundalek/lazy-lsp.nvim'
+Plug 'neovim/nvim-lspconfig'
+
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
+
+Plug 'folke/trouble.nvim'
 
 ""
 " @section Plugins, terminal / repl
