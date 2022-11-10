@@ -16,7 +16,6 @@ local options = { noremap = true, silent = true }
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, options)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, options)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, options)
-vim.keymap.set('n', '<c-e> m', vim.diagnostic.goto_next, options)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, options)
 
 --- This belongs here because `on_attach` is a native LSP thing,
