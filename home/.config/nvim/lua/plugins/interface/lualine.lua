@@ -1,3 +1,3 @@
-local slanted = require('plugins.interface.lualine.evil')
+local evil = require('plugins.interface.lualine.evil')
 
-require('lualine').setup(slanted)
+require('lualine').setup(evil)
