@@ -85,14 +85,7 @@ local config = {
           return { fg = catppuccin.surface1, bg = color_for_mode() }
         end,
         padding = { right = 1, left = 1 },
-      },
-      {
-        function()
-          return ''
-        end,
-        code = conditions.buffer_not_empty,
-        color = { bg = 'none', fg = color_for_mode() },
-        padding = { left = 0 },
+        separator = { right = '' }
       }
     },
     lualine_b = {
