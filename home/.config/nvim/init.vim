@@ -1,6 +1,7 @@
 scriptencoding utf-8
 
 runtime settings/globals.vim
+runtime settings/aliases.vim
 
 let g:init = 'init.vim'
 
