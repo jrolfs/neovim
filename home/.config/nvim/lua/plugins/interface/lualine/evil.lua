@@ -1,3 +1,4 @@
+local utilities = require('utilities')
 local catppuccin = require('catppuccin.palettes').get_palette()
 
 -- stylua: ignore
@@ -19,8 +20,10 @@ local conditions = {
   buffer_not_empty = function()
     return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
   end,
-  hide_in_width = function()
-    return vim.fn.winwidth(0) > 80
+  hide_at = function(width)
+    return function ()
+      return vim.fn.winwidth(0) > width
+    end
   end,
   check_git_workspace = function()
     local filepath = vim.fn.expand('%:p:h')
@@ -29,11 +32,14 @@ local conditions = {
   end,
 }
 
-local function truncate_at(size)
-  return function(data)
-    return (vim.fn.winwidth(0) <= size and '' or data)
-  end
-end
+local formatters = {
+  truncate_at = function(length, width)
+    return function(data)
+      local truncate = width == nil or vim.fn.winwidth(0) <= width
+      return (truncate and data:sub(0, length) .. '…' or data)
+    end
+  end,
+}
 
 local function color_for_mode()
   local color = {
@@ -60,6 +66,20 @@ local function color_for_mode()
   }
 
   return color[vim.fn.mode()]
+end
+
+local function filename(overrides)
+    local defaults = {
+      'filename',
+      icons_enabled = true,
+      cond = conditions.buffer_not_empty,
+      color = { fg = catppuccin.subtext0, bg = 'none', gui = 'none' },
+      fmt = function(data)
+        return data:gsub('%[%+%]', ''):gsub('%[%-%]', 'ﱮ')
+      end
+    }
+
+    return (overrides and utilities.merge(defaults, overrides) or defaults)
 end
 
 local config = {
@@ -89,15 +109,8 @@ local config = {
       }
     },
     lualine_b = {
-      {
-        'filename',
-        icons_enabled = true,
-        cond = conditions.buffer_not_empty,
-        color = { fg = catppuccin.subtext0, bg = 'none', gui = 'none' },
-        fmt = function(data)
-          return data:gsub('%[%+%]', ''):gsub('%[%-%]', 'ﱮ')
-        end
-      }
+      -- Filename
+      filename()
     },
     lualine_c = {
       {
@@ -115,7 +128,7 @@ local config = {
       -- Progress
       {
         'progress',
-        fmt = truncate_at(80),
+        cond = conditions.hide_at(80),
         color = { fg = colors.fg, gui = 'none' },
       },
 
@@ -180,14 +193,12 @@ local config = {
     lualine_y = {},
     lualine_z = {},
     lualine_c = {
-      {
-        'filename',
-        cond = conditions.buffer_not_empty,
+      -- Filename
+      filename({
         path = 1,
-        icons_enabled = true,
-        shortening_target = 0,
         color = { fg = catppuccin.overlay1, bg = 'none', gui = 'none' },
-      }
+        shorting_target = 80,
+      })
     },
     lualine_x = {},
   },
@@ -199,9 +210,8 @@ end
 
 insert_x {
   'o:encoding', -- option component same as &encoding in viml
-  cond = conditions.hide_in_width,
+  cond = conditions.hide_at(100),
   icons_enabled = true,
-  fmt = truncate_at(100),
   color = { fg = catppuccin.overlay1, gui = 'none' },
 }
 
@@ -216,18 +226,18 @@ insert_x {
   'branch',
   icon = '',
   color = { fg = colors.darkblue, gui = 'bold' },
+  fmt = formatters.truncate_at(8, 120)
 }
 
 insert_x {
   'diff',
-  -- Is it me or the symbol for modified us really weird
   symbols = { added = ' ', modified = ' ', removed = ' ' },
   diff_color = {
     added = { fg = colors.green },
     modified = { fg = colors.orange },
     removed = { fg = colors.red },
   },
-  cond = conditions.hide_in_width,
+  cond = conditions.hide_at(80),
 }
 
 return config
