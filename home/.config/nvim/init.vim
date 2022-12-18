@@ -37,7 +37,6 @@ Plug 'rafcamlet/nvim-luapad'
 " @section Plugins, search
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-Plug 'mhinz/vim-grepper'
 Plug 'tpope/vim-abolish'
 
 ""
@@ -141,13 +140,6 @@ let g:session_autosave_silent = 1
 let g:session_command_aliases = 1
 let g:session_directory = stdpath('data') . 'sessions'
 
-" Grepper
-let g:grepper = {
-  \   'tools': ['rg', 'ag', 'git'],
-  \   'ag': { 'grepprg': '/run/current-system/sw/bin/ag' },
-  \   'rg': { 'grepprg': '/run/current-system/sw/bin/rg' }
-  \ }
-
 " Gundo
 let g:gundo_prefer_python3 = 1
 
@@ -172,9 +164,6 @@ let g:pandoc#syntax#codeblocks#embeds#langs = [
   \   'python',
   \   'bash=sh'
   \ ]
-
-" Neosnippet
-let g:neosnippet#enable_completed_snippet = 1
 
 " JSX
 let g:jsx_ext_required = 0
@@ -230,14 +219,6 @@ nnoremap <C-w>z :MaximizerToggle<CR>
 " Find/Replace
 nnoremap <leader>rp :%s/"//g<Left><Left>
 
-" Grepper
-nnoremap <leader>gg :Grepper -tool git -noswitch<CR>
-nnoremap <leader>ga :Grepper -tool ag -grepprg ag --vimgrep<CR>
-nnoremap <leader>gr :Grepper -tool rg -grepprg rg<CR>
-
-nmap gs <plug>(GrepperOperator)
-xmap gs <plug>(GrepperOperator)
-
 " Terminal
 tnoremap <C-e> <C-\><C-n>
 tmap <C-w> <C-e><C-w>
@@ -268,11 +249,6 @@ nnoremap <silent> <C-t>T :TestFile<CR>
 nnoremap <silent> <C-t>a :TestSuite<CR>
 nnoremap <silent> <C-t>l :TestLast<CR>
 nnoremap <silent> <C-t>g :TestVisit<CR>
-
-" Neosnippet
-imap <C-k> <plug>(neosnippet_expand_or_jump)
-smap <C-k> <plug>(neosnippet_expand_or_jump)
-xmap <C-k> <plug>(neosnippet_expand_target)
 
 runtime mappings/common.vim
 
