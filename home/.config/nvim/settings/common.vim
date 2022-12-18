@@ -32,8 +32,8 @@ set expandtab
 set autoindent
 
 "
-" List trailing
-set listchars=tab:\ \ ,trail:·
+" Hidden characters
+set listchars=tab:->,trail:·
 set list
 
 " Search
