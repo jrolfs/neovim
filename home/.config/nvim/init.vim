@@ -102,7 +102,6 @@ Plug 'fladson/vim-kitty'
 Plug 'folke/neodev.nvim'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'jparise/vim-graphql'
-Plug 'jrolfs/vim-github-hub', { 'branch': 'support-commit' }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'powerman/vim-plugin-AnsiEsc'
