@@ -9,5 +9,18 @@ require('lazy-lsp').setup {
   default_config = {
     on_attach = config.on_attach
   },
-  configs = {},
+  configs = {
+    ltex = {
+      filetypes = {
+        "bib",
+        -- "gitcommit", -- Spelling goes nuts on the diff
+        "markdown",
+        "org",
+        "plaintex",
+        "rst",
+        "rnoweb",
+        "tex",
+      }
+    },
+  },
 }
