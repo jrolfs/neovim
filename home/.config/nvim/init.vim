@@ -157,12 +157,13 @@ let g:tagbar_autofocus = 1
 let g:pandoc#modules#disabled = ['chdir', 'folding']
 
 let g:pandoc#syntax#codeblocks#embeds#langs = [
+  \   'bash=sh',
   \   'javascript',
   \   'js=javascript',
   \   'json=javascript',
-  \   'ruby',
   \   'python',
-  \   'bash=sh'
+  \   'ruby',
+  \   'ts=typescript'
   \ ]
 
 " JSX
