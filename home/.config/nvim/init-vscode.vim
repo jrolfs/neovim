@@ -50,9 +50,6 @@ nmap gcc <plug>VSCodeCommentaryLine
 noremap [w :<C-u>call VSCodeCall('workbench.action.previousEditor')<cr>
 noremap ]w :<C-u>call VSCodeCall('workbench.action.nextEditor')<cr>
 
-noremap [c :<C-u>call VSCodeCall('workbench.action.editor.previousChange')<cr>
-noremap ]c :<C-u>call VSCodeCall('workbench.action.editor.nextChange')<cr>
-
 noremap [d :<C-u>call VSCodeCall('editor.action.marker.prev')<cr>
 noremap ]d :<C-u>call VSCodeCall('editor.action.marker.next')<cr>
 
@@ -70,3 +67,4 @@ noremap <leader>rt :<C-u>call VSCodeCall('typescript.restartTsServer')<cr>
 noremap <leader>z :<C-u>call VSCodeCall('workbench.action.maximizeEditor')<cr>
 noremap <leader>= :<C-u>call VSCodeCall('workbench.action.evenEditorWidths')<cr>
 
+lua require('init-vscode')

@@ -1,8 +1,10 @@
 lua <<EOF
 function _G.FlushLuaCache()
-  -- Need to do this, otherwise we seem to have a zomby
-  -- instance of Lualine continuing to update the status
-  require('lualine').hide()
+  if not vim.g.vscode then
+    -- Need to do this, otherwise we seem to have a zomby
+    -- instance of Lualine continuing to update the status
+    require('lualine').hide()
+  end
 
   for name,_ in pairs(package.loaded) do
     -- Dumping the cache for `bit` breaks `nvim-colorizer`... we should
