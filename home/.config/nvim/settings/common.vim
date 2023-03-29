@@ -48,6 +48,7 @@ set hidden
 set autoread
 
 set nowrap
+set textwidth=80
 
 " Session
 set sessionoptions+=tabpages,globals
