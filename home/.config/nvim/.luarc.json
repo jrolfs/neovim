@@ -1,0 +1,7 @@
+{
+    "workspace.library": [
+        "/Users/jamie/.local/share/nvim/plugged/neodev.nvim/types/stable",
+        "/nix/store/q28v1lys7jhn4wjwhyfk4gmkpxjpg6hc-neovim-unwrapped-0.8.3/share/nvim/runtime",
+        "${3rd}/luv/library"
+    ]
+}
