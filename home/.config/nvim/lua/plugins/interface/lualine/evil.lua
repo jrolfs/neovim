@@ -1,10 +1,17 @@
 local utilities = require('utilities')
+
+-- Catppuccin
 local catppuccin = require('catppuccin.palettes').get_palette()
 
+-- Gruvbox Material
+local configuration = vim.fn['gruvbox_material#get_configuration']()
+local gruvbox = vim.fn['gruvbox_material#get_palette'](configuration.background, configuration.foreground, configuration.colors_override)
+
 -- stylua: ignore
-local colors = {
+local catppuccin_colors = {
   bg       = catppuccin.surface1,
   fg       = catppuccin.text,
+  fg2      = catppuccin.text, -- TODO: map this to darker foreground
   yellow   = catppuccin.yellow,
   cyan     = catppuccin.sky,
   darkblue = catppuccin.blue,
@@ -15,6 +22,24 @@ local colors = {
   blue     = catppuccin.sapphire,
   red      = catppuccin.red,
 }
+
+-- stylua: ignore
+local gruvbox_colors = {
+  bg       = gruvbox.bg1[1],
+  fg       = gruvbox.fg1[1],
+  fg2       = gruvbox.fg0[1],
+  yellow   = gruvbox.yellow[1],
+  cyan     = gruvbox.aqua[1],
+  darkblue = gruvbox.blue[1],
+  green    = gruvbox.green[1],
+  orange   = gruvbox.orange[1],
+  violet   = gruvbox.purple[1],
+  magenta  = gruvbox.red[1],
+  blue     = gruvbox.blue[1],
+  red      = gruvbox.red[1],
+}
+
+local colors = vim.g.colorscheme == 'gruvbox-material' and gruvbox_colors or catppuccin_colors
 
 local conditions = {
   buffer_not_empty = function()
@@ -73,7 +98,7 @@ local function filename(overrides)
       'filename',
       icons_enabled = true,
       cond = conditions.buffer_not_empty,
-      color = { fg = catppuccin.subtext0, bg = 'none', gui = 'none' },
+      color = { fg = colors.fg, bg = 'none', gui = 'none' },
       fmt = function(data)
         return data:gsub('%[%+%]', ''):gsub('%[%-%]', 'ﱮ')
       end
@@ -129,7 +154,7 @@ local config = {
       {
         'progress',
         cond = conditions.hide_at(80),
-        color = { fg = colors.fg, gui = 'none' },
+        color = { fg = colors.fg2, gui = 'none' },
       },
 
       -- Diagnostics
