@@ -78,7 +78,7 @@ Plug 'moll/vim-node'
 Plug 'danro/rename.vim'
 Plug 'lambdalisue/suda.vim'
 Plug 't9md/vim-choosewin'
-Plug 'tpope/vim-vinegar'
+Plug 'stevearc/oil.nvim'
 
 ""
 " @section Plugins, motion
