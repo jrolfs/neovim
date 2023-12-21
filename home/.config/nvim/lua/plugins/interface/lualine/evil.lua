@@ -11,7 +11,8 @@ local gruvbox = vim.fn['gruvbox_material#get_palette'](configuration.background,
 local catppuccin_colors = {
   bg       = catppuccin.surface1,
   fg       = catppuccin.text,
-  fg2      = catppuccin.text, -- TODO: map this to darker foreground
+  fg2      = catppuccin.overlay0,
+  fg3      = catppuccin.overlay1,
   yellow   = catppuccin.yellow,
   cyan     = catppuccin.sky,
   darkblue = catppuccin.blue,
@@ -127,7 +128,7 @@ local config = {
           return ''
         end,
         color = function()
-          return { fg = catppuccin.surface1, bg = color_for_mode() }
+          return { fg = colors.bg, bg = color_for_mode() }
         end,
         padding = { right = 1, left = 1 },
         separator = { right = '' }
