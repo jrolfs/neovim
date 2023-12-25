@@ -5,7 +5,10 @@ require('lazy-lsp').setup {
     'denols', -- TypeScript: if I ever start using Deno, I'll need to figure out how to load this selectively
     'rls', -- Rust: no longer supported (prefer `rust-analyzer`
     'rust_analyzer', -- Letting 'rust-tools.nvim' manage this
-    'sqls' -- Deprecated (prefer `sqlls`)
+    'sqls', -- Deprecated (prefer `sqlls`)
+    -- Getting errors for these after latest nvim plugin update
+    'dolmenls',
+    'jqls',
   },
   default_config = {
     on_attach = config.on_attach
