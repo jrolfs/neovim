@@ -37,7 +37,7 @@ Plug 'rafcamlet/nvim-luapad'
 ""
 " @section Plugins, search
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'tpope/vim-abolish'
 
 ""
