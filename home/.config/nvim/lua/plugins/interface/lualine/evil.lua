@@ -128,7 +128,7 @@ local config = {
           return ''
         end,
         color = function()
-          return { fg = catppuccin.surface1, bg = color_for_mode() }
+          return { fg = colors.bg, bg = color_for_mode() }
         end,
         padding = { right = 1, left = 1 },
         separator = { right = '' }
