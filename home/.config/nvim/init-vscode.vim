@@ -70,4 +70,7 @@ noremap <leader>rt :<C-u>call VSCodeCall('typescript.restartTsServer')<cr>
 noremap <leader>z :<C-u>call VSCodeCall('workbench.action.maximizeEditor')<cr>
 noremap <leader>= :<C-u>call VSCodeCall('workbench.action.evenEditorWidths')<cr>
 
+nnoremap gqq gqq
+vnoremap gq gq
+
 lua require('init-vscode')
