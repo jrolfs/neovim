@@ -36,3 +36,4 @@ runtime settings/common.vim
 runtime settings/interface.vim
 runtime mappings/common.vim
 
+colorscheme gruvbox-material
