@@ -53,6 +53,9 @@ noremap ]w :<C-u>call VSCodeCall('workbench.action.nextEditor')<cr>
 noremap [d :<C-u>call VSCodeCall('editor.action.marker.prev')<cr>
 noremap ]d :<C-u>call VSCodeCall('editor.action.marker.next')<cr>
 
+noremap [c :<C-u>call VSCodeCall('workbench.action.editor.previousChange')<cr>
+noremap ]c :<C-u>call VSCodeCall('workbench.action.editor.nextChange')<cr>
+
 noremap <c-w>H :<C-u>call VSCodeCall('workbench.action.moveActiveEditorGroupLeft')<cr>
 noremap <c-w>J :<C-u>call VSCodeCall('workbench.action.moveActiveEditorGroupDown')<cr>
 noremap <c-w>K :<C-u>call VSCodeCall('workbench.action.moveActiveEditorGroupUp')<cr>
