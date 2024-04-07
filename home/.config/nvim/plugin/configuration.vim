@@ -14,6 +14,16 @@ function _G.FlushLuaCache()
     end
   end
 end
+
+function _G.StopLanguageServers()
+  -- Get the list of active LSP clients
+  local clients = vim.lsp.get_active_clients()
+
+  -- Iterate through the clients and send shutdown and exit requests
+  for _, client in ipairs(clients) do
+      client.stop()
+  end
+end
 EOF
 
 function s:SourceConfiguration()
