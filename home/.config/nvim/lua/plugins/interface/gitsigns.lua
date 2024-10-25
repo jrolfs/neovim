@@ -1,10 +1,24 @@
+-- First, set up the highlight groups
+vim.api.nvim_set_hl(0, 'GitSignsAdd', { link = 'DiffAdd' })
+vim.api.nvim_set_hl(0, 'GitSignsChange', { link = 'DiffChange' })
+vim.api.nvim_set_hl(0, 'GitSignsDelete', { link = 'DiffDelete' })
+
+vim.api.nvim_set_hl(0, 'GitSignsAddNr', { link = 'GitSignsAdd' })
+vim.api.nvim_set_hl(0, 'GitSignsChangeNr', { link = 'GitSignsChange' })
+vim.api.nvim_set_hl(0, 'GitSignsDeleteNr', { link = 'GitSignsDelete' })
+
+vim.api.nvim_set_hl(0, 'GitSignsAddLn', { link = 'GitSignsAdd' })
+vim.api.nvim_set_hl(0, 'GitSignsChangeLn', { link = 'GitSignsChange' })
+vim.api.nvim_set_hl(0, 'GitSignsDeleteLn', { link = 'GitSignsDelete' })
+
+-- Then, update the gitsigns configuration
 require('gitsigns').setup {
   signs = {
-    add          = {hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
-    change       = {hl = 'GitSignsChange', text = '│', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
-    delete       = {hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-    topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-    changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+    add          = {text = '│'},
+    change       = {text = '│'},
+    delete       = {text = '_'},
+    topdelete    = {text = '‾'},
+    changedelete = {text = '~'},
   },
   signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
   numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
@@ -35,9 +49,7 @@ require('gitsigns').setup {
     row = 0,
     col = 1
   },
-  yadm = {
-    enable = false
-  },
+  -- Remove the yadm configuration as it's not valid
 
   -- Mappings + Object
   on_attach = function(bufnr)
