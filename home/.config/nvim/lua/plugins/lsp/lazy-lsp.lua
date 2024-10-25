@@ -9,6 +9,8 @@ require('lazy-lsp').setup {
     -- Getting errors for these after latest nvim plugin update
     'dolmenls',
     'jqls',
+    -- Getting errors for these after latest nvim plugin update (part 2)
+    'jdtls'
   },
   default_config = {
     on_attach = config.on_attach
