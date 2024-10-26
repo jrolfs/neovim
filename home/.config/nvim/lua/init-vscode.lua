@@ -8,4 +8,4 @@ local home = vim.api.nvim_get_var('lua_home')
 -- in Code preserving the same directory structure as the Neovim plugins so it's easy
 -- to see what's mirrored.
 --
-require('relative-source').source { home .. '/vscode/*/*.lua' }
+require('relative-source').source { home .. '/code/*/*.lua' }
