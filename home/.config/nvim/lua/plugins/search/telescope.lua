@@ -41,6 +41,7 @@ end
 --
 
 vim.keymap.set('n', '<C-p>', project_files, {})
+vim.keymap.set('n', '<leader>fp', project_files, {})
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fv', builtin.git_files, {})
