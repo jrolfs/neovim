@@ -3,10 +3,6 @@ scriptencoding utf-8
 ""
 " @section General
 
-let g:lua_home = "~/.config/nvim/lua"
-let &runtimepath .= ', ' . g:lua_home
-
-"
 " Leader
 let g:mapleader = ' '
 let g:maplocalleader = ','
@@ -15,14 +11,28 @@ let g:maplocalleader = ','
 syntax enable
 filetype plugin indent on
 
+"
 " Undo
-silent !mkdir ${XDG_DATA_HOME:-$HOME/.local/share/nvim}/nvim/backups > /dev/null 2>&1
 
-if empty($XDG_DATA_HOME)
-  set undodir=$HOME/.local/share/nvim/backups
-else
-  set undodir=$XDG_DATA_HOME/nvim/backups
-endif
+" Define lua_home with ability to override
+let g:lua_home = get(g:, 'lua_home', '~/.config/nvim/lua')
+let &runtimepath .= ', ' . g:lua_home
+
+" Define backup directory name with ability to override
+let g:backup_directory = get(g:, 'backup_directory', 'backups')
+
+" Determine the base XDG data directory
+let s:xdg_data_home = empty($XDG_DATA_HOME) ? $HOME . '/.local/share' : $XDG_DATA_HOME
+let s:nvim_data_dir = s:xdg_data_home . '/nvim'
+
+" Construct the full backup path
+let s:backup_full_path = s:nvim_data_dir . '/' . g:backup_directory
+
+" Create backup directory if it doesn't exist
+silent execute '!mkdir -p ' . s:backup_full_path . ' > /dev/null 2>&1'
+
+" Set undodir to the backup directory
+let &undodir = s:backup_full_path
 
 set undofile
 

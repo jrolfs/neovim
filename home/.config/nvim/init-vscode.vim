@@ -10,42 +10,36 @@ let g:init = 'init-vscode.vim'
 
 call plug#begin(stdpath('data') . '/plugged-vscode')
 
+let g:backup_directory = 'backups-vscode'
+
+runtime settings/common.vim
+runtime mappings/common.vim
+
 ""
 " @section Plugins, interface
 Plug 'editorconfig/editorconfig-vim'
-Plug 'sjl/gundo.vim'
 
 ""
 " @section Plugins, motion
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'chamindra/marvim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
 Plug 'wellle/targets.vim'
 
 ""
 " @section Plugins, search
 Plug 'tpope/vim-abolish'
 
-""
-" @section Plugins, syntax
-Plug 'heavenshell/vim-jsdoc'
-
 call plug#end()
-
-
-runtime settings/common.vim
-runtime mappings/common.vim
 
 "
 " @section Mappings, mappings
 
-xmap gc  <plug>VSCodeCommentary
-nmap gc  <plug>VSCodeCommentary
-omap gc  <plug>VSCodeCommentary
-nmap gcc <plug>VSCodeCommentaryLine
+" xmap gc  <plug>VSCodeCommentary
+" nmap gc  <plug>VSCodeCommentary
+" omap gc  <plug>VSCodeCommentary
+" nmap gcc <plug>VSCodeCommentaryLine
 
 noremap [w :<C-u>call VSCodeCall('workbench.action.previousEditor')<cr>
 noremap ]w :<C-u>call VSCodeCall('workbench.action.nextEditor')<cr>
@@ -72,5 +66,10 @@ noremap <leader>= :<C-u>call VSCodeCall('workbench.action.evenEditorWidths')<cr>
 
 nnoremap gqq gqq
 vnoremap gq gq
+
+set nu rnu
+
+autocmd InsertEnter * set nu nornu
+autocmd InsertLeave * set nu rnu
 
 lua require('init-vscode')
