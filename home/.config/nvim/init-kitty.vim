@@ -11,9 +11,24 @@ let g:init = 'init-kitty.vim'
 call plug#begin(stdpath('data') . '/plugged-kitty')
 
 
-Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'gruvbox-material/vim', { 'as': 'gruvbox-material' }
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'qpkorr/vim-bufkill'
+Plug 'sjl/gundo.vim'
+Plug 'szw/vim-maximizer'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
+
+""
+" @section Plugins, lsp + completion
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-path'
 
 ""
 " @section Plugins, motion
@@ -29,6 +44,10 @@ Plug 'wellle/targets.vim'
 " @section Plugins, search
 Plug 'tpope/vim-abolish'
 
+""
+" @section Plugins, syntax
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 call plug#end()
 
 
@@ -37,3 +56,5 @@ runtime settings/interface.vim
 runtime mappings/common.vim
 
 colorscheme gruvbox-material
+
+lua require('init-kitty')
