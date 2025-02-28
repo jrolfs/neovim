@@ -72,4 +72,42 @@ set nu rnu
 autocmd InsertEnter * set nu nornu
 autocmd InsertLeave * set nu rnu
 
+" Attempt at hacking for supporting persistent undo in vscode-neovim. This isn't working yet with either the `autocmd`
+" or a manual call to `VSCodeWriteUndoFile` per the mapping in the GitHub example
+" See: https://github.com/vscode-neovim/vscode-neovim/issues/474#issuecomment-2537746208
+
+augroup vim_undodir_tree
+  autocmd!
+  autocmd BufEnter * call s:ReadUndoFile()
+  autocmd BufWritePost * call s:WriteUndoFile()
+augroup END
+
+function! VSCodeWriteUndoFile()
+  call s:WriteUndoFile()
+endfunction
+
+function! s:GetUndoFile(filepath)
+  let undofile = undofile(a:filepath)
+  let undofile = substitute(undofile, '%', '/', 'g')
+  let undofile = substitute(undofile, '//', '/', 'g')
+  return undofile
+endfunction
+
+function! s:WriteUndoFile()
+  let undofile = s:GetUndoFile(expand('%:p'))
+  let undodir = fnamemodify(undofile, ":h")
+  if !isdirectory(undodir)
+    call mkdir(undodir, "p")
+  endif
+
+  execute 'wundo ' . fnameescape(undofile)
+endfunction
+
+function! s:ReadUndoFile()
+  let undofile = s:GetUndoFile(expand('%:p'))
+  if filereadable(undofile)
+    execute 'silent! rundo ' . fnameescape(undofile)
+  endif
+endfunction
+
 lua require('init-vscode')
