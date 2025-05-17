@@ -54,6 +54,9 @@ Plug 'saadparwaiz1/cmp_luasnip'
 
 Plug 'folke/trouble.nvim'
 
+Plug 'olimorris/codecompanion.nvim'
+Plug 'ravitemer/mcphub.nvim'
+
 ""
 " @section Plugins, terminal / repl
 Plug 'metakirby5/codi.vim'
