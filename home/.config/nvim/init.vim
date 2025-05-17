@@ -84,13 +84,15 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'chamindra/marvim'
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/vim-easy-align'
-Plug 'mg979/vim-visual-multi'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'wellle/targets.vim'
+
+Plug 'nvimtools/hydra.nvim'
+Plug 'smoka7/multicursors.nvim'
 
 ""
 " @section Plugins, syntax
