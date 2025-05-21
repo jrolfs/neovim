@@ -200,7 +200,8 @@ nmap <leader>agv :vs<CR>:ALEGoToDefinition<CR>
 nmap <leader>ad :ALEDetail<CR>
 
 " netrw
-noremap <leader>ls :Oil<CR>
+noremap <leader>ls :Oil --float<CR>
+noremap <leader>lS :Oil<CR>
 
 noremap <leader>ly :let @+ = expand("%")<CR>
 noremap <leader>lcd :tcd %:p:h<CR>
