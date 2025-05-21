@@ -36,3 +36,5 @@
         }
     },
 }
+
+vim.keymap.set({ "n", "v" }, "mi", "<cmd>MCstart<cr>", { noremap = true, silent = true })
