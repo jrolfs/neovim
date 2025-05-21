@@ -18,6 +18,12 @@ require('lazy-lsp').setup {
     on_attach = config.on_attach
   },
   configs = {
+    lua_ls = {
+      on_attach = function(client)
+          -- Opt out of semantic token highlighting.
+          client.server_capabilities.semanticTokensProvider = nil
+      end
+    },
     ltex = {
       filetypes = {
         "bib",
