@@ -5,8 +5,8 @@ require("oil").setup({
   columns = {
     "icon",
     "permissions",
-    -- "size",
-    -- "mtime",
+    "size",
+    "mtime",
   },
   -- Buffer-local options to use for oil buffers
   buf_options = {
@@ -16,11 +16,11 @@ require("oil").setup({
   -- Window-local options to use for oil buffers
   win_options = {
     wrap = false,
-    signcolumn = "no",
+    signcolumn = "yes",
     cursorcolumn = false,
-    foldcolumn = "0",
+    foldcolumn = "1",
     spell = false,
-    list = false,
+    list = true,
     conceallevel = 3,
     concealcursor = "nvic",
   },
@@ -59,7 +59,7 @@ require("oil").setup({
   use_default_keymaps = true,
   view_options = {
     -- Show files and directories that start with "."
-    show_hidden = false,
+    show_hidden = true,
     -- This function defines what is considered a "hidden" file
     is_hidden_file = function(name, bufnr)
       return vim.startswith(name, ".")
@@ -78,17 +78,39 @@ require("oil").setup({
   -- Configuration for the floating window in oil.open_float
   float = {
     -- Padding around the floating window
-    padding = 2,
+    padding = 10,
     max_width = 0,
     max_height = 0,
     border = "rounded",
-    win_options = {
-      winblend = 0,
-    },
-    -- This is the config that will be passed to nvim_open_win.
-    -- Change values here to customize the layout
-    override = function(conf)
-      return conf
+    win_options = { winblend = 1 },
+    get_win_title = function(winid)
+      -- Get the current directory path from the oil buffer
+      local oil_buf = vim.api.nvim_win_get_buf(winid)
+      local dir_path = vim.b[oil_buf].oil_dir or vim.fn.getcwd()
+
+      -- Get the local working directory (lcd or tcd)
+      local local_cwd = vim.fn.getcwd(-1, -1) -- Get cwd for current window
+
+      -- Get the home directory
+      local home_dir = vim.fn.expand("~")
+
+      -- If the path is under the local working directory, make it relative
+      if vim.startswith(dir_path, local_cwd) and dir_path ~= local_cwd then
+        -- Create relative path
+        local rel_path = dir_path:sub(#local_cwd + 2) -- +2 to account for the trailing slash
+        return "   " .. rel_path
+        -- If the path is under home directory, replace with ~
+      elseif vim.startswith(dir_path, home_dir) then
+        local home_relative = dir_path:sub(#home_dir + 1)
+        if home_relative == "" then
+          return "Oil: ~"
+        else
+          return "Oil: ~" .. home_relative
+        end
+      else
+        -- Return the absolute path
+        return "Oil: " .. dir_path
+      end
     end,
   },
   -- Configuration for the actions floating preview window
