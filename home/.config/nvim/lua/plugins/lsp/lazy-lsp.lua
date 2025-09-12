@@ -8,6 +8,7 @@ require('lazy-lsp').setup {
     'sqls',          -- Deprecated (prefer `sqlls`)
     -- Getting errors for these after latest nvim plugin update
     'dolmenls',
+    'gdscript',
     'jqls',
     -- Getting errors for these after latest nvim plugin update (part 2)
     'jdtls',
