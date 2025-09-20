@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = {"javascript", "typescript"},
   callback = function()
     vim.opt_local.textwidth = 80
-    vim.opt_local.formatoptions:append("croql")
+    vim.opt_local.formatoptions:append("croqlt")
     vim.opt_local.comments = "sO:* -,mO:*  ,exO:*/,s1:/*,mb:*,ex:*/,://"
   end,
 })

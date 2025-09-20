@@ -22,6 +22,9 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, options)
 --  but we export it because `lazy-lsp` makes it easier to apply
 --  to every language server instead of having to manually do so
 local on_attach = function(_, bufnr)
+  -- Clear formatexpr so gq uses built-in formatting
+  vim.bo[bufnr].formatexpr = ""
+
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -42,8 +45,24 @@ local on_attach = function(_, bufnr)
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 
-  -- For some reason passing the `async` option is throwing an error right now
-  -- vim.keymap.set('n', '<leader>af', function() vim.lsp.buf.format { async = true } end, bufopts)
+  -- LSP formatting with different operators (Option 3)
+  vim.keymap.set('n', 'gF', function()
+    vim.lsp.buf.format({ async = true })
+  end, { buffer = bufnr, desc = "LSP format buffer" })
+
+  -- LSP format current line
+  vim.keymap.set('n', 'gff', function()
+    local line = vim.api.nvim_win_get_cursor(0)[1]
+    vim.lsp.buf.format({
+      async = true,
+      range = {
+        start = { line, 0 },
+        ["end"] = { line, 0 }
+      }
+    })
+  end, { buffer = bufnr, desc = "LSP format line" })
+
+  -- Keep your existing format mapping as well if you want
   vim.keymap.set('n', '<leader>af', vim.lsp.buf.format, bufopts)
 end
 
