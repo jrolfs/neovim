@@ -1,6 +1,5 @@
 let g:netrw_keepdir = 0
 let g:vimsyn_embed= 'l'
-let g:neovide_background_color = '#303446'
 
 set updatetime=100
 
