@@ -57,9 +57,11 @@ noremap <c-w>L :<C-u>call VSCodeCall('workbench.action.moveActiveEditorGroupRigh
 
 noremap <leader>af :<C-u>call VSCodeCall('editor.action.formatDocument')<cr>
 noremap <leader>ef :<C-u>call VSCodeCall('eslint.executeAutofix')<cr>
+noremap <leader>of :<C-u>call VSCodeCall('oxc.applyAllFixesFile')<cr>
 
 noremap <leader>re :<C-u>call VSCodeCall('eslint.restart')<cr>
 noremap <leader>rt :<C-u>call VSCodeCall('typescript.restartTsServer')<cr>
+noremap <leader>ro :<C-u>call VSCodeCall('oxc.restartServer')<cr>
 
 noremap <leader>z :<C-u>call VSCodeCall('workbench.action.maximizeEditor')<cr>
 noremap <leader>= :<C-u>call VSCodeCall('workbench.action.evenEditorWidths')<cr>
