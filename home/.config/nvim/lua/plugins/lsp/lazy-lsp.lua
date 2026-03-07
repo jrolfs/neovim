@@ -1,6 +1,7 @@
 local config = require('plugins.lsp.nvim-lspconfig')
 
 require('lazy-lsp').setup {
+  use_vim_lsp_config = true,
   excluded_servers = {
     'denols',        -- TypeScript: if I ever start using Deno, I'll need to figure out how to load this selectively
     'rls',           -- Rust: no longer supported (prefer `rust-analyzer`
@@ -13,7 +14,9 @@ require('lazy-lsp').setup {
     -- Getting errors for these after latest nvim plugin update (part 2)
     'jdtls',
     -- Prefer Ruby LSP + standardrb
-    'solargraph'
+    'solargraph',
+    -- Not yet in lspconfig
+    'ty'
   },
   default_config = {
     on_attach = config.on_attach
