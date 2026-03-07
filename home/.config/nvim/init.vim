@@ -56,20 +56,15 @@ Plug 'folke/trouble.nvim'
 
 ""
 " @section Plugins, terminal / repl
-Plug 'metakirby5/codi.vim'
-Plug 'kassio/neoterm'
-Plug 'janko-m/vim-test'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 
 ""
 " @section Plugins, tools
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'simrat39/rust-tools.nvim'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-fugitive'
 Plug 'sjl/splice.vim'
-Plug 'moll/vim-node'
 
 ""
 " @section Plugins, files
