@@ -61,7 +61,7 @@ Plug 'mattn/gist-vim'
 
 ""
 " @section Plugins, tools
-Plug 'simrat39/rust-tools.nvim'
+Plug 'mrcjkb/rustaceanvim'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-fugitive'
 Plug 'sjl/splice.vim'
