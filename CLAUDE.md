@@ -1,0 +1,49 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## What This Is
+
+A personal Neovim configuration managed as a [homesick](https://github.com/technicalpickles/homesick) castle. The `home/` directory is symlinked into `~` by homesick, so `home/.config/nvim/` becomes `~/.config/nvim/`. The `vim-plug/` directory is a vendored copy of [vim-plug](https://github.com/junegunn/vim-plug), symlinked into `autoload/` for plugin management.
+
+## Architecture
+
+### Multi-Environment Init System
+
+There are three separate entry points, each loading a tailored subset of plugins and configuration:
+
+- **`init.vim`** — Full Neovim (terminal). Loads all plugins, all settings, and `lua/init.lua`.
+- **`init-vscode.vim`** — VS Code via [vscode-neovim](https://github.com/vscode-neovim/vscode-neovim). Loads a minimal set of motion/editing plugins into a separate `plugged-vscode` directory. Maps Neovim leader bindings to VS Code commands via `VSCodeCall()`.
+- **`init-kitty.vim`** — Kitty terminal scrollback via [kitty-scrollback.nvim](https://github.com/mikesmithgh/kitty-scrollback.nvim). Separate `plugged-kitty` directory.
+
+Each init file sets `g:init` to its own filename so the `<leader>C` hot-reload command (in `plugin/configuration.vim`) re-sources the correct entry point.
+
+### VimScript Layer (`settings/`, `mappings/`, `plugin/`)
+
+Shared VimScript sourced via `runtime`:
+
+- **`settings/globals.vim`** — XDG data home detection
+- **`settings/common.vim`** — Leader key (Space), undo, indentation, search, wildignore. Sets `g:lua_home` for the Lua layer.
+- **`settings/interface.vim`** — UI options (cursorline, signcolumn, termguicolors)
+- **`mappings/common.vim`** — Shared keybindings (quickfix/loclist navigation, `[b`/`]b`/`[w`/`]w`, EasyAlign)
+- **`plugin/configuration.vim`** — `FlushLuaCache()` and `<leader>C` hot-reload mapping
+
+### Lua Layer (`lua/`)
+
+- **`lua/init.lua`** — Sets up neodev, globs and sources all files under `lua/plugins/*/`, then sets the colorscheme.
+- **`lua/plugins/{category}/{plugin}.lua`** — Plugin configs organized by category: `interface/`, `lsp/`, `search/`, `syntax/`, `language/`. The `relative-source.lua` helper auto-discovers and sources these via glob patterns.
+- **`lua/code/{category}/{plugin}.lua`** — VS Code–specific plugin config (mirrors the `plugins/` structure for bindings mapped to VS Code equivalents).
+- **`lua/utilities.lua`** — Helpers: `merge()`, `map()`, `map_buffer()`, `map_vs()` (wraps `VSCodeCall`/`VSCodeNotify`).
+
+### Key Conventions
+
+- **Leader**: Space (`<leader>`), Local leader: comma (`<localleader>`)
+- Plugin management: vim-plug (`PlugInstall`, `PlugUpdate`, `PlugClean`)
+- LSP: `lazy-lsp.nvim` wraps `nvim-lspconfig` for automatic server setup
+- Completion: `nvim-cmp` with buffer, cmdline, path, and LSP sources
+- Colorscheme: gruvbox-material (default, stored in `vim.g.colorscheme`)
+- Transparent background highlights are defined in `plugin/highlights.vim`
+
+## Commit Style
+
+Follows conventional commits: `feat(scope):`, `fix(scope):`, `chore(scope):` where scope is typically the plugin or area name (e.g., `oil`, `vscode`, `lazy-lsp`, `interface`).
