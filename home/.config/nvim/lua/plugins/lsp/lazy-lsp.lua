@@ -16,7 +16,8 @@ require('lazy-lsp').setup {
     -- Prefer Ruby LSP + standardrb
     'solargraph',
     -- Not yet in lspconfig
-    'ty'
+    'ty',
+    'quick_lint_js',
   },
   default_config = {
     on_attach = config.on_attach
