@@ -29,6 +29,24 @@ require('lazy-lsp').setup {
           client.server_capabilities.semanticTokensProvider = nil
       end
     },
+    tailwindcss = {
+      root_dir = function(bufnr, on_dir)
+        local fname = vim.api.nvim_buf_get_name(bufnr)
+        local root = vim.fs.dirname(vim.fs.find({
+          'tailwind.config.js',
+          'tailwind.config.cjs',
+          'tailwind.config.mjs',
+          'tailwind.config.ts',
+          'postcss.config.js',
+          'postcss.config.cjs',
+          'postcss.config.mjs',
+          'postcss.config.ts',
+        }, { path = fname, upward = true })[1])
+        if root then
+          on_dir(root)
+        end
+      end,
+    },
     ltex = {
       filetypes = {
         "bib",
