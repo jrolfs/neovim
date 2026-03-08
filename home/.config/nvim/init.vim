@@ -20,7 +20,6 @@ Plug 'gruvbox-material/vim', { 'as': 'gruvbox-material' }
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 Plug 'chrisbra/Recover.vim'
-Plug 'gcmt/taboo.vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-lualine/lualine.nvim'
@@ -69,9 +68,7 @@ Plug 'sjl/splice.vim'
 
 ""
 " @section Plugins, files
-Plug 'danro/rename.vim'
 Plug 'lambdalisue/suda.vim'
-Plug 't9md/vim-choosewin'
 Plug 'stevearc/oil.nvim'
 
 ""
