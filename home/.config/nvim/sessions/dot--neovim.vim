@@ -15,7 +15,6 @@ let EditorConfig_exec_path = ""
 let EasyMotion_do_mapping =  1
 let EasyMotion_keys = "asdghklqwertyuiopzxcvbnmfj;"
 let EditorConfig_max_line_indicator = "line"
-let Taboo_tabs = ""
 let EditorConfig_enable_for_new_buf =  0
 let BufKillFunctionSelectingValidBuffersToDisplay = "buflisted"
 let EasyMotion_disable_two_key_combo =  0
@@ -47,41 +46,29 @@ let EasyMotion_force_csapprox =  0
 let EditorConfig_softtabstop_space =  1
 let VM_Cursor_hl = "VMCursor"
 let EasyMotion_landing_highlight =  0
+
 silent only
 silent tabonly
+
 cd ~/.homesick/repos/neovim
+
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
+
 let s:shortmess_save = &shortmess
+
 if &shortmess =~ 'A'
   set shortmess=aoOA
 else
   set shortmess=aoO
 endif
+
 argglobal
 %argdel
+argglobal
+enew
 
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
-set splitbelow splitright
-wincmd _ | wincmd |
-split
-1wincmd h
-wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-exe 'vert 1resize ' . ((&columns * 88 + 88) / 177)
-exe 'vert 2resize ' . ((&columns * 88 + 88) / 177)
-argglobal
-enew
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -90,42 +77,32 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldenable
+
 lcd ~/.homesick/repos/neovim
-wincmd w
-argglobal
-enew
-setlocal foldmethod=manual
-setlocal foldexpr=0
-setlocal foldmarker={{{,}}}
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldenable
-lcd ~/.homesick/repos/neovim
-wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 88 + 88) / 177)
-exe 'vert 2resize ' . ((&columns * 88 + 88) / 177)
+
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
+
 set winheight=1 winwidth=20
+
 let &shortmess = s:shortmess_save
-let &winminheight = s:save_winminheight
-let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
+
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
+
 let &g:so = s:so_save | let &g:siso = s:siso_save
+
 set hlsearch
+
 nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 
-Oil
+Telescope git_files
 
 " vim: set ft=vim :
