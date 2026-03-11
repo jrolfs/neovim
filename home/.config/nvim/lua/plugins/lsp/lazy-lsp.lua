@@ -18,6 +18,8 @@ require('lazy-lsp').setup {
     -- Not yet in lspconfig
     'ty',
     'quick_lint_js',
+    'oxlint', -- Managed manually with node_modules binary detection
+    'oxfmt',  -- Using conform.nvim instead
   },
   default_config = {
     on_attach = config.on_attach

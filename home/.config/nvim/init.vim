@@ -52,6 +52,7 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 
 Plug 'folke/trouble.nvim'
+Plug 'stevearc/conform.nvim'
 
 ""
 " @section Plugins, terminal / repl

@@ -45,25 +45,28 @@ local on_attach = function(_, bufnr)
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 
-  -- LSP formatting with different operators (Option 3)
+  -- Format buffer (conform with LSP fallback)
   vim.keymap.set('n', 'gF', function()
-    vim.lsp.buf.format({ async = true })
-  end, { buffer = bufnr, desc = "LSP format buffer" })
+    require('conform').format({ async = true, lsp_fallback = true })
+  end, { buffer = bufnr, desc = "Format buffer" })
 
-  -- LSP format current line
+  -- Format current line
   vim.keymap.set('n', 'gff', function()
     local line = vim.api.nvim_win_get_cursor(0)[1]
-    vim.lsp.buf.format({
+    require('conform').format({
       async = true,
+      lsp_fallback = true,
       range = {
         start = { line, 0 },
-        ["end"] = { line, 0 }
-      }
+        ["end"] = { line, 0 },
+      },
     })
-  end, { buffer = bufnr, desc = "LSP format line" })
+  end, { buffer = bufnr, desc = "Format line" })
 
-  -- Keep your existing format mapping as well if you want
-  vim.keymap.set('n', '<leader>af', vim.lsp.buf.format, bufopts)
+  -- Format buffer (alternative binding)
+  vim.keymap.set('n', '<leader>af', function()
+    require('conform').format({ async = true, lsp_fallback = true })
+  end, bufopts)
 end
 
 return { on_attach = on_attach }
