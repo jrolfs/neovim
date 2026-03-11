@@ -26,9 +26,10 @@ require('lazy-lsp').setup {
   },
   configs = {
     lua_ls = {
-      on_attach = function(client)
+      on_attach = function(client, bufnr)
           -- Opt out of semantic token highlighting.
           client.server_capabilities.semanticTokensProvider = nil
+          config.on_attach(client, bufnr)
       end
     },
     tailwindcss = {
