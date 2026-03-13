@@ -1,5 +1,7 @@
 local home = vim.api.nvim_get_var('lua_home')
 
+require('environment.mise')
+
 vim.g.colorscheme = "gruvbox-material"
 
 --- Lazydev configures lua_ls with Neovim's runtime types,
