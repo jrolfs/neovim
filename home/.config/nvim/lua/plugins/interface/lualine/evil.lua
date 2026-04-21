@@ -178,32 +178,19 @@ local config = {
       -- Language Server
       {
         function()
-          local msg = 'ﮤ'
-          local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-          local clients = vim.lsp.get_clients()
+          local msg = '· ⋯ ·'
+          local clients = vim.lsp.get_clients({ bufnr = 0 })
 
-          if next(clients) == nil then
+          if #clients == 0 then
             return msg
           end
 
-          local clients_formatted = ''
-
+          local names = {}
           for _, client in ipairs(clients) do
-            local filetypes = client.config.filetypes
-            if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-              clients_formatted = (
-                  string.len(clients_formatted) == 0
-                      and client.name
-                      or clients_formatted .. ', ' .. client.name
-                  )
-            end
+            table.insert(names, client.name)
           end
 
-          return (
-              string.len(clients_formatted) > 0
-                  and 'ﮣ ' .. clients_formatted
-                  or msg
-              )
+          return '󰴽 ' .. table.concat(names, ' • ')
         end,
         color = { fg = '#ffffff', gui = 'none' },
       }
