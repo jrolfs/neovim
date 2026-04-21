@@ -7,12 +7,19 @@
     ]
   },
   "diagnostics": {
-    "globals": ["vim"]
+    "globals": [
+      "vim"
+    ]
   },
   "workspace": {
     "checkThirdParty": false,
     "library": [
       "$VIMRUNTIME/lua"
     ]
+  },
+  "format": {
+    "defaultConfig": {
+      "max_line_length": "80"
+    }
   }
 }
