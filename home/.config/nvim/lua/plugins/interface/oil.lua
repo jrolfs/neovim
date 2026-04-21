@@ -1,3 +1,25 @@
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    local hl = vim.api.nvim_get_hl(0, { name = 'NormalFloat' })
+    if hl.bg then
+      local bg = string.format('#%06x', hl.bg)
+      vim.api.nvim_set_hl(0, 'OilFloatBorder', { fg = bg, bg = 'NONE' })
+      vim.api.nvim_set_hl(0, 'OilFloatTitle', { fg = hl.fg and string.format('#%06x', hl.fg) or '#ffffff', bg = bg })
+    end
+  end,
+})
+
+local oil_border = {
+  { "▗", "OilFloatBorder" },  -- top-left: lower-right quadrant
+  { "▄", "OilFloatBorder" },  -- top: lower half block
+  { "▖", "OilFloatBorder" },  -- top-right: lower-left quadrant
+  { "▌", "OilFloatBorder" },  -- right: left half block
+  { "▘", "OilFloatBorder" },  -- bottom-right: upper-left quadrant
+  { "▀", "OilFloatBorder" },  -- bottom: upper half block
+  { "▝", "OilFloatBorder" },  -- bottom-left: upper-right quadrant
+  { "▐", "OilFloatBorder" },  -- left: right half block
+}
+
 require("oil").setup({
   default_file_explorer = true,
   -- Id is automatically added at the beginning, and name at the end
@@ -81,12 +103,17 @@ require("oil").setup({
     padding = 5,
     max_width = 100,
     max_height = 30,
-    border = "rounded",
-    win_options = { winblend = 1 },
+    border = oil_border,
+    win_options = { winblend = 0 },
+    override_win_config = function(conf)
+      conf.title_pos = "center"
+      conf.title_hl = "OilFloatTitle"
+      return conf
+    end,
     get_win_title = function(winid)
       -- Get the current directory path from the oil buffer
       local oil_buf = vim.api.nvim_win_get_buf(winid)
-      local dir_path = vim.b[oil_buf].oil_dir or vim.fn.getcwd()
+      local dir_path = require("oil").get_current_dir(oil_buf) or vim.fn.getcwd()
 
       -- Get the local working directory (lcd or tcd)
       local local_cwd = vim.fn.getcwd(-1, -1) -- Get cwd for current window
