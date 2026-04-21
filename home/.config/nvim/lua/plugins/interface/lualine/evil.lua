@@ -222,6 +222,12 @@ local function insert_x(component)
 end
 
 insert_x {
+  'filetype',
+  icons_enabled = true,
+  color = { fg = catppuccin.subtext0, gui = 'none' },
+}
+
+insert_x {
   'o:encoding', -- option component same as &encoding in viml
   cond = conditions.hide_at(100),
   icons_enabled = true,
