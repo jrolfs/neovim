@@ -7,9 +7,11 @@ function _G.FlushLuaCache()
   end
 
   for name,_ in pairs(package.loaded) do
-    -- Dumping the cache for `bit` breaks `nvim-colorizer`... we should
-    -- probably be much more discerning about what we clear out here
-    if name ~= 'bit' then
+    if name:match('^plugins%.')
+      or name:match('^code%.')
+      or name == 'utilities'
+      or name == 'relative-source'
+    then
       package.loaded[name] = nil
     end
   end
