@@ -32,6 +32,13 @@ require('lazy-lsp').setup {
           config.on_attach(client, bufnr)
       end
     },
+    jsonls = {
+      root_markers = {},
+      root_dir = function(bufnr, on_dir)
+        local fname = vim.api.nvim_buf_get_name(bufnr)
+        on_dir(vim.fs.root(bufnr, '.git') or vim.fs.dirname(fname))
+      end,
+    },
     tailwindcss = {
       root_dir = function(bufnr, on_dir)
         local fname = vim.api.nvim_buf_get_name(bufnr)
