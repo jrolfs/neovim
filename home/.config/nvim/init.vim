@@ -65,7 +65,6 @@ Plug 'mrcjkb/rustaceanvim'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-fugitive'
 Plug 'sindrets/diffview.nvim'
-Plug 'sjl/splice.vim'
 
 ""
 " @section Plugins, files
