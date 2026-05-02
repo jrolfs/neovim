@@ -33,3 +33,6 @@ nmap <leader>H <plug>(configuration-show-highlights)
 xmap ga <plug>(EasyAlign)
 nmap ga <plug>(EasyAlign)
 
+" EasyMotion
+map <leader><leader> <plug>(easymotion-prefix)
+

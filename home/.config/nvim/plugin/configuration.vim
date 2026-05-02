@@ -9,6 +9,7 @@ function _G.FlushLuaCache()
   for name,_ in pairs(package.loaded) do
     if name:match('^plugins%.')
       or name:match('^code%.')
+      or name:match('^packages%.')
       or name == 'utilities'
       or name == 'relative-source'
     then

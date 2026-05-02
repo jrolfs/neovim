@@ -8,30 +8,12 @@ let g:init = 'init-vscode.vim'
 ""
 " @section Plugins, plugins
 
-call plug#begin(stdpath('data') . '/plugged-vscode')
+lua require('packages.vscode')
 
 let g:backup_directory = 'backups-vscode'
 
 runtime settings/common.vim
 runtime mappings/common.vim
-
-""
-" @section Plugins, interface
-Plug 'editorconfig/editorconfig-vim'
-
-""
-" @section Plugins, motion
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'junegunn/vim-easy-align'
-Plug 'tpope/vim-surround'
-Plug 'wellle/targets.vim'
-
-""
-" @section Plugins, search
-Plug 'tpope/vim-abolish'
-
-call plug#end()
 
 "
 " @section Mappings, mappings

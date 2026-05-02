@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-A personal Neovim configuration managed as a [homesick](https://github.com/technicalpickles/homesick) castle. The `home/` directory is symlinked into `~` by homesick, so `home/.config/nvim/` becomes `~/.config/nvim/`. The `vim-plug/` directory is a vendored copy of [vim-plug](https://github.com/junegunn/vim-plug), symlinked into `autoload/` for plugin management.
+A personal Neovim configuration managed as a [homesick](https://github.com/technicalpickles/homesick) castle. The `home/` directory is symlinked into `~` by homesick, so `home/.config/nvim/` becomes `~/.config/nvim/`. Plugin management uses Neovim's built-in `vim.pack` (0.12+), with a lockfile (`nvim-pack-lock.json`) checked into the config directory.
 
 ## Architecture
 
@@ -12,9 +12,9 @@ A personal Neovim configuration managed as a [homesick](https://github.com/techn
 
 There are three separate entry points, each loading a tailored subset of plugins and configuration:
 
-- **`init.vim`** — Full Neovim (terminal). Loads all plugins, all settings, and `lua/init.lua`.
-- **`init-vscode.vim`** — VS Code via [vscode-neovim](https://github.com/vscode-neovim/vscode-neovim). Loads a minimal set of motion/editing plugins into a separate `plugged-vscode` directory. Maps Neovim leader bindings to VS Code commands via `VSCodeCall()`.
-- **`init-kitty.vim`** — Kitty terminal scrollback via [kitty-scrollback.nvim](https://github.com/mikesmithgh/kitty-scrollback.nvim). Separate `plugged-kitty` directory.
+- **`init.vim`** — Full Neovim (terminal). Loads all plugins via `lua/packages/terminal.lua`, all settings, and `lua/init.lua`.
+- **`init-vscode.vim`** — VS Code via [vscode-neovim](https://github.com/vscode-neovim/vscode-neovim). Loads a minimal set of motion/editing plugins via `lua/packages/vscode.lua`. Maps Neovim leader bindings to VS Code commands via `VSCodeCall()`.
+- **`init-kitty.vim`** — Kitty terminal scrollback via [kitty-scrollback.nvim](https://github.com/mikesmithgh/kitty-scrollback.nvim). Loads plugins via `lua/packages/kitty.lua`.
 
 Each init file sets `g:init` to its own filename so the `<leader>C` hot-reload command (in `plugin/configuration.vim`) re-sources the correct entry point.
 
@@ -30,7 +30,9 @@ Shared VimScript sourced via `runtime`:
 
 ### Lua Layer (`lua/`)
 
-- **`lua/init.lua`** — Sets up neodev, globs and sources all files under `lua/plugins/*/`, then sets the colorscheme.
+- **`lua/packages/common.lua`** — Plugin specs shared by all three environments, returned as a table.
+- **`lua/packages/{terminal,vscode,kitty}.lua`** — Environment-specific plugin lists. Each extends common and calls `vim.pack.add()`.
+- **`lua/init.lua`** — Sets up lazydev, globs and sources all files under `lua/plugins/*/`, then sets the colorscheme.
 - **`lua/plugins/{category}/{plugin}.lua`** — Plugin configs organized by category: `interface/`, `lsp/`, `search/`, `syntax/`, `language/`. The `relative-source.lua` helper auto-discovers and sources these via glob patterns.
 - **`lua/code/{category}/{plugin}.lua`** — VS Code–specific plugin config (mirrors the `plugins/` structure for bindings mapped to VS Code equivalents).
 - **`lua/utilities.lua`** — Helpers: `merge()`, `map()`, `map_buffer()`, `map_vs()` (wraps `VSCodeCall`/`VSCodeNotify`).
@@ -38,7 +40,7 @@ Shared VimScript sourced via `runtime`:
 ### Key Conventions
 
 - **Leader**: Space (`<leader>`), Local leader: comma (`<localleader>`)
-- Plugin management: vim-plug (`PlugInstall`, `PlugUpdate`, `PlugClean`)
+- Plugin management: `vim.pack` (`:lua vim.pack.update()`, lockfile at `nvim-pack-lock.json`)
 - LSP: `lazy-lsp.nvim` wraps `nvim-lspconfig` for automatic server setup
 - Completion: `nvim-cmp` with buffer, cmdline, path, and LSP sources
 - Colorscheme: gruvbox-material (default, stored in `vim.g.colorscheme`)
