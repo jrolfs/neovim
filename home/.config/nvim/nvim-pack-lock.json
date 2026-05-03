@@ -121,7 +121,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "rustaceanvim": {
-      "rev": "ae5bced54e93149385916efad2fc9d24cdecdc56",
+      "rev": "04a45e3eb8a3252a429137bf2669d4f7b3e5c3e7",
       "src": "https://github.com/mrcjkb/rustaceanvim"
     },
     "splitjoin.vim": {
