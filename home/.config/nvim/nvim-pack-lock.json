@@ -152,6 +152,10 @@
       "rev": "3113181d0c1bfb8719f3ddcd2e2f35a8d763d1e5",
       "src": "https://github.com/qpkorr/vim-bufkill"
     },
+    "vim-commentary": {
+      "rev": "64a654ef4a20db1727938338310209b6a63f60c9",
+      "src": "https://github.com/tpope/vim-commentary"
+    },
     "vim-easy-align": {
       "rev": "9815a55dbcd817784458df7a18acacc6f82b1241",
       "src": "https://github.com/junegunn/vim-easy-align"
@@ -211,6 +215,10 @@
     "vim-rhubarb": {
       "rev": "5496d7c94581c4c9ad7430357449bb57fc59f501",
       "src": "https://github.com/tpope/vim-rhubarb"
+    },
+    "vim-session": {
+      "rev": "9e9a6088f0554f6940c19889d0b2a8f39d13f2bb",
+      "src": "https://github.com/xolox/vim-session"
     },
     "vim-sleuth": {
       "rev": "be69bff86754b1aa5adcbb527d7fcd1635a84080",
