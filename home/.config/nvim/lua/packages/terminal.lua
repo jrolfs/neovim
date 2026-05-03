@@ -72,7 +72,7 @@ vim.pack.add(vim.list_extend(vim.deepcopy(common), {
   'https://github.com/folke/lazydev.nvim',
   'https://github.com/heavenshell/vim-jsdoc',
   'https://github.com/jparise/vim-graphql',
-  'https://github.com/norcalli/nvim-colorizer.lua',
+  'https://github.com/catgoose/nvim-colorizer.lua',
   'https://github.com/nvim-treesitter/nvim-treesitter',
   'https://github.com/sheerun/vim-polyglot',
   'https://github.com/tridactyl/vim-tridactyl',

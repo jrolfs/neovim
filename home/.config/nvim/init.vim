@@ -25,10 +25,6 @@ let g:taboo_tab_format = ' %m %I%P  '
 let g:taboo_renamed_tab_format = '  %m%I%l  '
 let g:taboo_modified_tab_flag = '✎'
 
-" Colorizer
-let g:colorizer_auto_map = 1
-let g:colorizer_disable_bufleave = 1
-
 let g:session_autoload = 'no'
 let g:session_autosave = 'yes'
 let g:session_autosave_periodic = 1
