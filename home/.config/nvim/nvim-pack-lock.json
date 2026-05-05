@@ -68,6 +68,10 @@
       "rev": "8c4a9f621ec7cdc30411a1f3b6d5eebb12b469dc",
       "src": "https://github.com/nvimtools/hydra.nvim"
     },
+    "kitty-scrollback.nvim": {
+      "rev": "27a34ad53f188758fe202eb08f0063bce572dde4",
+      "src": "https://github.com/mikesmithgh/kitty-scrollback.nvim"
+    },
     "lazy-lsp.nvim": {
       "rev": "e2599ac3d2ee3b0c38d11edf1c01ce7e846f0079",
       "src": "https://github.com/dundalek/lazy-lsp.nvim"
