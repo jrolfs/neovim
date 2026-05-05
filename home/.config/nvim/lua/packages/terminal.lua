@@ -51,6 +51,7 @@ vim.pack.add(vim.list_extend(vim.deepcopy(common), {
   'https://github.com/tpope/vim-rhubarb',
   'https://github.com/tpope/vim-fugitive',
   'https://github.com/sindrets/diffview.nvim',
+  'https://github.com/linrongbin16/gitlinker.nvim',
 
   -- Files
   'https://github.com/lambdalisue/suda.vim',
