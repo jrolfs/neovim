@@ -33,6 +33,7 @@ require('lazy-lsp').setup {
       end
     },
     jsonls = {
+      cmd = { 'vscode-json-language-server', '--stdio' },
       root_markers = {},
       root_dir = function(bufnr, on_dir)
         local fname = vim.api.nvim_buf_get_name(bufnr)
