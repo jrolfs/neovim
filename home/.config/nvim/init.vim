@@ -9,6 +9,23 @@ let g:init = 'init.vim'
 ""
 " @section Plugins, plugins
 
+" Pandoc — must be set BEFORE vim.pack loads vim-pandoc below. `:packadd`
+" re-runs the plugin's ftdetect against the command-line buffer immediately,
+" so these globals are read at that point. Setting them later (after the
+" require) misses files opened directly at launch (e.g. PR descriptions),
+" leaving the folding module active and collapsing every section.
+let g:pandoc#modules#disabled = ['chdir', 'folding']
+
+let g:pandoc#syntax#codeblocks#embeds#langs = [
+  \   'bash=sh',
+  \   'javascript',
+  \   'js=javascript',
+  \   'json=javascript',
+  \   'python',
+  \   'ruby',
+  \   'ts=typescript'
+  \ ]
+
 lua require('packages.terminal')
 
 runtime settings/interface.vim
@@ -44,19 +61,6 @@ let g:JavaComplete_BaseDir = '~/.cache'
 
 " Tags
 let g:tagbar_autofocus = 1
-
-" Pandoc
-let g:pandoc#modules#disabled = ['chdir', 'folding']
-
-let g:pandoc#syntax#codeblocks#embeds#langs = [
-  \   'bash=sh',
-  \   'javascript',
-  \   'js=javascript',
-  \   'json=javascript',
-  \   'python',
-  \   'ruby',
-  \   'ts=typescript'
-  \ ]
 
 " JSX
 let g:jsx_ext_required = 0
