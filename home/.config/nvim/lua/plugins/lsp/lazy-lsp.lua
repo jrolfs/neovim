@@ -20,6 +20,7 @@ require('lazy-lsp').setup {
     'quick_lint_js',
     'oxlint', -- Managed manually with node_modules binary detection
     'oxfmt',  -- Using conform.nvim instead
+    'ts_ls',  -- Managed manually in typescript.lua (prefers project-local tsgo)
   },
   default_config = {
     on_attach = config.on_attach
