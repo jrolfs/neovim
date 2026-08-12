@@ -12,6 +12,11 @@ function _G.FlushLuaCache()
       or name:match('^packages%.')
       or name == 'utilities'
       or name == 'relative-source'
+      -- Entry-point modules, otherwise `lua require('init')` at the end of
+      -- init.vim returns the cached module and never re-sources lua/plugins/*.
+      or name == 'init'
+      or name == 'init-vscode'
+      or name == 'init-kitty'
     then
       package.loaded[name] = nil
     end
