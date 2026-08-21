@@ -16,6 +16,13 @@ telescope.setup({
   defaults = {
     -- `hidden = true` is not supported in text grep commands.
     vimgrep_arguments = vimgrep_arguments,
+    layout_strategy = "flex",
+    layout_config = {
+      -- `flip_lines` defaults to `vertical.preview_cutoff`; below it, flex falls back
+      -- to horizontal, which then drops the preview entirely under 120 columns.
+      vertical = { preview_cutoff = 0, preview_height = 0.5 },
+      horizontal = { preview_width = 0.55 },
+    },
   },
   pickers = {
     find_files = {
