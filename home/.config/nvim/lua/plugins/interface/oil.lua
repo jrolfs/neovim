@@ -77,6 +77,8 @@ require("oil").setup({
     ["gs"] = "actions.change_sort",
     ["gx"] = "actions.open_external",
     ["g."] = "actions.toggle_hidden",
+    ["gy"] = { "actions.yank_entry", desc = "Yank absolute path of entry" },
+    ["gY"] = { "actions.yank_entry", opts = { modify = ":." }, desc = "Yank path relative to cwd" },
   },
   -- Set to false to disable all of the above keymaps
   use_default_keymaps = true,
