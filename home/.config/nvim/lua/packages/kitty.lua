@@ -9,6 +9,9 @@ vim.api.nvim_create_autocmd('PackChanged', {
   end
 })
 
+-- Not prompting matters more here than in packages/terminal.lua: this runs as
+-- kitty's scrollback pager, so a confirmation prompt would appear over the
+-- scrollback with no obvious way to read it as a question.
 vim.pack.add(vim.list_extend(vim.deepcopy(common), {
   -- Interface
   { src = 'https://github.com/gruvbox-material/vim', name = 'gruvbox-material' },
@@ -35,4 +38,4 @@ vim.pack.add(vim.list_extend(vim.deepcopy(common), {
 
   -- Kitty
   'https://github.com/mikesmithgh/kitty-scrollback.nvim',
-}))
+}), { confirm = false })

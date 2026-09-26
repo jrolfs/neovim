@@ -9,6 +9,18 @@ vim.api.nvim_create_autocmd('PackChanged', {
   end
 })
 
+-- `confirm = false` because the prompt blocks inside this call. Anything
+-- declared here but missing from disk stops startup at "Proceed? [Y]es, (N)o,
+-- (A)lways:", and until it is answered nothing later in init.vim runs,
+-- including `require('init')` where the colorscheme and every plugin's setup
+-- live. The editor then comes up with no theme and no completion, which reads
+-- as a broken config rather than as a question waiting for an answer.
+--
+-- A missing plugin is the normal case, not an exceptional one: ~/.config/nvim
+-- is symlinked to this working copy, so adding an entry below takes effect on
+-- the very next launch, while the nix warm-up that pre-installs plugins only
+-- runs at `darwin-rebuild switch`. Between switches the list and the installed
+-- pack are expected to drift, and the drift should just install.
 vim.pack.add(vim.list_extend(vim.deepcopy(common), {
   -- Interface
   'https://github.com/editorconfig/editorconfig-vim',
@@ -82,4 +94,4 @@ vim.pack.add(vim.list_extend(vim.deepcopy(common), {
 
   -- Icons
   'https://github.com/nvim-tree/nvim-web-devicons',
-}))
+}), { confirm = false })
