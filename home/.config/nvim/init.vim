@@ -26,6 +26,39 @@ let g:pandoc#syntax#codeblocks#embeds#langs = [
   \   'ts=typescript'
   \ ]
 
+" Polyglot — must be set BEFORE vim.pack loads it below, for the same reason as
+" the pandoc globals; it warns at VimEnter if the list arrives late. Polyglot
+" sits second to last on the runtimepath, ahead only of $VIMRUNTIME, so the
+" copies it bundles shadow both the plugins installed separately below and the
+" files Neovim itself ships.
+"
+" graphql was the entry that was actually broken rather than merely redundant.
+" Polyglot's after/syntax/javascript/graphql.vim calls graphql#has_syntax_group(),
+" which only polyglot's own autoload defines, and jparise/vim-graphql wins the
+" autoload lookup: every .js buffer threw E117. vim-graphql carries the whole
+" set (syntax, indent, ftplugin, after/syntax, after/indent), so disabling the
+" bundled copy loses no highlighting.
+"
+" nix and rust shadow rather than break. LnL7/vim-nix supplies nix's syntax,
+" ftplugin and indent, rustaceanvim owns rust, and $VIMRUNTIME covers the rest.
+"
+" sensible is a trimmed vim-sensible that was quietly the last thing to set
+" 'tabstop', 'shiftwidth' and 'shortmess'; those are spelled out in
+" settings/common.vim now. autoindent is polyglot's own :Sleuth, which
+" tpope/vim-sleuth deletes on sight anyway ("Charlatan :Sleuth implementation in
+" vim-polyglot has been found and disabled").
+"
+" What stays enabled is the long tail, the filetypes with neither a $VIMRUNTIME
+" syntax file nor a treesitter parser. The language packs are lazy, so leaving
+" them costs nothing until such a file is opened.
+let g:polyglot_disabled = [
+  \   'autoindent',
+  \   'graphql',
+  \   'nix',
+  \   'rust',
+  \   'sensible'
+  \ ]
+
 lua require('packages.terminal')
 
 runtime settings/interface.vim

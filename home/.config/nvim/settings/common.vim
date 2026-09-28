@@ -41,6 +41,13 @@ set smartindent
 set expandtab
 set autoindent
 
+" Spelled out because the width used to come from the vim-sensible copy bundled
+" in vim-polyglot, which init.vim now disables. Neovim's own default is 8, which
+" is what applies anywhere editorconfig-vim and vim-sleuth find nothing to go on.
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
 "
 " Hidden characters
 set listchars=tab:->,trail:·
@@ -56,6 +63,11 @@ set nostartofline
 " Buffers
 set hidden
 set autoread
+
+" Keep the ATTENTION message quiet when a swap file turns up, since Recover.vim
+" answers SwapExists with its own prompt. Also inherited from the vim-sensible
+" copy in vim-polyglot.
+set shortmess+=A
 
 set nowrap
 set textwidth=80
