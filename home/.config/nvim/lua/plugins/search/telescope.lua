@@ -2,6 +2,7 @@ local telescope = require("telescope")
 
 local builtin = require('telescope.builtin')
 local config = require("telescope.config")
+local float = require("interface.float")
 
 -- Clone the default Telescope configuration
 local vimgrep_arguments = { unpack(config.values.vimgrep_arguments) }
@@ -16,6 +17,7 @@ telescope.setup({
   defaults = {
     -- `hidden = true` is not supported in text grep commands.
     vimgrep_arguments = vimgrep_arguments,
+    borderchars = float.popup(),
     layout_strategy = "flex",
     layout_config = {
       -- `flip_lines` defaults to `vertical.preview_cutoff`; below it, flex falls back

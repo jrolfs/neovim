@@ -10,6 +10,7 @@ function _G.FlushLuaCache()
     if name:match('^plugins%.')
       or name:match('^code%.')
       or name:match('^packages%.')
+      or name:match('^interface%.')
       or name == 'utilities'
       or name == 'relative-source'
       -- Entry-point modules, otherwise `lua require('init')` at the end of
