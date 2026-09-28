@@ -6,6 +6,16 @@ local M = {}
 -- highlight group in the active colorscheme that carries it.
 local kitty_border_color = "#282828"
 
+-- bg1 of the soft dark palette. The theme's own float background is bg3
+-- (#504945), four rungs up from the border, which makes the ring read as a hard
+-- edge rather than as a frame around a panel. bg1 halves that step and sits one
+-- rung above the editor's bg0 (#32302f), the usual relationship for something
+-- floating over a buffer.
+--
+-- It also gets the float off bg3 for a second reason: `Visual` is bg3 too, so a
+-- selection inside a float was the same colour as what it sat on.
+local float_background = "#3c3836"
+
 -- Every position is a full block, which sidesteps corner geometry entirely. A
 -- partial-cell edge has no corner glyph that meets it exactly: nothing in the
 -- Block Elements, Legacy Computing or Powerline ranges has a diagonal
@@ -56,20 +66,19 @@ local apply_highlights = function()
     vim.api.nvim_set_hl(0, group, { fg = kitty_border_color, bg = "NONE" })
   end
 
+  local float = vim.api.nvim_get_hl(0, { name = "NormalFloat", link = false })
+  local foreground = float.fg and string.format("#%06x", float.fg) or "#ffffff"
+
+  vim.api.nvim_set_hl(0, "NormalFloat", { fg = foreground, bg = float_background })
+
   -- Telescope's windows default to `Normal`, which gruvbox-material leaves
   -- transparent, so the border would enclose nothing.
   vim.api.nvim_set_hl(0, "TelescopeNormal", { link = "NormalFloat" })
 
-  local float = vim.api.nvim_get_hl(0, { name = "NormalFloat" })
-  if not float.bg then return end
-
   -- Titles keep the float's own colours rather than the border's, so they read
   -- as a label inset into the ring instead of disappearing into it.
-  local background = string.format("#%06x", float.bg)
-  local foreground = float.fg and string.format("#%06x", float.fg) or "#ffffff"
-
   for _, group in ipairs({ "OilFloatTitle", "TelescopeTitle" }) do
-    vim.api.nvim_set_hl(0, group, { fg = foreground, bg = background })
+    vim.api.nvim_set_hl(0, group, { fg = foreground, bg = float_background })
   end
 end
 
