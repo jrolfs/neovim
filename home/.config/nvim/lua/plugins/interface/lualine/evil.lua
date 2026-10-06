@@ -136,7 +136,7 @@ local function filename(overrides)
     cond = conditions.buffer_not_empty,
     color = { fg = colors.fg, bg = 'none', gui = 'none' },
     fmt = function(data)
-      return data:gsub('%[%+%]', ''):gsub('%[%-%]', 'ﱮ')
+      return data:gsub('%[%+%]', ''):gsub('%[%-%]', '󰝰')
     end
   }
 
