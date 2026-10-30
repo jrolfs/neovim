@@ -40,6 +40,10 @@
       "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
       "src": "https://github.com/sindrets/diffview.nvim"
     },
+    "direnv.nvim": {
+      "rev": "0d2edd378dbdf2c653869772d761ad914219ba9d",
+      "src": "https://github.com/actionshrimp/direnv.nvim"
+    },
     "direnv.vim": {
       "rev": "ab2a7e08dd630060cd81d7946739ac7442a4f269",
       "src": "https://github.com/direnv/direnv.vim"

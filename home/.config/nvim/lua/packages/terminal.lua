@@ -48,6 +48,7 @@ vim.pack.add(vim.list_extend(vim.deepcopy(common), {
   'https://github.com/hrsh7th/cmp-nvim-lsp',
   'https://github.com/hrsh7th/cmp-path',
   'https://github.com/dundalek/lazy-lsp.nvim',
+  'https://github.com/actionshrimp/direnv.nvim',
   'https://github.com/neovim/nvim-lspconfig',
   'https://github.com/L3MON4D3/LuaSnip',
   'https://github.com/saadparwaiz1/cmp_luasnip',

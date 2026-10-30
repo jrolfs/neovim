@@ -59,6 +59,12 @@ let g:polyglot_disabled = [
   \   'sensible'
   \ ]
 
+" direnv.vim stays for .envrc syntax and its :Direnv* commands, but loading
+" environments is direnv.nvim's job (lua/plugins/lsp/direnv.lua). direnv.vim
+" follows nvim's working directory, so the two would overwrite each other's
+" environment on every directory change.
+let g:direnv_auto = 0
+
 lua require('packages.terminal')
 
 runtime settings/interface.vim
