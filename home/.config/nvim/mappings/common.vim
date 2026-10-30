@@ -26,6 +26,9 @@ noremap [w :tabprevious<cr>
 " Source configuration
 nmap <leader>C <plug>(configuration-source)
 
+" Reload statusline
+nmap <leader>L <plug>(configuration-reload-statusline)
+
 " Show highlights
 nmap <leader>H <plug>(configuration-show-highlights)
 

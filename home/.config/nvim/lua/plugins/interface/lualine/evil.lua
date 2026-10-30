@@ -25,11 +25,57 @@ local catppuccin_colors = {
   red      = catppuccin.red,
 }
 
+
+-- aqua             #89b482
+-- bg0              #32302f
+-- bg1              #3c3836
+-- bg2              #3c3836
+-- bg3              #504945
+-- bg4              #504945
+-- bg5              #665c54
+-- bg_current_word  #45403d
+-- bg_diff_blue     #0f3a42
+-- bg_diff_green    #3d4220
+-- bg_diff_red      #472322
+-- bg_dim           #252423
+-- bg_green         #a9b665
+-- bg_red           #ea6962
+-- bg_statusline1   #3c3836
+-- bg_statusline2   #46413e
+-- bg_statusline3   #5b534d
+-- bg_visual_blue   #404946
+-- bg_visual_green  #424a3e
+-- bg_visual_purple #4b3e45
+-- bg_visual_red    #543937
+-- bg_visual_yellow #574833
+-- bg_yellow        #d8a657
+-- blue             #7daea3
+-- fg0              #d4be98
+-- fg1              #ddc7a1
+-- green            #a9b665
+-- grey0            #7c6f64
+-- grey1            #928374
+-- grey2            #a89984
+-- none             none
+-- orange           #e78a4e
+-- purple           #d3869b
+-- red              #ea6962
+-- yellow           #d8a657
+
 -- stylua: ignore
 local gruvbox_colors = {
   bg       = gruvbox.bg1[1],
+  bg0      = gruvbox.bg0[1],
+  bg1      = gruvbox.bg1[1],
+  bg2      = gruvbox.bg2[1],
+  bg3      = gruvbox.bg3[1],
+  bg4      = gruvbox.bg4[1],
+  bg5      = gruvbox.bg5[1],
   fg       = gruvbox.fg1[1],
   fg2      = gruvbox.fg0[1],
+  grey0    = gruvbox.grey0[1],
+  grey1    = gruvbox.grey1[1],
+  grey2    = gruvbox.grey2[1],
   yellow   = gruvbox.yellow[1],
   cyan     = gruvbox.aqua[1],
   darkblue = gruvbox.blue[1],
@@ -59,6 +105,33 @@ local conditions = {
     return gitdir and #gitdir > 0 and #gitdir < #filepath
   end,
 }
+
+-- local superscript_digits = { '⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹' }
+-- local subscript_digits = { '₀', '₁', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉' }
+
+-- local to_digits = function(number, digits)
+--   return (tostring(number):gsub('%d', function(digit)
+--     return digits[tonumber(digit) + 1]
+--   end))
+-- end
+
+local location = function()
+  return vim.fn.line('.')
+      .. '↳'
+      .. vim.fn.charcol('.')
+end
+
+-- Empty circle, then Nerd Font circle_slice_1 through circle_slice_8
+local pie_codepoints = {
+  0xf0766, 0xf0a9e, 0xf0a9f, 0xf0aa0, 0xf0aa1, 0xf0aa2, 0xf0aa3, 0xf0aa4, 0xf0aa5,
+}
+
+--- Pie that fills as the cursor moves from the first line to the last
+local progress_pie = function()
+  local steps = #pie_codepoints - 1
+  local step = math.floor(vim.fn.line('.') / vim.fn.line('$') * steps)
+  return vim.fn.nr2char(pie_codepoints[step + 1])
+end
 
 local formatters = {
   truncate_at = function(length, width)
@@ -153,7 +226,7 @@ local config = {
         b = { fg = colors.fg, bg = colors.bg },
         c = { fg = colors.fg, bg = colors.bg },
       },
-      inactive = { c = { fg = catppuccin.overlay0, bg = 'none' } },
+      inactive = { c = { fg = colors.overlay0, bg = 'none' } },
     },
   },
   sections = {
@@ -184,13 +257,16 @@ local config = {
       },
 
       -- Location
-      'location',
+      {
+        location,
+        color = { fg = colors.fg0 }
+      },
 
       -- Progress
       {
-        'progress',
-        cond = conditions.hide_at(80),
-        color = { fg = colors.fg2, gui = 'none' },
+        progress_pie,
+        -- cond = conditions.hide_at(80),
+        color = { fg = colors.grey1, gui = 'none' },
       },
 
       -- Diagnostics
@@ -244,7 +320,7 @@ local config = {
       -- Filename
       filename({
         path = 1,
-        color = { fg = catppuccin.overlay1, bg = 'none', gui = 'none' },
+        color = { fg = colors.overlay1, bg = 'none', gui = 'none' },
         shorting_target = 80,
       })
     },
@@ -259,26 +335,27 @@ end
 insert_x {
   'filetype',
   icons_enabled = true,
-  color = { fg = catppuccin.subtext0, gui = 'none' },
+  color = { fg = colors.subtext0, gui = 'none' },
 }
 
 insert_x {
   'o:encoding', -- option component same as &encoding in viml
   cond = conditions.hide_at(100),
   icons_enabled = true,
-  color = { fg = catppuccin.overlay1, gui = 'none' },
+  color = { fg = colors.overlay1, gui = 'none' },
 }
 
 insert_x {
   'fileformat',
+  cond = conditions.hide_at(100),
   fmt = string.upper,
   icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
-  color = { fg = catppuccin.subtext0, gui = 'bold' },
+  color = { fg = colors.subtext0, gui = 'bold' },
 }
 
 insert_x {
   'branch',
-  icon = '',
+  icon = '',
   color = { fg = colors.darkblue, gui = 'bold' },
   fmt = formatters.truncate_at(8, 120)
 }

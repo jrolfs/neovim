@@ -20,6 +20,43 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, options)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, options)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, options)
 
+-- Keys are `client.name`, which for lazy-lsp servers is the lspconfig config
+-- name, and for manually started servers is whatever `vim.lsp.start` was given
+local client_display = {
+  lua_ls = '󰢱 ',
+  tsgo = '󰛦 ',
+  ts_ls = '󰛦 ',
+  oxlint = '󰀱 ',
+  eslint = '󰀱 ',
+  ['rust-analyzer'] = ' ',
+  jsonls = ' ',
+  gopls = ' ',
+  nil_ls = ' ',
+  nixd = ' ',
+  tailwindcss = ' ',
+  ruby_lsp = '󰴭',
+  standardrb = ' ',
+  ltex = '󰾹 ',
+}
+
+--- Restart every LSP client attached to the current buffer
+local restart_buffer_clients = function()
+  local names = vim.iter(vim.lsp.get_clients({ bufnr = 0 }))
+    :map(function(client) return client.name end)
+    :totable()
+
+  if #names == 0 then
+    vim.notify("No LSP clients attached to this buffer", vim.log.levels.WARN)
+    return
+  end
+
+  vim.cmd('lsp restart')
+  vim.notify("Restarting " .. table.concat(names, ", "))
+end
+
+vim.keymap.set('n', '<leader>R', restart_buffer_clients,
+  { noremap = true, silent = true, desc = "Restart LSP clients for buffer" })
+
 --- This belongs here because `on_attach` is a native LSP thing,
 --  but we export it because `lazy-lsp` makes it easier to apply
 --  to every language server instead of having to manually do so
