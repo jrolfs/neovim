@@ -40,6 +40,21 @@ require('lazy-lsp').setup {
         local fname = vim.api.nvim_buf_get_name(bufnr)
         on_dir(vim.fs.root(bufnr, '.git') or vim.fs.dirname(fname))
       end,
+      settings = {
+        json = {
+          validate = { enable = true },
+          schemas = {
+            -- Zed serves its schema only as zed://schemas/settings, generated
+            -- from the running install, so this is a snapshot exported from
+            -- Zed. Mapped here rather than with `$schema` so Zed keeps its
+            -- live one.
+            {
+              fileMatch = { '**/.config/zed/settings.json' },
+              url = 'file://' .. vim.fn.expand('~/.config/zed/settings.schema.json'),
+            },
+          },
+        },
+      },
     },
     tailwindcss = {
       root_dir = function(bufnr, on_dir)
