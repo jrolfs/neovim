@@ -15,7 +15,7 @@ filetype plugin indent on
 " Undo
 
 " Define lua_home with ability to override
-let g:lua_home = get(g:, 'lua_home', '~/.config/nvim/lua')
+let g:lua_home = get(g:, 'lua_home', stdpath('config') . '/lua')
 let &runtimepath .= ', ' . g:lua_home
 
 " Define backup directory name with ability to override
