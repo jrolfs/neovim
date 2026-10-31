@@ -230,10 +230,11 @@ local config = {
     },
   },
   sections = {
+    -- Progress + Mode
     lualine_a = {
       {
         function()
-          return icon_for_mode()
+          return progress_pie() .. ' ┊' .. icon_for_mode()
         end,
         color = function()
           return { fg = colors.bg, bg = color_for_mode() }
@@ -260,13 +261,6 @@ local config = {
       {
         location,
         color = { fg = colors.fg0 }
-      },
-
-      -- Progress
-      {
-        progress_pie,
-        -- cond = conditions.hide_at(80),
-        color = { fg = colors.grey1, gui = 'none' },
       },
 
       -- Diagnostics
