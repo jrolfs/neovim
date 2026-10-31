@@ -1,30 +1,53 @@
 local utilities = require('utilities')
 
--- Catppuccin
-local catppuccin = require('catppuccin.palettes').get_palette()
+-- Every colorscheme spells its palette differently, so each entry here adapts
+-- one onto the keys the rest of this file uses. Nothing below this table names
+-- a colorscheme, so supporting another one is a matter of adding a function:
+--
+--   bg, fg                 statusline background and primary text
+--   dim, dimmer, dimmest   de-emphasised text, brightest first
+--   the rest               accents, for mode colour, diff and diagnostics
+--
+-- Installing the colorscheme in packages/terminal.lua is the other half. A
+-- second entry would read:
+--
+--   ['tokyonight'] = function()
+--     local palette = require('tokyonight.colors').setup()
+--
+--     return {
+--       bg = palette.bg_statusline, fg = palette.fg,
+--       dim = palette.fg_dark, dimmer = palette.comment, dimmest = palette.dark3,
+--       yellow = palette.yellow, cyan = palette.cyan, darkblue = palette.blue0,
+--       green = palette.green, orange = palette.orange, violet = palette.purple,
+--       magenta = palette.magenta, blue = palette.blue, red = palette.red,
+--     }
+--   end,
+local palettes = {
+  ['gruvbox-material'] = function()
+    local configuration = vim.fn['gruvbox_material#get_configuration']()
+    local palette = vim.fn['gruvbox_material#get_palette'](configuration.background,
+      configuration.foreground, configuration.colors_override)
 
--- Gruvbox Material
-local configuration = vim.fn['gruvbox_material#get_configuration']()
-local gruvbox = vim.fn['gruvbox_material#get_palette'](configuration.background,
-  configuration.foreground, configuration.colors_override)
-
--- stylua: ignore
-local catppuccin_colors = {
-  bg       = catppuccin.surface1,
-  fg       = catppuccin.text,
-  fg2      = catppuccin.overlay0,
-  fg3      = catppuccin.overlay1,
-  yellow   = catppuccin.yellow,
-  cyan     = catppuccin.sky,
-  darkblue = catppuccin.blue,
-  green    = catppuccin.green,
-  orange   = catppuccin.peach,
-  violet   = catppuccin.mauve,
-  magenta  = catppuccin.pink,
-  blue     = catppuccin.sapphire,
-  red      = catppuccin.red,
+    -- Each entry is a { gui, cterm } pair and lualine wants the gui half.
+    -- stylua: ignore
+    return {
+      bg       = palette.bg1[1],
+      fg       = palette.fg1[1],
+      dim      = palette.grey2[1],
+      dimmer   = palette.grey1[1],
+      dimmest  = palette.grey0[1],
+      yellow   = palette.yellow[1],
+      cyan     = palette.aqua[1],
+      darkblue = palette.blue[1],
+      green    = palette.green[1],
+      orange   = palette.orange[1],
+      violet   = palette.purple[1],
+      magenta  = palette.red[1],
+      blue     = palette.blue[1],
+      red      = palette.red[1],
+    }
+  end,
 }
-
 
 -- aqua             #89b482
 -- bg0              #32302f
@@ -63,32 +86,40 @@ local catppuccin_colors = {
 -- yellow           #d8a657
 
 -- stylua: ignore
-local gruvbox_colors = {
-  bg       = gruvbox.bg1[1],
-  bg0      = gruvbox.bg0[1],
-  bg1      = gruvbox.bg1[1],
-  bg2      = gruvbox.bg2[1],
-  bg3      = gruvbox.bg3[1],
-  bg4      = gruvbox.bg4[1],
-  bg5      = gruvbox.bg5[1],
-  fg       = gruvbox.fg1[1],
-  fg2      = gruvbox.fg0[1],
-  grey0    = gruvbox.grey0[1],
-  grey1    = gruvbox.grey1[1],
-  grey2    = gruvbox.grey2[1],
-  yellow   = gruvbox.yellow[1],
-  cyan     = gruvbox.aqua[1],
-  darkblue = gruvbox.blue[1],
-  green    = gruvbox.green[1],
-  orange   = gruvbox.orange[1],
-  violet   = gruvbox.purple[1],
-  magenta  = gruvbox.red[1],
-  blue     = gruvbox.blue[1],
-  red      = gruvbox.red[1],
-}
+-- local gruvbox_colors = {
+--   bg       = gruvbox.bg1[1],
+--   bg0      = gruvbox.bg0[1],
+--   bg1      = gruvbox.bg1[1],
+--   bg2      = gruvbox.bg2[1],
+--   bg3      = gruvbox.bg3[1],
+--   bg4      = gruvbox.bg4[1],
+--   bg5      = gruvbox.bg5[1],
+--   fg       = gruvbox.fg1[1],
+--   fg2      = gruvbox.fg0[1],
+--   grey0    = gruvbox.grey0[1],
+--   grey1    = gruvbox.grey1[1],
+--   grey2    = gruvbox.grey2[1],
+--   yellow   = gruvbox.yellow[1],
+--   cyan     = gruvbox.aqua[1],
+--   darkblue = gruvbox.blue[1],
+--   green    = gruvbox.green[1],
+--   orange   = gruvbox.orange[1],
+--   violet   = gruvbox.purple[1],
+--   magenta  = gruvbox.red[1],
+--   blue     = gruvbox.blue[1],
+--   red      = gruvbox.red[1],
+-- }
 
-local colors = vim.g.colorscheme == 'gruvbox-material' and gruvbox_colors or
-    catppuccin_colors
+-- Warn rather than fail: a statusline with the wrong greys still works, and an
+-- error here would stop the rest of init.lua the way a missing plugin does.
+if not build then
+  vim.notify(
+    ('lualine: no palette for colorscheme %q, using gruvbox-material'):format(vim.g.colorscheme),
+    vim.log.levels.WARN
+  )
+end
+
+local colors = (build or palettes['gruvbox-material'])()
 
 local conditions = {
   buffer_not_empty = function()
@@ -314,7 +345,7 @@ local config = {
       -- Filename
       filename({
         path = 1,
-        color = { fg = colors.overlay1, bg = 'none', gui = 'none' },
+        color = { fg = colors.dimmer, bg = 'none', gui = 'none' },
         shorting_target = 80,
       })
     },
@@ -329,14 +360,14 @@ end
 insert_x {
   'filetype',
   icons_enabled = true,
-  color = { fg = colors.subtext0, gui = 'none' },
+  color = { fg = colors.dim, gui = 'none' },
 }
 
 insert_x {
   'o:encoding', -- option component same as &encoding in viml
   cond = conditions.hide_at(100),
   icons_enabled = true,
-  color = { fg = colors.overlay1, gui = 'none' },
+  color = { fg = colors.dimmer, gui = 'none' },
 }
 
 insert_x {
@@ -344,7 +375,7 @@ insert_x {
   cond = conditions.hide_at(100),
   fmt = string.upper,
   icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
-  color = { fg = colors.subtext0, gui = 'bold' },
+  color = { fg = colors.dim, gui = 'bold' },
 }
 
 insert_x {

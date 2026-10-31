@@ -25,7 +25,6 @@ vim.pack.add(vim.list_extend(vim.deepcopy(common), {
   -- Interface
   'https://github.com/editorconfig/editorconfig-vim',
   { src = 'https://github.com/gruvbox-material/vim', name = 'gruvbox-material' },
-  { src = 'https://github.com/catppuccin/nvim', name = 'catppuccin' },
   'https://github.com/chrisbra/Recover.vim',
   'https://github.com/jeffkreeftmeijer/vim-numbertoggle',
   'https://github.com/lewis6991/gitsigns.nvim',

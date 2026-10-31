@@ -8,10 +8,6 @@
       "rev": "e61319bce3cd1004e5b695933296d8f267dd65a3",
       "src": "https://github.com/chrisbra/Recover.vim"
     },
-    "catppuccin": {
-      "rev": "426dbebe06b5c69fd846ceb17b42e12f890aedf1",
-      "src": "https://github.com/catppuccin/nvim"
-    },
     "cmp-buffer": {
       "rev": "b74fab3656eea9de20a9b8116afa3cfc4ec09657",
       "src": "https://github.com/hrsh7th/cmp-buffer"
