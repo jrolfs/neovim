@@ -25,7 +25,8 @@ local utilities = require('utilities')
 local palettes = {
   ['gruvbox-material'] = function()
     local configuration = vim.fn['gruvbox_material#get_configuration']()
-    local palette = vim.fn['gruvbox_material#get_palette'](configuration.background,
+    local palette = vim.fn['gruvbox_material#get_palette'](
+      configuration.background,
       configuration.foreground, configuration.colors_override)
 
     -- Each entry is a { gui, cterm } pair and lualine wants the gui half.
@@ -110,16 +111,19 @@ local palettes = {
 --   red      = gruvbox.red[1],
 -- }
 
+local build_palette = palettes[vim.g.colorscheme]
+
 -- Warn rather than fail: a statusline with the wrong greys still works, and an
 -- error here would stop the rest of init.lua the way a missing plugin does.
-if not build then
+if not build_palette then
   vim.notify(
-    ('lualine: no palette for colorscheme %q, using gruvbox-material'):format(vim.g.colorscheme),
+    ('lualine: no palette for colorscheme %q, using gruvbox-material'):format(
+    vim.g.colorscheme),
     vim.log.levels.WARN
   )
 end
 
-local colors = (build or palettes['gruvbox-material'])()
+local colors = (build_palette or palettes['gruvbox-material'])()
 
 local conditions = {
   buffer_not_empty = function()
